@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>QGIS &mdash; Python - SIG 2016.02.06 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/oslide.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2016.02.06',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    
+    
+    <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  
+<article class="slide level-1" id="qgis">
+
+<h1>QGIS</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/qgis-icon.png"><img alt="_images/qgis-icon.png" class="align-center" src="_images/qgis-icon.png" style="width: 200pt;" /></a>
+
+
+
+<div class="slide-no">1</div>
+
+
+</article>
+<article class="slide level-1" id="api-qgis-1">
+
+<h1>API QGIS (1)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/qgis.png"><img alt="_images/qgis.png" class="align-center" src="_images/qgis.png" style="width: 2000pt;" /></a>
+
+
+
+<div class="slide-no">2</div>
+
+
+</article>
+<article class="slide level-1" id="api-qgis-2">
+
+<h1>API QGIS (2)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>map</strong></p>
+<ul class="simple">
+<li>QgsMapCanvas : widget d'affichage de la carte</li>
+<li>QgsMapRenderer / QgsMapRendererJob : rendu de la carte</li>
+<li>QgsMapTool : intéractions utilisateur avec la carte (déplacement, identification de feature, ...)</li>
+<li>QgsMapLayer : les couches (vector, raster, ...)</li>
+</ul>
+<p><strong>feature</strong></p>
+<ul class="simple">
+<li>QgsFeature : objets géographiques</li>
+<li>QgsFeatureRenderer : rendu de feature</li>
+<li>QgsGeometry : géometrie (point, polygone, ...)</li>
+</ul>
+
+
+
+<div class="slide-no">3</div>
+
+
+</article>
+<article class="slide level-1" id="api-qgis-3">
+
+<h1>API QGIS (3)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>divers</strong></p>
+<ul class="simple">
+<li>QgsProject : ouverture / lecture / ... de fichier .qgis</li>
+<li>QgsLayerTreeGroup : arbre des couches</li>
+<li>QgisInterface : point d'entrée des plugins Python</li>
+</ul>
+<p><strong>Beaucoup de classes!!</strong></p>
+
+
+
+<div class="slide-no">4</div>
+
+
+</article>
+<article class="slide level-1" id="depot-qgis-1">
+
+<h1>Dépôt QGIS (1)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><a class="reference external" href="https://github.com/qgis/QGIS">https://github.com/qgis/QGIS</a></p>
+<a class="reference internal image-reference" href="_images/qgis_repo.png"><img alt="_images/qgis_repo.png" class="align-center" src="_images/qgis_repo.png" style="width: 2000pt;" /></a>
+
+
+
+<div class="slide-no">5</div>
+
+
+</article>
+<article class="slide level-1" id="depot-qgis-2">
+
+<h1>Dépôt QGIS (2)</h1>
+
+<p><strong>Racine</strong></p>
+<ul class="simple">
+<li><strong>ci</strong> : continuous integration (scripts travis pour linux, OSX, QT4, QT5)</li>
+<li><strong>cmake</strong> : scripts CMake</li>
+<li><strong>debian</strong> - mac - ms-windows - rpm : le nécessaire pour faire les packages</li>
+<li><strong>doc</strong> : auteurs, contributeurs, ...</li>
+<li><strong>i18n</strong> : langues</li>
+<li><strong>images/themes/default</strong> : icones, ...</li>
+<li><strong>python</strong> : binding (.sip), ...</li>
+<li><strong>scripts</strong> : des scripts utiles (pre-commit.sh, astyle.sh, ...)</li>
+<li><strong>src</strong> : les sources QGIS</li>
+<li><strong>tests</strong> : le nécessaire pour les tests unitaires (sources, données de tests, ...)</li>
+</ul>
+
+
+
+<div class="slide-no">6</div>
+
+
+</article>
+<article class="slide level-1" id="depot-qgis-3">
+
+<h1>Dépôt QGIS (3)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>src : les répertoires principaux</strong></p>
+<ul class="simple">
+<li><strong>app</strong> : maptools &quot;spécifiques&quot; (pin/unpin labels, ...), le main!</li>
+<li><strong>core</strong> : expression, maplayer, renderer, datadefined, ...</li>
+<li><strong>customwidgets</strong> : les widgets custom réutilisables (QgsSpinBox)</li>
+<li><strong>gui</strong> : les maptools de base, mapcanvas, messagebar, attributeform, ...</li>
+<li><strong>plugins</strong> : les plugin C++</li>
+<li><strong>providers</strong> : les dataproviders (memory, postgres, virtual, ...)</li>
+<li><strong>ui</strong> : les fichiers .ui</li>
+</ul>
+
+
+
+<div class="slide-no">7</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-standalone-1">
+
+<h1>QGIS Standalone (1)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Application sans GUI</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;QApplication&gt;</span>
+<span class="cp">#include &lt;qgsapplication.h&gt;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+  <span class="n">QApplication</span> <span class="n">app</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+
+  <span class="n">QgsApplication</span><span class="o">::</span><span class="n">setPrefixPath</span><span class="p">(</span><span class="s">&quot;/usr/local&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="n">QgsApplication</span><span class="o">::</span><span class="n">initQgis</span><span class="p">();</span>
+
+  <span class="n">QgsApplication</span><span class="o">::</span><span class="n">exitQgis</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">8</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-standalone-2">
+
+<h1>QGIS Standalone (2)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Application avec GUI</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;QApplication&gt;</span>
+<span class="cp">#include &lt;qgsapplication.h&gt;</span>
+<span class="cp">#include &lt;qgsmapcanvas.h&gt;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+  <span class="n">QApplication</span> <span class="n">app</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+
+  <span class="n">QgsApplication</span><span class="o">::</span><span class="n">setPrefixPath</span><span class="p">(</span><span class="s">&quot;/usr/local&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="n">QgsApplication</span><span class="o">::</span><span class="n">initQgis</span><span class="p">();</span>
+
+  <span class="n">QgsMapCanvas</span> <span class="n">canvas</span><span class="p">;</span>
+  <span class="n">canvas</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+
+  <span class="kt">int</span> <span class="n">rc</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">exec</span><span class="p">();</span>
+  <span class="n">QgsApplication</span><span class="o">::</span><span class="n">exitQgis</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="n">rc</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">9</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-standalone-3">
+
+<h1>QGIS Standalone (3)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>EXERCICE 4</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 200pt;" /></a>
+
+
+
+<div class="slide-no">10</div>
+
+
+</article>
+<article class="slide level-1" id="integration-continue">
+
+<h1>Intégration continue</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Lors d'une PR, les builds sont réalisés sur plusieurs OS : Linux, OSX et Windows.</p>
+<p><a class="reference external" href="http://dash.orfeo-toolbox.org/index.php?project=QGIS">http://dash.orfeo-toolbox.org/index.php?project=QGIS</a></p>
+<dl class="docutils">
+<dt>Un build va échouer si :</dt>
+<dd><ul class="first last simple">
+<li>il y a des erreurs/warnings de compilation</li>
+<li>des tests unitaires ne passent pas</li>
+<li>il y a un problème dans le binding Python</li>
+<li>la documentation est incomplète</li>
+<li>...</li>
+</ul>
+</dd>
+</dl>
+
+
+
+<div class="slide-no">11</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-documentation-1">
+
+<h1>QGIS documentation (1)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>header</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="cm">/***************************************************************************</span>
+<span class="cm">&lt;filename&gt;</span>
+<span class="cm">begin                : &lt;month&gt; &lt;year&gt;</span>
+<span class="cm">copyright            : (C) &lt;year&gt; &lt;Prenom&gt; &lt;Nom&gt;, &lt;Entrprise&gt;</span>
+<span class="cm">email                : &lt;mail&gt;</span>
+<span class="cm">***************************************************************************/</span>
+
+<span class="cm">/***************************************************************************</span>
+<span class="cm">*                                                                         *</span>
+<span class="cm">*   This program is free software; you can redistribute it and/or modify  *</span>
+<span class="cm">*   it under the terms of the GNU General Public License as published by  *</span>
+<span class="cm">*   the Free Software Foundation; either version 2 of the License, or     *</span>
+<span class="cm">*   (at your option) any later version.                                   *</span>
+<span class="cm">*                                                                         *</span>
+<span class="cm">***************************************************************************/</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">12</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-documentation-2">
+
+<h1>QGIS documentation (2)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>doxygen</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="cm">/** Description de la méthode.</span>
+<span class="cm"> * @param nom description du paramètre1</span>
+<span class="cm"> * @param nom description du paramètre2</span>
+<span class="cm"> * @return description de la valeur de retour</span>
+<span class="cm"> * @note added in QGIS 2.XX</span>
+<span class="cm"> */</span>
+</pre></div>
+</div>
+<p>Documenter tout ce qui est public ou protected au minimum!!</p>
+
+
+
+<div class="slide-no">13</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-documentation-3">
+
+<h1>QGIS documentation (3)</h1>
+
+<p><a class="reference external" href="https://github.com/qgis/QGIS-Documentation">https://github.com/qgis/QGIS-Documentation</a></p>
+<p>Documentation à compléter lors de l'ajout d'une feature!</p>
+<p><strong>[FEATURE] My new feature</strong> : création automatique d'issue</p>
+<a class="reference internal image-reference" href="_images/qgis-doc-feature.png"><img alt="_images/qgis-doc-feature.png" class="align-center" src="_images/qgis-doc-feature.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">14</div>
+
+
+</article>
+<article class="slide level-1" id="id1">
+
+<h1>QGIS documentation (3)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>changelog</strong></p>
+<p><a class="reference external" href="http://changelog.qgis.org/en/qgis/">http://changelog.qgis.org/en/qgis/</a></p>
+<a class="reference internal image-reference" href="_images/changelog.png"><img alt="_images/changelog.png" class="align-center" src="_images/changelog.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">15</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-unit-tests-1">
+
+<h1>QGIS unit tests (1)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>C++ : unit class test</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;QtTest/QtTest&gt;</span>
+
+<span class="k">class</span> <span class="nc">TestQgsMyClass</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QObject</span>
+<span class="p">{</span>
+  <span class="n">Q_OBJECT</span>
+
+  <span class="k">public</span><span class="o">:</span>
+    <span class="n">TestQgsMyClass</span><span class="p">()</span> <span class="p">{}</span>
+
+  <span class="k">private</span> <span class="nl">slots</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">initTestCase</span><span class="p">();</span> <span class="c1">// executed before the first test function</span>
+    <span class="kt">void</span> <span class="nf">cleanUpTestCase</span><span class="p">();</span> <span class="c1">// executed after the last test function</span>
+
+    <span class="kt">void</span> <span class="nf">testfunction1</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">testfunction2</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="n">QTEST_MAIN</span><span class="p">(</span> <span class="n">TestQgsMyClass</span> <span class="p">)</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">16</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-unit-tests-2">
+
+<h1>QGIS unit tests (2)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>C++ : QGIS environment</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="kt">void</span> <span class="n">TestQgsMyClass</span><span class="o">::</span><span class="n">initTestCase</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">QgsApplication</span><span class="o">::</span><span class="n">init</span><span class="p">();</span>
+  <span class="n">QgsApplication</span><span class="o">::</span><span class="n">initQgis</span><span class="p">();</span> <span class="c1">// if needed</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">TestQgsMyClass</span><span class="o">::</span><span class="n">cleanUpTestCase</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">QgsApplication</span><span class="o">::</span><span class="n">exitQgis</span><span class="p">();</span> <span class="c1">// if needed</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">TestQgsMyClass</span><span class="o">::</span><span class="n">testfunction1</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">QVERIFY</span><span class="p">(</span> <span class="n">boolean</span> <span class="n">predicate</span> <span class="p">);</span>
+  <span class="n">QCOMPARE</span><span class="p">(</span> <span class="n">checked_value</span><span class="p">,</span> <span class="n">waited_value</span> <span class="p">);</span>
+
+  <span class="n">QgsRenderChecker</span> <span class="n">checker</span><span class="p">;</span>
+  <span class="n">checker</span><span class="p">.</span><span class="n">compareImages</span><span class="p">(....);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">17</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-unit-tests-3">
+
+<h1>QGIS unit tests (3)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Python : unittest</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">qgis.testing</span> <span class="kn">import</span> <span class="p">(</span><span class="n">start_app</span><span class="p">,</span>
+                          <span class="n">unittest</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">utilities</span> <span class="kn">import</span> <span class="n">unitTestDataPath</span>
+
+<span class="n">start_app</span><span class="p">()</span>
+<span class="n">TEST_DATA_DIR</span> <span class="o">=</span> <span class="n">unitTestDataPath</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">TestQgsClass</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">methodName</span><span class="p">):</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">methodName</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">test1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="o">....</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="o">....</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">18</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-unit-tests-4">
+
+<h1>QGIS unit tests (4)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Python : interface</strong></p>
+<p>Mock object pour <strong>QgisInterface</strong> : <em>python/testing/mocked.py</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">qgis.testing.mocked</span> <span class="kn">import</span> <span class="n">get_iface</span>
+
+<span class="n">my_iface</span> <span class="o">=</span> <span class="n">get_iface</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">19</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-python-binding-1">
+
+<h1>QGIS Python binding (1)</h1>
+
+<p><strong>SIP</strong></p>
+<p>Recopie du <strong>.h</strong> sauf :</p>
+<blockquote>
+<div><ul class="simple">
+<li>mot clé override</li>
+<li>implémentation</li>
+<li>les includes</li>
+<li>les éléments private</li>
+</ul>
+</div></blockquote>
+<p>En plus :</p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">QgsMapRendererJob</span> <span class="o">:</span> <span class="n">QObject</span>
+<span class="p">{</span>
+  <span class="o">%</span><span class="n">TypeHeaderCode</span>
+  <span class="cp">#include &lt;qgsmaprendererjob.h&gt;</span>
+  <span class="o">%</span><span class="n">End</span>
+
+  <span class="p">........</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">20</div>
+
+
+</article>
+<article class="slide level-1" id="qgis-core-dev">
+
+<h1>QGIS Core-Dev</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>EXERCICE 5</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 200pt;" /></a>
+
+
+
+<div class="slide-no">21</div>
+
+
+</article>
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>

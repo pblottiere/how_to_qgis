@@ -1,0 +1,6 @@
+SET(SOURCES
+  hello.cpp)
+
+ADD_LIBRARY(hello SHARED ${SOURCES})
+
+INSTALL(TARGETS hello DESTINATION lib)

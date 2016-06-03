@@ -1,0 +1,4 @@
+SET(SOURCES
+  hello.cpp)
+
+ADD_LIBRARY(hello SHARED ${SOURCES})
