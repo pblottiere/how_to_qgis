@@ -99,7 +99,7 @@ Rappels de C++ (5)
   {
   }
 
-  void Hello::print()
+  void Hello::print() const
   {
     std::cout << "Hello " <<  mNumber << std::endl;
   }
@@ -187,7 +187,7 @@ Rappels de C++ (9)
   {
   }
 
-  void HelloWorldV2::print()
+  void HelloWorldV2::print() const
   {
     std::cout << "HelloWorldV2 print: " << std::endl;
     this.hello();
@@ -204,8 +204,8 @@ Rappels de C++ (10)
 
   class Printer
   {
-    void hello( const HelloWorldV2 &h ) { h.print(); }
-    void hello( const Hello &h ) { h.print() ); }
+    static void hello( const HelloWorldV2 &h ) { h.print(); }
+    static void hello( const Hello &h ) { h.print() ); }
   }
 
 .. code-block:: C++
