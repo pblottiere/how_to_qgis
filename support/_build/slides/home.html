@@ -226,7 +226,7 @@ Hello 2
 <span class="p">{</span>
 <span class="p">}</span>
 
-<span class="kt">void</span> <span class="n">Hello</span><span class="o">::</span><span class="n">print</span><span class="p">()</span>
+<span class="kt">void</span> <span class="n">Hello</span><span class="o">::</span><span class="n">print</span><span class="p">()</span> <span class="k">const</span>
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello &quot;</span> <span class="o">&lt;&lt;</span>  <span class="n">mNumber</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
@@ -342,7 +342,7 @@ Hello 2
 <span class="p">{</span>
 <span class="p">}</span>
 
-<span class="kt">void</span> <span class="n">HelloWorldV2</span><span class="o">::</span><span class="n">print</span><span class="p">()</span>
+<span class="kt">void</span> <span class="n">HelloWorldV2</span><span class="o">::</span><span class="n">print</span><span class="p">()</span> <span class="k">const</span>
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;HelloWorldV2 print: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
   <span class="k">this</span><span class="p">.</span><span class="n">hello</span><span class="p">();</span>
@@ -366,8 +366,8 @@ Hello 2
 <p><strong>Surcharge / méthode statique</strong></p>
 <div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Printer</span>
 <span class="p">{</span>
-  <span class="kt">void</span> <span class="n">hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">HelloWorldV2</span> <span class="o">&amp;</span><span class="n">h</span> <span class="p">)</span> <span class="p">{</span> <span class="n">h</span><span class="p">.</span><span class="n">print</span><span class="p">();</span> <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">Hello</span> <span class="o">&amp;</span><span class="n">h</span> <span class="p">)</span> <span class="p">{</span> <span class="n">h</span><span class="p">.</span><span class="n">print</span><span class="p">()</span> <span class="p">);</span> <span class="p">}</span>
+  <span class="k">static</span> <span class="kt">void</span> <span class="n">hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">HelloWorldV2</span> <span class="o">&amp;</span><span class="n">h</span> <span class="p">)</span> <span class="p">{</span> <span class="n">h</span><span class="p">.</span><span class="n">print</span><span class="p">();</span> <span class="p">}</span>
+  <span class="k">static</span> <span class="kt">void</span> <span class="n">hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">Hello</span> <span class="o">&amp;</span><span class="n">h</span> <span class="p">)</span> <span class="p">{</span> <span class="n">h</span><span class="p">.</span><span class="n">print</span><span class="p">()</span> <span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -584,7 +584,7 @@ Hello 2
 <span class="nv">$ </span>git checkout new_feature
 ......
 <span class="nv">$ </span>git add ...
-<span class="nv">$ </span>git comit -m <span class="s2">&quot;[FEATURE] my new feature description&quot;</span>
+<span class="nv">$ </span>git commit -m <span class="s2">&quot;[FEATURE] my new feature description&quot;</span>
 <span class="nv">$ </span>git push origin new_feature
 .....
 <span class="nv">$ </span>git checkout master
