@@ -1,0 +1,15 @@
+
+.slides > article {
+    background: url('oslandia.png') bottom right no-repeat;
+    background-size: 200px 147px;
+    background-color: #fff;
+    font-size: 0.8em;
+    padding-right: 100px;
+}
+
+
+.slide-no {
+    left: 2ex;
+    right: 1em;
+}
+

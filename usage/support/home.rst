@@ -1,0 +1,27 @@
+=======================
+QGIS 2.14 - Utilisateur
+=======================
+|
+|
+**Paul Blottiere**
+
+**Juillet 2016**
+
+Plan de la formation
+====================
+
+|
+**Jour 1**
+  - Les couches vecteur
+  - Les couches raster
+  - Les flux WMS
+  - Style et étiquettes
+
+|
+|
+**Jour 2**
+  - Requêtes attributaires et spatiales
+  - Mise en page cartographique et atlas
+  - Plugins adaptés aux besoins?
+
+.. include:: vector.rst
