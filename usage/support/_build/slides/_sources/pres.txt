@@ -18,7 +18,7 @@ Présentation (2)
 
 - Raster (GeoTIFF, JPG, PNG, ...)
 - Vecteur ( Shapefile, GRASS GIS, Mapinfo, ... )
-- Base de données spatiale ( Postgis, SpatiaLite )
+- Base de données spatiale ( Postgis, SpatiaLite, ... )
 |
 .. image:: imgs/mix2.png
   :width: 600pt

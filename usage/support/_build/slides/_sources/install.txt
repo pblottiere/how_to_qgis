@@ -57,10 +57,11 @@ Installation Windows (5)
 ========================
 
 |
-**EXERCICE**
+.. image:: imgs/exo.png
+  :width: 100pt
+  :align: center
 
 |
+**1** - Installer Windows avec l'installateur indépendant
 
-.. image:: imgs/exo.png
-  :width: 200pt
-  :align: center
+**2** - Lancer QGIS pour vérifier le fonctionnement
