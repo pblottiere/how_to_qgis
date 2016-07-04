@@ -26,3 +26,4 @@ Plan de la formation
 .. include:: pres.rst
 .. include:: install.rst
 .. include:: vector.rst
+.. include:: wms.rst
