@@ -12,7 +12,7 @@ Plan de la formation
 
 **Jour 1**
   - Présentation
-  - Installation
+  - Installation Windows
   - Les couches vecteur
   - Les couches raster
   - Les flux WMS

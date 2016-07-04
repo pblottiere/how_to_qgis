@@ -1,5 +1,5 @@
-Installation (1)
-================
+Installation Windows (1)
+========================
 
 |
 https://www.qgis.org/fr/site/forusers/download.html
@@ -13,9 +13,54 @@ Deux moyens d'installer QGIS:
   :width: 1500pt
   :align: center
 
-Installation (2)
-================
 
-**Installateur indépendant**
+Installation Windows (2)
+========================
 
-- Installe seulement QGIS
+|
+**Installateur indépendant : seulement QGIS**
+
+|
+.. image:: imgs/qgis_install.png
+  :width: 1500pt
+  :align: center
+
+
+Installation Windows (3)
+========================
+
+|
+**Installateur réseau : OsGeo4W**
+
+- Pour les utilisateurs "experts"
+- Permet d'installer QGIS ainsi que de nombreux logiciels annexes
+- Permet d'installer plusieurs versions de QGIS en parallèle
+
+.. image:: imgs/osgeo_dl.png
+  :width: 1500pt
+  :align: center
+
+
+Installation Windows (4)
+========================
+
+|
+**Installateur réseau : OsGeo4W**
+
+|
+.. image:: imgs/osgeo4w.gif
+  :width: 400pt
+  :align: center
+
+
+Installation Windows (5)
+========================
+
+|
+**EXERCICE**
+
+|
+
+.. image:: imgs/exo.png
+  :width: 200pt
+  :align: center

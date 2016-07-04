@@ -26,9 +26,9 @@ Présentation (2)
 
 Présentation (3)
 ================
-**LTR**
+**Dernière version**
 
-- LTR courante : 2.14.3 / Essen
+- 2.14.3 / Essen
 - Sortie en 20/05/ 2016
 - Bientôt la 2.16!
 
