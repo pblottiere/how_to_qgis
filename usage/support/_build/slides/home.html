@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>QGIS - Utilisateur &mdash; Python - SIG 2016.02.06 documentation</title>
+    <title>QGIS 2.14 - Utilisateur &mdash; Python - SIG 2016.02.06 documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/styles.css" type="text/css" />
@@ -47,9 +47,9 @@
 
 
   
-<article class="slide level-1" id="qgis-utilisateur">
+<article class="slide level-1" id="qgis-2-14-utilisateur">
 
-<h1>QGIS - Utilisateur</h1>
+<h1>QGIS 2.14 - Utilisateur</h1>
 
 <div class="line-block">
 <div class="line"><br /></div>
@@ -68,26 +68,19 @@
 
 <h2>Plan de la formation</h2>
 
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 <dl class="docutils">
 <dt><strong>Jour 1</strong></dt>
 <dd><ul class="first last simple">
+<li>Présentation</li>
+<li>Installation</li>
 <li>Les couches vecteur</li>
 <li>Les couches raster</li>
 <li>Les flux WMS</li>
-<li>Style et étiquettes</li>
 </ul>
 </dd>
-</dl>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-<dl class="docutils">
 <dt><strong>Jour 2</strong></dt>
 <dd><ul class="first last simple">
+<li>Style et étiquettes</li>
 <li>Requêtes attributaires et spatiales</li>
 <li>Mise en page cartographique et atlas</li>
 <li>Plugins adaptés aux besoins?</li>
@@ -98,6 +91,111 @@
 
 
 <div class="slide-no">2</div>
+
+
+</article>
+<article class="slide level-2" id="presentation-1">
+
+<h2>Présentation (1)</h2>
+
+<a class="reference internal image-reference" href="_images/qgis-icon.png"><img alt="_images/qgis-icon.png" class="align-center" src="_images/qgis-icon.png" style="width: 200pt;" /></a>
+<p><a class="reference external" href="http://www.qgis.org/fr/site/">http://www.qgis.org/fr/site/</a></p>
+<ul class="simple">
+<li>Développement débuté en 2002</li>
+<li>Logiciel SIG libre multiplate-forme</li>
+<li>Quantum GIS -&gt; version 1.9</li>
+</ul>
+
+
+
+<div class="slide-no">3</div>
+
+
+</article>
+<article class="slide level-2" id="presentation-2">
+
+<h2>Présentation (2)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>De nombreux formats supportés</strong></p>
+<ul class="simple">
+<li>Raster (GeoTIFF, JPG, PNG, ...)</li>
+<li>Vecteur ( Shapefile, GRASS GIS, Mapinfo, ... )</li>
+<li>Base de données spatiale ( Postgis, SpatiaLite )</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/mix2.png"><img alt="_images/mix2.png" class="align-center" src="_images/mix2.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">4</div>
+
+
+</article>
+<article class="slide level-2" id="presentation-3">
+
+<h2>Présentation (3)</h2>
+
+<p><strong>LTR</strong></p>
+<ul class="simple">
+<li>LTR courante : 2.14.3 / Essen</li>
+<li>Sortie en 20/05/ 2016</li>
+<li>Bientôt la 2.16!</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/essen.png"><img alt="_images/essen.png" class="align-center" src="_images/essen.png" style="width: 400pt;" /></a>
+
+
+
+<div class="slide-no">5</div>
+
+
+</article>
+<article class="slide level-2" id="installation-1">
+
+<h2>Installation (1)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><a class="reference external" href="https://www.qgis.org/fr/site/forusers/download.html">https://www.qgis.org/fr/site/forusers/download.html</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>Deux moyens d'installer QGIS:</dt>
+<dd><ul class="first last simple">
+<li>Installateur indépendant</li>
+<li>Installateur réseau OsGeo4W</li>
+</ul>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/mix.png"><img alt="_images/mix.png" class="align-center" src="_images/mix.png" style="width: 1500pt;" /></a>
+
+
+
+<div class="slide-no">6</div>
+
+
+</article>
+<article class="slide level-2" id="installation-2">
+
+<h2>Installation (2)</h2>
+
+<p><strong>Installateur indépendant</strong></p>
+<ul class="simple">
+<li>Installe seulement QGIS</li>
+</ul>
+
+
+
+<div class="slide-no">7</div>
 
 
 </article>
@@ -112,6 +210,7 @@
 <ul class="simple">
 <li>Définies par des coordonnées</li>
 <li>3 types de géométrie : <em>point</em>, <em>ligne</em> et <em>polygone</em></li>
+<li>1 seul type de géométrie par layer</li>
 <li>69 formats gérés (lib OGR) : format standard QGIS est le shapefile ESRI</li>
 </ul>
 <div class="line-block">
@@ -121,7 +220,7 @@
 
 
 
-<div class="slide-no">3</div>
+<div class="slide-no">8</div>
 
 
 </article>
@@ -136,7 +235,7 @@
 
 
 
-<div class="slide-no">4</div>
+<div class="slide-no">9</div>
 
 
 </article>
@@ -172,7 +271,7 @@ Hello 2
 
 
 
-<div class="slide-no">5</div>
+<div class="slide-no">10</div>
 
 
 </article>
@@ -205,7 +304,7 @@ Hello 2
 
 
 
-<div class="slide-no">6</div>
+<div class="slide-no">11</div>
 
 
 </article>
@@ -238,7 +337,7 @@ Hello 2
 
 
 
-<div class="slide-no">7</div>
+<div class="slide-no">12</div>
 
 
 </article>
@@ -269,7 +368,7 @@ Hello 2
 
 
 
-<div class="slide-no">8</div>
+<div class="slide-no">13</div>
 
 
 </article>
@@ -299,7 +398,7 @@ Hello 2
 
 
 
-<div class="slide-no">9</div>
+<div class="slide-no">14</div>
 
 
 </article>
@@ -324,7 +423,7 @@ Hello 2
 
 
 
-<div class="slide-no">10</div>
+<div class="slide-no">15</div>
 
 
 </article>
@@ -355,7 +454,7 @@ Hello 2
 
 
 
-<div class="slide-no">11</div>
+<div class="slide-no">16</div>
 
 
 </article>
@@ -387,7 +486,7 @@ Hello 2
 
 
 
-<div class="slide-no">12</div>
+<div class="slide-no">17</div>
 
 
 </article>
@@ -412,7 +511,7 @@ Hello 2
 
 
 
-<div class="slide-no">13</div>
+<div class="slide-no">18</div>
 
 
 </article>
@@ -444,7 +543,7 @@ Hello 2
 
 
 
-<div class="slide-no">14</div>
+<div class="slide-no">19</div>
 
 
 </article>
@@ -476,7 +575,7 @@ Hello 2
 
 
 
-<div class="slide-no">15</div>
+<div class="slide-no">20</div>
 
 
 </article>
@@ -501,7 +600,7 @@ Hello 2
 
 
 
-<div class="slide-no">16</div>
+<div class="slide-no">21</div>
 
 
 </article>
