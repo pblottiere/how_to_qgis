@@ -39,6 +39,14 @@ De nombreux algorithmes de traitement disponibles dans QGIS et via *Processing* 
 Les couches raster (4)
 ======================
 
+.. image:: imgs/raster_grass.png
+  :width: 200pt
+  :align: center
+
+
+Les couches raster (5)
+======================
+
 |
 .. image:: imgs/exo.png
   :width: 100pt
@@ -54,7 +62,19 @@ Les couches raster (4)
 **4** - Extraire les contours tous les 100 mètres avec un export de l'altitude dans le champs *ELEV*
 
 
-Les couches raster (5)
+Les couches raster (6)
+======================
+
+|
+.. image:: imgs/exo.png
+  :width: 100pt
+  :align: center
+
+.. image:: imgs/raster_contour.png
+  :width: 400pt
+  :align: center
+
+Les couches raster (7)
 ======================
 
 |
@@ -72,7 +92,7 @@ Les couches raster (5)
 **6** - Labeliser la couche contour avec l'élévation et vérifier que le mont Everest se trouve bien à l'altitude maximale
 
 
-Les couches raster (6)
+Les couches raster (8)
 ======================
 
 |
@@ -86,7 +106,7 @@ Les couches raster (6)
 utiliser les couleurs de la palette topographique *sda*
 
 
-Les couches raster (7)
+Les couches raster (9)
 ======================
 
 |
@@ -95,8 +115,8 @@ Les couches raster (7)
   :align: center
 
 
-Les couches raster (8)
-======================
+Les couches raster (10)
+=======================
 
 |
 .. image:: imgs/exo.png

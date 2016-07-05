@@ -26,5 +26,6 @@ Plan de la formation
 .. include:: pres.rst
 .. include:: install.rst
 .. include:: vector.rst
-.. include:: raster.rst
 .. include:: wms.rst
+.. include:: raster.rst
+.. include:: composer_atlas.rst

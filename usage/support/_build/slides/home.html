@@ -751,187 +751,6 @@
 
 
 </article>
-<article class="slide level-2" id="les-couches-raster-1">
-
-<h2>Les couches raster (1)</h2>
-
-<p><strong>Les bases</strong></p>
-<ul class="simple">
-<li>Matrice de cellules</li>
-<li>Photographies aériennes, images satellites, ...</li>
-<li>Géoréférencées grâce à la position des pixels</li>
-</ul>
-<a class="reference internal image-reference" href="_images/raster_load.png"><img alt="_images/raster_load.png" class="align-center" src="_images/raster_load.png" style="width: 40pt;" /></a>
-
-
-
-<div class="slide-no">33</div>
-
-
-</article>
-<article class="slide level-2" id="les-couches-raster-2">
-
-<h2>Les couches raster (2)</h2>
-
-<p><strong>Propriétés</strong></p>
-<a class="reference internal image-reference" href="_images/ratser_prop.png"><img alt="_images/ratser_prop.png" class="align-center" src="_images/ratser_prop.png" style="width: 450pt;" /></a>
-
-
-
-<div class="slide-no">34</div>
-
-
-</article>
-<article class="slide level-2" id="les-couches-raster-3">
-
-<h2>Les couches raster (3)</h2>
-
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<dl class="docutils">
-<dt>De nombreux algorithmes de traitement disponibles dans QGIS et via <em>Processing</em> :</dt>
-<dd><ul class="first last simple">
-<li>extraction, contour, analyse, ...</li>
-<li>GRASS GIS 7 ( r.to.vect, r.watershed, ... )</li>
-</ul>
-</dd>
-</dl>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<a class="reference internal image-reference" href="_images/raster_algo.png"><img alt="_images/raster_algo.png" class="align-center" src="_images/raster_algo.png" style="width: 300pt;" /></a>
-
-
-
-<div class="slide-no">35</div>
-
-
-</article>
-<article class="slide level-2" id="les-couches-raster-4">
-
-<h2>Les couches raster (4)</h2>
-
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<p><strong>1</strong> - Récupérer les données ici : <a class="reference external" href="https://github.com/spatialthoughts/qgis-tutorials/blob/master/downloads/GMTED2010N10E060_300.zip">https://github.com/spatialthoughts/qgis-tutorials/blob/master/downloads/GMTED2010N10E060_300.zip</a></p>
-<p><strong>2</strong> - Charger le fichier raster <em>10n060e_20101117_gmted_mea300.tif</em> dans QGIS</p>
-<p><strong>3</strong> - Extraire une partie du raster en faisant un drag de la bounding box dans le canvas</p>
-<p><strong>4</strong> - Extraire les contours tous les 100 mètres avec un export de l'altitude dans le champs <em>ELEV</em></p>
-
-
-
-<div class="slide-no">36</div>
-
-
-</article>
-<article class="slide level-2" id="id1">
-
-<h2>Les couches raster (4)</h2>
-
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<p><strong>5</strong> - Ajouter un point dans une couche virtuelle à la position du mont Everest grâce à la commande suivante (<em>x</em> et <em>y</em> doivent être en degrés décimaux) :</p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">SELECT</span> <span class="mi">1</span> <span class="n">as</span> <span class="n">id</span><span class="p">,</span> <span class="n">MakePoint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">4326</span><span class="p">)</span> <span class="n">as</span> <span class="n">geom</span>
-</pre></div>
-</div>
-<p><strong>6</strong> - Labeliser la couche contour avec l'élévation et vérifier que le mont Everest se trouve bien à l'altitude maximale</p>
-
-
-
-<div class="slide-no">37</div>
-
-
-</article>
-<article class="slide level-2" id="id2">
-
-<h2>Les couches raster (4)</h2>
-
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
-<p><strong>7</strong> - Installer et utiliser le plugin <em>Terrain profile</em> pour récupérer une courbe de profile au niveau du mont Everest</p>
-<p><strong>8</strong> - Styliser le raster avec le type de rendu &quot;Singleband pseudocolor&quot; et
-utiliser les couleurs de la palette topographique <em>sda</em></p>
-
-
-
-<div class="slide-no">38</div>
-
-
-</article>
-<article class="slide level-2" id="id3">
-
-<h2>Les couches raster (4)</h2>
-
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<a class="reference internal image-reference" href="_images/raster_sda.png"><img alt="_images/raster_sda.png" class="align-center" src="_images/raster_sda.png" style="width: 700pt;" /></a>
-
-
-
-<div class="slide-no">39</div>
-
-
-</article>
-<article class="slide level-2" id="id4">
-
-<h2>Les couches raster (4)</h2>
-
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
-<p><strong>1</strong> - Créer un hillshade à partir du raster : Raster -&gt; Analyse -&gt; DEM.</p>
-<p><strong>2</strong> - Jouer avec les paramètres de rendu (transparence, luminosité, ...) pour donner du relief au raster grâce au hillshade :</p>
-<a class="reference internal image-reference" href="_images/raster_hillshade.png"><img alt="_images/raster_hillshade.png" class="align-center" src="_images/raster_hillshade.png" style="width: 400pt;" /></a>
-
-
-
-<div class="slide-no">40</div>
-
-
-</article>
-<article class="slide level-2" id="id5">
-
-<h2>Les couches raster (4)</h2>
-
-<p>De nombreux algorithmes de traitement disponibles dans QGIS et via <em>Processing</em> :
-<a class="reference external" href="https://www.data.gouv.fr/fr/datasets/fond-cartographique-franceraster-ign-esri/">https://www.data.gouv.fr/fr/datasets/fond-cartographique-franceraster-ign-esri/</a></p>
-<p>500k</p>
-
-
-
-<div class="slide-no">41</div>
-
-
-</article>
-<article class="slide level-2" id="id6">
-
-<h2>Les couches raster (4)</h2>
-
-<p>régler visiblité labelle selon l'échelle</p>
-<p>EPSG : 4326</p>
-<a class="reference internal image-reference" href="_images/raster_ex0.png"><img alt="_images/raster_ex0.png" class="align-center" src="_images/raster_ex0.png" style="width: 450pt;" /></a>
-
-
-
-<div class="slide-no">42</div>
-
-
-</article>
 <article class="slide level-2" id="wms-wfs-1">
 
 <h2>WMS / WFS (1)</h2>
@@ -957,7 +776,7 @@ utiliser les couleurs de la palette topographique <em>sda</em></p>
 
 
 
-<div class="slide-no">43</div>
+<div class="slide-no">33</div>
 
 
 </article>
@@ -972,7 +791,7 @@ utiliser les couleurs de la palette topographique <em>sda</em></p>
 
 
 
-<div class="slide-no">44</div>
+<div class="slide-no">34</div>
 
 
 </article>
@@ -989,7 +808,287 @@ utiliser les couleurs de la palette topographique <em>sda</em></p>
 
 
 
+<div class="slide-no">35</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-1">
+
+<h2>Les couches raster (1)</h2>
+
+<p><strong>Les bases</strong></p>
+<ul class="simple">
+<li>Matrice de cellules</li>
+<li>Photographies aériennes, images satellites, ...</li>
+<li>Géoréférencées grâce à la position des pixels</li>
+</ul>
+<a class="reference internal image-reference" href="_images/raster_load.png"><img alt="_images/raster_load.png" class="align-center" src="_images/raster_load.png" style="width: 40pt;" /></a>
+
+
+
+<div class="slide-no">36</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-2">
+
+<h2>Les couches raster (2)</h2>
+
+<p><strong>Propriétés</strong></p>
+<a class="reference internal image-reference" href="_images/ratser_prop.png"><img alt="_images/ratser_prop.png" class="align-center" src="_images/ratser_prop.png" style="width: 450pt;" /></a>
+
+
+
+<div class="slide-no">37</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-3">
+
+<h2>Les couches raster (3)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>De nombreux algorithmes de traitement disponibles dans QGIS et via <em>Processing</em> :</dt>
+<dd><ul class="first last simple">
+<li>extraction, contour, analyse, ...</li>
+<li>GRASS GIS 7 ( r.to.vect, r.watershed, ... )</li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/raster_algo.png"><img alt="_images/raster_algo.png" class="align-center" src="_images/raster_algo.png" style="width: 300pt;" /></a>
+
+
+
+<div class="slide-no">38</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-4">
+
+<h2>Les couches raster (4)</h2>
+
+<a class="reference internal image-reference" href="_images/raster_grass.png"><img alt="_images/raster_grass.png" class="align-center" src="_images/raster_grass.png" style="width: 200pt;" /></a>
+
+
+
+<div class="slide-no">39</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-5">
+
+<h2>Les couches raster (5)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>1</strong> - Récupérer les données ici : <a class="reference external" href="https://github.com/spatialthoughts/qgis-tutorials/blob/master/downloads/GMTED2010N10E060_300.zip">https://github.com/spatialthoughts/qgis-tutorials/blob/master/downloads/GMTED2010N10E060_300.zip</a></p>
+<p><strong>2</strong> - Charger le fichier raster <em>10n060e_20101117_gmted_mea300.tif</em> dans QGIS</p>
+<p><strong>3</strong> - Extraire une partie du raster en faisant un drag de la bounding box dans le canvas</p>
+<p><strong>4</strong> - Extraire les contours tous les 100 mètres avec un export de l'altitude dans le champs <em>ELEV</em></p>
+
+
+
+<div class="slide-no">40</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-6">
+
+<h2>Les couches raster (6)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<a class="reference internal image-reference" href="_images/raster_contour.png"><img alt="_images/raster_contour.png" class="align-center" src="_images/raster_contour.png" style="width: 400pt;" /></a>
+
+
+
+<div class="slide-no">41</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-7">
+
+<h2>Les couches raster (7)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>5</strong> - Ajouter un point dans une couche virtuelle à la position du mont Everest grâce à la commande suivante (<em>x</em> et <em>y</em> doivent être en degrés décimaux) :</p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="n">SELECT</span> <span class="mi">1</span> <span class="n">as</span> <span class="n">id</span><span class="p">,</span> <span class="n">MakePoint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">4326</span><span class="p">)</span> <span class="n">as</span> <span class="n">geom</span>
+</pre></div>
+</div>
+<p><strong>6</strong> - Labeliser la couche contour avec l'élévation et vérifier que le mont Everest se trouve bien à l'altitude maximale</p>
+
+
+
+<div class="slide-no">42</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-8">
+
+<h2>Les couches raster (8)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>7</strong> - Installer et utiliser le plugin <em>Terrain profile</em> pour récupérer une courbe de profile au niveau du mont Everest</p>
+<p><strong>8</strong> - Styliser le raster avec le type de rendu &quot;Singleband pseudocolor&quot; et
+utiliser les couleurs de la palette topographique <em>sda</em></p>
+
+
+
+<div class="slide-no">43</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-9">
+
+<h2>Les couches raster (9)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/raster_sda.png"><img alt="_images/raster_sda.png" class="align-center" src="_images/raster_sda.png" style="width: 700pt;" /></a>
+
+
+
+<div class="slide-no">44</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-10">
+
+<h2>Les couches raster (10)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>9</strong> - Créer un hillshade à partir du raster : Raster -&gt; Analyse -&gt; DEM.</p>
+<p><strong>10</strong> - Jouer avec les paramètres de rendu (transparence, luminosité, ...) pour donner du relief au raster grâce au hillshade :</p>
+<a class="reference internal image-reference" href="_images/raster_hillshade.png"><img alt="_images/raster_hillshade.png" class="align-center" src="_images/raster_hillshade.png" style="width: 400pt;" /></a>
+
+
+
 <div class="slide-no">45</div>
+
+
+</article>
+<article class="slide level-2" id="composeur-et-atlas-1">
+
+<h2>Composeur et atlas (1)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Composeur de carte</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>Fournit des outils de mise en page et d'impression :</dt>
+<dd><ul class="first last simple">
+<li>échelle, carte, légendre, ...</li>
+<li>export (SVG, PDF, ...)</li>
+</ul>
+</dd>
+</dl>
+<p><strong>Atlas</strong></p>
+<p>Création automatisée d'une carte pour chaque entité d'un couche virtuelle</p>
+
+
+
+<div class="slide-no">46</div>
+
+
+</article>
+<article class="slide level-2" id="composeur-et-atlas-2">
+
+<h2>Composeur et atlas (2)</h2>
+
+<p><strong>Composeur de carte</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/composer.png"><img alt="_images/composer.png" class="align-center" src="_images/composer.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">47</div>
+
+
+</article>
+<article class="slide level-2" id="composeur-et-atlas-3">
+
+<h2>Composeur et atlas (3)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>1</strong> - Avoir un shapefile des communes de Bretagne dans le canvas principal supperposé avec le même fond de carte raster que précédement.</p>
+<a class="reference internal image-reference" href="_images/raster_ex0.png"><img alt="_images/raster_ex0.png" class="align-center" src="_images/raster_ex0.png" style="width: 450pt;" /></a>
+
+
+
+<div class="slide-no">48</div>
+
+
+</article>
+<article class="slide level-2" id="composeur-et-atlas-4">
+
+<h2>Composeur et atlas (4)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>2</strong> - Aller dans le composeur de carte et rajouter la carte principale zoomant sur la Bretagne puis ajouter une seconde carte servant d'overview d'un point de vue national</p>
+<p><strong>3</strong> - Rajouter des éléments à la carte : échelle, légende, forme, flèche, image, ...</p>
+<p><strong>4</strong> - Labeliser la couche vecteur</p>
+<p><strong>5</strong> - Faire un export.</p>
+
+
+
+<div class="slide-no">49</div>
+
+
+</article>
+<article class="slide level-2" id="composeur-et-atlas-5">
+
+<h2>Composeur et atlas (5)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>6</strong> - Faire un atlas avec un polygone &quot;COMMUNE&quot; comme entité de référence.</p>
+<p><strong>7</strong> - Rajouter un deuxième overview d'un point de vue départemental.</p>
+<p><strong>8</strong> - Rajouter un champs texte utilisant une expression affichant la densité de population de l'entité courante à partir de la superficie calculée par QGIS</p>
+<p><strong>9</strong> - Imprimer l'atlas dans un PDF</p>
+
+
+
+<div class="slide-no">50</div>
 
 
 </article>

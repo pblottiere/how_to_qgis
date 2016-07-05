@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Composeur et atlas (1) &mdash; Python - SIG 2016.02.06 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/oslide.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2016.02.06',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    
+    
+    <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  
+<article class="slide level-1" id="composeur-et-atlas-1">
+
+<h1>Composeur et atlas (1)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Composeur de carte</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>Fournit des outils de mise en page et d'impression :</dt>
+<dd><ul class="first last simple">
+<li>échelle, carte, légendre, ...</li>
+<li>export (SVG, PDF, ...)</li>
+</ul>
+</dd>
+</dl>
+<p><strong>Atlas</strong></p>
+<p>Création automatisée d'une carte pour chaque entité d'un couche virtuelle</p>
+
+
+
+<div class="slide-no">1</div>
+
+
+</article>
+<article class="slide level-1" id="composeur-et-atlas-2">
+
+<h1>Composeur et atlas (2)</h1>
+
+<p><strong>Composeur de carte</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/composer.png"><img alt="_images/composer.png" class="align-center" src="_images/composer.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">2</div>
+
+
+</article>
+<article class="slide level-1" id="composeur-et-atlas-3">
+
+<h1>Composeur et atlas (3)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>1</strong> - Avoir un shapefile des communes de Bretagne dans le canvas principal supperposé avec le même fond de carte raster que précédement.</p>
+<a class="reference internal image-reference" href="_images/raster_ex0.png"><img alt="_images/raster_ex0.png" class="align-center" src="_images/raster_ex0.png" style="width: 450pt;" /></a>
+
+
+
+<div class="slide-no">3</div>
+
+
+</article>
+<article class="slide level-1" id="composeur-et-atlas-4">
+
+<h1>Composeur et atlas (4)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>2</strong> - Aller dans le composeur de carte et rajouter la carte principale zoomant sur la Bretagne puis ajouter une seconde carte servant d'overview d'un point de vue national</p>
+<p><strong>3</strong> - Rajouter des éléments à la carte : échelle, légende, forme, flèche, image, ...</p>
+<p><strong>4</strong> - Labeliser la couche vecteur</p>
+<p><strong>5</strong> - Faire un export.</p>
+
+
+
+<div class="slide-no">4</div>
+
+
+</article>
+<article class="slide level-1" id="composeur-et-atlas-5">
+
+<h1>Composeur et atlas (5)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>6</strong> - Faire un atlas avec un polygone &quot;COMMUNE&quot; comme entité de référence.</p>
+<p><strong>7</strong> - Rajouter un deuxième overview d'un point de vue départemental.</p>
+<p><strong>8</strong> - Rajouter un champs texte utilisant une expression affichant la densité de population de l'entité courante à partir de la superficie calculée par QGIS</p>
+<p><strong>9</strong> - Imprimer l'atlas dans un PDF</p>
+
+
+
+<div class="slide-no">5</div>
+
+
+</article>
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>
