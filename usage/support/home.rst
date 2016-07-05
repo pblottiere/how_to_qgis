@@ -14,16 +14,17 @@ Plan de la formation
   - Présentation
   - Installation Windows
   - Les couches vecteur
-  - Les couches raster
-  - Les flux WMS
-
-**Jour 2**
   - Style et étiquettes
   - Requêtes attributaires et spatiales
+
+|
+**Jour 2**
+  - Les couches raster
+  - Les flux WMS
   - Mise en page cartographique et atlas
-  - Plugins adaptés aux besoins?
 
 .. include:: pres.rst
 .. include:: install.rst
 .. include:: vector.rst
 .. include:: wms.rst
+.. include:: raster.rst

@@ -171,7 +171,7 @@ Les couches vecteur (11)
   :width: 100pt
   :align: center
 
-**1** - Ouvrir le project QGIS précédent
+**1** - Ouvrir le projet QGIS précédent
 
 **2** - Labeliser la couche *COMMUNE* en mode "Montrer les étiquettes pour cette couche":
   - avec le code de département
@@ -323,7 +323,7 @@ Les couches vecteur (22)
   :width: 100pt
   :align: center
 
-**1** - Utiliser les outils suivant pour créer une couche vectorielle contenant seulement les départements frontaliers entre le Finistère et le reste de la France
+**1** - Utiliser les outils suivant pour créer une couche vectorielle contenant seulement les communes frontalières entre le Finistère et le reste de la France
   - couche virtuelle
   - géotraitement "Différence""
   - géotraitement "Tampon"

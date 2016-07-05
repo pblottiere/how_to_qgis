@@ -74,16 +74,20 @@
 <li>Présentation</li>
 <li>Installation Windows</li>
 <li>Les couches vecteur</li>
-<li>Les couches raster</li>
-<li>Les flux WMS</li>
-</ul>
-</dd>
-<dt><strong>Jour 2</strong></dt>
-<dd><ul class="first last simple">
 <li>Style et étiquettes</li>
 <li>Requêtes attributaires et spatiales</li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt><strong>Jour 2</strong></dt>
+<dd><ul class="first last simple">
+<li>Les couches raster</li>
+<li>Les flux WMS</li>
 <li>Mise en page cartographique et atlas</li>
-<li>Plugins adaptés aux besoins?</li>
 </ul>
 </dd>
 </dl>
@@ -509,7 +513,7 @@
 <div class="line"><br /></div>
 </div>
 <a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
-<p><strong>1</strong> - Ouvrir le project QGIS précédent</p>
+<p><strong>1</strong> - Ouvrir le projet QGIS précédent</p>
 <dl class="docutils">
 <dt><strong>2</strong> - Labeliser la couche <em>COMMUNE</em> en mode &quot;Montrer les étiquettes pour cette couche&quot;:</dt>
 <dd><ul class="first last simple">
@@ -731,7 +735,7 @@
 </div>
 <a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
 <dl class="docutils">
-<dt><strong>1</strong> - Utiliser les outils suivant pour créer une couche vectorielle contenant seulement les départements frontaliers entre le Finistère et le reste de la France</dt>
+<dt><strong>1</strong> - Utiliser les outils suivant pour créer une couche vectorielle contenant seulement les communes frontalières entre le Finistère et le reste de la France</dt>
 <dd><ul class="first last simple">
 <li>couche virtuelle</li>
 <li>géotraitement &quot;Différence&quot;&quot;</li>
@@ -744,6 +748,187 @@
 
 
 <div class="slide-no">32</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-1">
+
+<h2>Les couches raster (1)</h2>
+
+<p><strong>Les bases</strong></p>
+<ul class="simple">
+<li>Matrice de cellules</li>
+<li>Photographies aériennes, images satellites, ...</li>
+<li>Géoréférencées grâce à la position des pixels</li>
+</ul>
+<a class="reference internal image-reference" href="_images/raster_load.png"><img alt="_images/raster_load.png" class="align-center" src="_images/raster_load.png" style="width: 40pt;" /></a>
+
+
+
+<div class="slide-no">33</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-2">
+
+<h2>Les couches raster (2)</h2>
+
+<p><strong>Propriétés</strong></p>
+<a class="reference internal image-reference" href="_images/ratser_prop.png"><img alt="_images/ratser_prop.png" class="align-center" src="_images/ratser_prop.png" style="width: 450pt;" /></a>
+
+
+
+<div class="slide-no">34</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-3">
+
+<h2>Les couches raster (3)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>De nombreux algorithmes de traitement disponibles dans QGIS et via <em>Processing</em> :</dt>
+<dd><ul class="first last simple">
+<li>extraction, contour, analyse, ...</li>
+<li>GRASS GIS 7 ( r.to.vect, r.watershed, ... )</li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/raster_algo.png"><img alt="_images/raster_algo.png" class="align-center" src="_images/raster_algo.png" style="width: 300pt;" /></a>
+
+
+
+<div class="slide-no">35</div>
+
+
+</article>
+<article class="slide level-2" id="les-couches-raster-4">
+
+<h2>Les couches raster (4)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>1</strong> - Récupérer les données ici : <a class="reference external" href="https://github.com/spatialthoughts/qgis-tutorials/blob/master/downloads/GMTED2010N10E060_300.zip">https://github.com/spatialthoughts/qgis-tutorials/blob/master/downloads/GMTED2010N10E060_300.zip</a></p>
+<p><strong>2</strong> - Charger le fichier raster <em>10n060e_20101117_gmted_mea300.tif</em> dans QGIS</p>
+<p><strong>3</strong> - Extraire une partie du raster en faisant un drag de la bounding box dans le canvas</p>
+<p><strong>4</strong> - Extraire les contours tous les 100 mètres avec un export de l'altitude dans le champs <em>ELEV</em></p>
+
+
+
+<div class="slide-no">36</div>
+
+
+</article>
+<article class="slide level-2" id="id1">
+
+<h2>Les couches raster (4)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>5</strong> - Ajouter un point dans une couche virtuelle à la position du mont Everest grâce à la commande suivante (<em>x</em> et <em>y</em> doivent être en degrés décimaux) :</p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="n">SELECT</span> <span class="mi">1</span> <span class="n">as</span> <span class="n">id</span><span class="p">,</span> <span class="n">MakePoint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">4326</span><span class="p">)</span> <span class="n">as</span> <span class="n">geom</span>
+</pre></div>
+</div>
+<p><strong>6</strong> - Labeliser la couche contour avec l'élévation et vérifier que le mont Everest se trouve bien à l'altitude maximale</p>
+
+
+
+<div class="slide-no">37</div>
+
+
+</article>
+<article class="slide level-2" id="id2">
+
+<h2>Les couches raster (4)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>7</strong> - Installer et utiliser le plugin <em>Terrain profile</em> pour récupérer une courbe de profile au niveau du mont Everest</p>
+<p><strong>8</strong> - Styliser le raster avec le type de rendu &quot;Singleband pseudocolor&quot; et
+utiliser les couleurs de la palette topographique <em>sda</em></p>
+
+
+
+<div class="slide-no">38</div>
+
+
+</article>
+<article class="slide level-2" id="id3">
+
+<h2>Les couches raster (4)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/raster_sda.png"><img alt="_images/raster_sda.png" class="align-center" src="_images/raster_sda.png" style="width: 700pt;" /></a>
+
+
+
+<div class="slide-no">39</div>
+
+
+</article>
+<article class="slide level-2" id="id4">
+
+<h2>Les couches raster (4)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>1</strong> - Créer un hillshade à partir du raster : Raster -&gt; Analyse -&gt; DEM.</p>
+<p><strong>2</strong> - Jouer avec les paramètres de rendu (transparence, luminosité, ...) pour donner du relief au raster grâce au hillshade :</p>
+<a class="reference internal image-reference" href="_images/raster_hillshade.png"><img alt="_images/raster_hillshade.png" class="align-center" src="_images/raster_hillshade.png" style="width: 400pt;" /></a>
+
+
+
+<div class="slide-no">40</div>
+
+
+</article>
+<article class="slide level-2" id="id5">
+
+<h2>Les couches raster (4)</h2>
+
+<p>De nombreux algorithmes de traitement disponibles dans QGIS et via <em>Processing</em> :
+<a class="reference external" href="https://www.data.gouv.fr/fr/datasets/fond-cartographique-franceraster-ign-esri/">https://www.data.gouv.fr/fr/datasets/fond-cartographique-franceraster-ign-esri/</a></p>
+<p>500k</p>
+
+
+
+<div class="slide-no">41</div>
+
+
+</article>
+<article class="slide level-2" id="id6">
+
+<h2>Les couches raster (4)</h2>
+
+<p>régler visiblité labelle selon l'échelle</p>
+<p>EPSG : 4326</p>
+<a class="reference internal image-reference" href="_images/raster_ex0.png"><img alt="_images/raster_ex0.png" class="align-center" src="_images/raster_ex0.png" style="width: 450pt;" /></a>
+
+
+
+<div class="slide-no">42</div>
 
 
 </article>
@@ -772,7 +957,7 @@
 
 
 
-<div class="slide-no">33</div>
+<div class="slide-no">43</div>
 
 
 </article>
@@ -787,7 +972,7 @@
 
 
 
-<div class="slide-no">34</div>
+<div class="slide-no">44</div>
 
 
 </article>
@@ -804,7 +989,7 @@
 
 
 
-<div class="slide-no">35</div>
+<div class="slide-no">45</div>
 
 
 </article>
