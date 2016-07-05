@@ -54,7 +54,7 @@ Les couches raster (4)
 **4** - Extraire les contours tous les 100 mètres avec un export de l'altitude dans le champs *ELEV*
 
 
-Les couches raster (4)
+Les couches raster (5)
 ======================
 
 |
@@ -72,7 +72,7 @@ Les couches raster (4)
 **6** - Labeliser la couche contour avec l'élévation et vérifier que le mont Everest se trouve bien à l'altitude maximale
 
 
-Les couches raster (4)
+Les couches raster (6)
 ======================
 
 |
@@ -86,7 +86,7 @@ Les couches raster (4)
 utiliser les couleurs de la palette topographique *sda*
 
 
-Les couches raster (4)
+Les couches raster (7)
 ======================
 
 |
@@ -95,7 +95,7 @@ Les couches raster (4)
   :align: center
 
 
-Les couches raster (4)
+Les couches raster (8)
 ======================
 
 |
@@ -109,26 +109,4 @@ Les couches raster (4)
 
 .. image:: imgs/raster_hillshade.png
   :width: 400pt
-  :align: center
-
-
-Les couches raster (4)
-======================
-
-De nombreux algorithmes de traitement disponibles dans QGIS et via *Processing* :
-https://www.data.gouv.fr/fr/datasets/fond-cartographique-franceraster-ign-esri/
-
-500k
-
-
-
-Les couches raster (4)
-======================
-
-régler visiblité labelle selon l'échelle
-
-EPSG : 4326
-
-.. image:: imgs/raster_ex0.png
-  :width: 450pt
   :align: center

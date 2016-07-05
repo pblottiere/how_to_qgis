@@ -28,3 +28,4 @@ Plan de la formation
 .. include:: vector.rst
 .. include:: wms.rst
 .. include:: raster.rst
+.. include:: composer_atlas.rst
