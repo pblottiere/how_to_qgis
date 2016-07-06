@@ -25,6 +25,7 @@ Plan de la formation
 
 .. include:: pres.rst
 .. include:: install.rst
+.. include:: information.rst
 .. include:: vector.rst
 .. include:: wms.rst
 .. include:: raster.rst

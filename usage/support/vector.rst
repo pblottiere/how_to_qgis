@@ -87,8 +87,10 @@ Analyse syntaxique d'expression :
 Les couches vecteur (7)
 =======================
 
+|
 **Expressions - example**
 
+|
 .. code-block:: C++
 
   case
@@ -97,13 +99,6 @@ Les couches vecteur (7)
       POPULATION
     else
       0
-  end
-
-.. code-block:: C++
-
-  if length ( NOM_COM ) > 15
-  then
-    '-'
   end
 
 
