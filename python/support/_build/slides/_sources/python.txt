@@ -632,6 +632,21 @@ Pour l'utiliser :
 Python (25)
 ===========
 
+**main**
+
+Script exécutable :
+
+.. code-block:: python
+
+  import sys
+
+  if __name__ == "__main__":
+      print(len(sys.argv))
+
+
+Python (26)
+===========
+
 **Entrées/Sorties - open**
 
 |
@@ -648,7 +663,7 @@ en deuxième argument le mode qui peut être :
    f.close()
 
 
-Python (26)
+Python (27)
 ===========
 
 **Entrées/Sorties - readline**
@@ -666,7 +681,7 @@ Lire un fichier ligne par ligne:
     f.close()
 
 
-Python (27)
+Python (28)
 ===========
 
 **Entrées/Sorties - write**
@@ -685,7 +700,7 @@ Note : les opérations autorisées dans le fichier dépendent du mode dans leque
 le fichier est ouvert.
 
 
-Python (28)
+Python (29)
 ===========
 
 **Les bonnes pratiques**
@@ -703,7 +718,7 @@ PEP8 : `<http://www.python.org/dev/peps/pep-0008/>`_
 * MAJUSCULE pour les constantes
 
 
-Python (29)
+Python (30)
 ===========
 
 |
