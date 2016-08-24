@@ -1,16 +1,17 @@
 Python (1)
 ==========
 
-**Python c'est quoi ?**
+**C'est quoi ?**
 
-* un langage de programmation
-* interprété
-* syntaxe simple et lisible
+* un langage de programmation interprété
 * multi-plateformes
 * typage dynamique fort
 * gestion automatique de la mémoire
 * première version publiée en 1991 par Guido Van Rossum
 
+.. image:: imgs/gvr.jpg
+  :width: 150pt
+  :align: center
 
 Python (2)
 ==========
@@ -36,9 +37,9 @@ Python (2)
 Python (3)
 ==========
 
-|
 **Installer Python (version 2.7)**
 
+|
 Sous une distribution Linux Debian-based :
 
 .. code-block:: bash
