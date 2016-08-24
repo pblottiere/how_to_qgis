@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rappels de C++ (1) &mdash; Python - SIG 2016.02.06 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/oslide.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2016.02.06',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    
+    
+    <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  
+<article class="slide level-1" id="rappels-de-c-1">
+
+<h1>Rappels de C++ (1)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/bjarne.png"><img alt="_images/bjarne.png" class="align-center" src="_images/bjarne.png" style="width: 140pt;" /></a>
+<ul class="simple">
+<li>1983 - Bjarne Stroustrup (Danois)</li>
+<li>Langage compilé orienté objet (et procédural)</li>
+<li>Typage statique</li>
+<li>Pas de garbage collector</li>
+<li>C++ 99 → C++ 11 → C++ 14 → C++ 17</li>
+</ul>
+
+
+
+<div class="slide-no">1</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-2">
+
+<h1>Rappels de C++ (2)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/cppenv.png"><img alt="_images/cppenv.png" class="align-center" src="_images/cppenv.png" style="width: 1500pt;" /></a>
+
+
+
+<div class="slide-no">2</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-3">
+
+<h1>Rappels de C++ (3)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>main</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &quot;hello.h&quot;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Hello</span> <span class="n">h1</span><span class="p">(</span> <span class="mi">1</span> <span class="p">);</span>
+  <span class="n">h1</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+
+  <span class="k">const</span> <span class="kt">int</span> <span class="n">n2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="n">Hello</span> <span class="o">*</span><span class="n">h2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hello</span><span class="p">(</span> <span class="n">n2</span> <span class="p">);</span>
+  <span class="n">h2</span><span class="o">-&gt;</span><span class="n">print</span><span class="p">();</span>
+  <span class="k">delete</span> <span class="n">h2</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./main
+Hello 1
+Hello 2
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">3</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-4">
+
+<h1>Rappels de C++ (4)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Header</strong> : déclaration</p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#ifndef HELLO_H</span>
+<span class="cp">#define HELLO_H</span>
+
+<span class="k">class</span> <span class="nc">Hello</span>
+<span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="n">Hello</span><span class="p">(</span> <span class="kt">int</span> <span class="n">number</span> <span class="p">);</span>
+    <span class="o">~</span><span class="n">Hello</span><span class="p">();</span>
+
+    <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+
+  <span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">mNumber</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">4</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-5">
+
+<h1>Rappels de C++ (5)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Source</strong> : implémentation</p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &quot;hello.h&quot;</span>
+
+<span class="n">Hello</span><span class="o">::</span><span class="n">Hello</span><span class="p">(</span> <span class="kt">int</span> <span class="n">number</span> <span class="p">)</span>
+  <span class="o">:</span> <span class="n">mNumber</span><span class="p">(</span> <span class="n">number</span> <span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="n">Hello</span><span class="o">::~</span><span class="n">Hello</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Hello</span><span class="o">::</span><span class="n">print</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello &quot;</span> <span class="o">&lt;&lt;</span>  <span class="n">mNumber</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">5</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-6">
+
+<h1>Rappels de C++ (6)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Méthode virtuelle pure ⟶ Classe abstraite</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">HelloV2</span>
+<span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="n">Hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span> <span class="p">);</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">Hello</span><span class="p">();</span>
+
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">protected</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">hello</span><span class="p">();</span>
+
+  <span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">mWord</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">6</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-7">
+
+<h1>Rappels de C++ (7)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Méthode virtuelle pure ⟶ Classe abstraite</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="n">HelloV2</span><span class="o">::</span><span class="n">HelloV2</span><span class="p">(</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span> <span class="p">)</span>
+  <span class="o">:</span> <span class="n">mWord</span><span class="p">(</span> <span class="n">word</span> <span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="n">HelloV2</span><span class="o">::~</span><span class="n">HelloV2</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">HelloV2</span><span class="o">::</span><span class="n">hello</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">mWord</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">7</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-8">
+
+<h1>Rappels de C++ (8)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Héritage</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">HelloWorldV2</span> <span class="o">:</span> <span class="k">public</span> <span class="n">HelloV2</span>
+<span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="n">HelloWorldV2</span><span class="p">();</span>
+    <span class="o">~</span><span class="n">HelloWorldV2</span><span class="p">();</span>
+
+    <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">8</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-9">
+
+<h1>Rappels de C++ (9)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Héritage</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="n">HelloWorldV2</span><span class="o">::</span><span class="n">HelloWorldV2</span><span class="p">()</span>
+  <span class="o">:</span> <span class="n">HelloV2</span><span class="p">(</span> <span class="s">&quot;world!&quot;</span> <span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="n">HelloWorldV2</span><span class="o">::~</span><span class="n">HelloWorldV2</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">HelloWorldV2</span><span class="o">::</span><span class="n">print</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;HelloWorldV2 print: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="n">hello</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">9</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-10">
+
+<h1>Rappels de C++ (10)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Surcharge / méthode statique</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Printer</span>
+<span class="p">{</span>
+  <span class="k">static</span> <span class="kt">void</span> <span class="n">hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">HelloWorldV2</span> <span class="o">&amp;</span><span class="n">h</span> <span class="p">)</span> <span class="p">{</span> <span class="n">h</span><span class="p">.</span><span class="n">print</span><span class="p">();</span> <span class="p">}</span>
+  <span class="k">static</span> <span class="kt">void</span> <span class="n">hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">Hello</span> <span class="o">&amp;</span><span class="n">h</span> <span class="p">)</span> <span class="p">{</span> <span class="n">h</span><span class="p">.</span><span class="n">print</span><span class="p">()</span> <span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Hello</span> <span class="n">h1</span><span class="p">(</span> <span class="mi">10</span> <span class="p">);</span>
+  <span class="n">Printer</span><span class="o">::</span><span class="n">hello</span><span class="p">(</span> <span class="n">h1</span> <span class="p">);</span>
+
+  <span class="n">HelloWorldV2</span> <span class="n">h2</span><span class="p">;</span>
+  <span class="n">Printer</span><span class="o">::</span><span class="n">hello</span><span class="p">(</span> <span class="n">h2</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">10</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-11">
+
+<h1>Rappels de C++ (11)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Sructures de contrôle : if</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">...;</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="o">||</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">)</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">42</span> <span class="p">)</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Awesome!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="k">else</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Nothing todo&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">11</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-12">
+
+<h1>Rappels de C++ (12)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Sructures de contrôle : switch/case</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">...;</span>
+
+<span class="k">switch</span> <span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;a = 1&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+
+  <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;a = 2&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+
+  <span class="k">default</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Doesn&#39;t matter&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">12</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-13">
+
+<h1>Rappels de C++ (13)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Sructures de contrôle : for</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="cp"># entier</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+  <span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="cp"># iterateur</span>
+<span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">Values</span><span class="p">;</span>
+<span class="n">Values</span> <span class="n">values</span><span class="p">;</span>
+<span class="n">values</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="mi">3</span> <span class="p">);</span>
+<span class="n">values</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="mi">30</span> <span class="p">);</span>
+<span class="n">Values</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+
+<span class="k">for</span><span class="p">(</span> <span class="n">it</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span> <span class="p">)</span>
+  <span class="n">a</span> <span class="o">+=</span> <span class="o">*</span><span class="n">it</span><span class="p">;</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">13</div>
+
+
+</article>
+<article class="slide level-1" id="rappels-de-c-14">
+
+<h1>Rappels de C++ (14)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Sructures de contrôle : while</strong></p>
+<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">a</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+  <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">14</div>
+
+
+</article>
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>

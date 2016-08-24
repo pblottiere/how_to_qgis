@@ -1,4 +1,4 @@
-support/_build/doctrees
+/doctrees/
 build
 *.o
 *.so
