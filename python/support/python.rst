@@ -619,7 +619,7 @@ Regroupement de modules
 Dans un répertoire nommé suivant le nom du package :
 
 * des modules
-* un fichier *_init_.py*
+* un fichier *__init__.py*
 
 Pour l'utiliser :
 
