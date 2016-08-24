@@ -1,4 +1,5 @@
 /doctrees/
+python/support/_build/doctrees/
 build
 *.o
 *.so

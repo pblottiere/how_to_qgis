@@ -51,11 +51,883 @@
 
 <h1>Python (1)</h1>
 
-<p>TODO</p>
+<p><strong>Python c'est quoi ?</strong></p>
+<ul class="simple">
+<li>un langage de programmation</li>
+<li>interprété</li>
+<li>syntaxe simple et lisible</li>
+<li>multi-plateformes</li>
+<li>typage dynamique fort</li>
+<li>gestion automatique de la mémoire</li>
+<li>première version publiée en 1991 par Guido Van Rossum</li>
+</ul>
 
 
 
 <div class="slide-no">1</div>
+
+
+</article>
+<article class="slide level-1" id="python-2">
+
+<h1>Python (2)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Console Python</strong></p>
+<ul class="simple">
+<li>permet d'explorer la syntaxe</li>
+<li>d'avoir de l'aide sur les commandes python</li>
+<li>de debugger des programmes simples</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python
+Python 2.7.3 <span class="o">(</span>default, Mar <span class="m">13</span> 2014, 11:03:55<span class="o">)</span>
+<span class="o">[</span>GCC 4.7.2<span class="o">]</span> on linux2
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+&gt;&gt;&gt; <span class="m">1</span> + 1
+2
+&gt;&gt;&gt; <span class="nb">help</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">2</div>
+
+
+</article>
+<article class="slide level-1" id="python-3">
+
+<h1>Python (3)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Installer Python (version 2.7)</strong></p>
+<p>Sous une distribution Linux Debian-based :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># installer le gestionnaire de paquets python</span>
+sudo apt-get install python-pip
+<span class="c"># mise à jour du gestionnaire de paquets</span>
+sudo pip install -U pip
+<span class="c"># installation de ipython</span>
+sudo pip install ipython
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Sous Windows &amp; MacOSX :</p>
+<p>=&gt; Distribution Anaconda  <a class="reference external" href="http://continuum.io/downloads">http://continuum.io/downloads</a></p>
+
+
+
+<div class="slide-no">3</div>
+
+
+</article>
+<article class="slide level-1" id="python-4">
+
+<h1>Python (4)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Éditeurs</strong></p>
+<ul class="simple">
+<li>Eclipse - pydev</li>
+<li>notepad++</li>
+<li>pycharm</li>
+<li>sublimetext</li>
+<li>emacs</li>
+<li>vi(m)</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><a class="reference external" href="https://wiki.python.org/moin/PythonEditors">https://wiki.python.org/moin/PythonEditors</a></p>
+
+
+
+<div class="slide-no">4</div>
+
+
+</article>
+<article class="slide level-1" id="python-5">
+
+<h1>Python (5)</h1>
+
+<p><strong>Syntaxe générale - l'indentation</strong></p>
+<p>L'indentation délimite les blocs de code</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<span class="o">....</span><span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="o">........</span><span class="k">print</span> <span class="s">&#39;one&#39;</span>
+<span class="o">....</span><span class="k">else</span><span class="p">:</span>
+<span class="o">........</span><span class="k">print</span> <span class="s">&#39;two&#39;</span>
+
+<span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="o">....</span><span class="k">return</span> <span class="n">arg</span>
+
+<span class="k">print</span> <span class="n">myfunc</span><span class="p">(</span><span class="s">&#39;Starting&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ne pas mixer espaces et tabulations (convention : <strong>4 espaces</strong>)</p>
+<p>L’interpréteur Python s’appuie sur l’indentation pour déterminer la structure du code</p>
+
+
+
+<div class="slide-no">5</div>
+
+
+</article>
+<article class="slide level-1" id="python-6">
+
+<h1>Python (6)</h1>
+
+<p><strong>Syntaxe générale - les commentaires</strong></p>
+<p>Avec <strong>#</strong> :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># this is the first comment</span>
+<span class="n">SPAM</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c"># and this is the second comment</span>
+<span class="n">STRING</span> <span class="o">=</span> <span class="s">&quot;# This is not a comment.&quot;</span>
+</pre></div>
+</div>
+<p>Ou <strong>&quot;&quot;&quot;</strong> :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">i will</span>
+<span class="sd">print</span>
+<span class="sd">some stuff now</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">print</span> <span class="s">&quot;stuff&quot;</span>
+</pre></div>
+</div>
+<p>Les <strong>&quot;&quot;&quot;</strong> sont le plus souvent utilisé pour les <em>docstring</em>.</p>
+
+
+
+<div class="slide-no">6</div>
+
+
+</article>
+<article class="slide level-1" id="python-7">
+
+<h1>Python (7)</h1>
+
+<p><strong>Syntaxe générale - les variables</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Variable : association entre un symbol et une valeur</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>En Python : une variable est une référence à un objet en mémoire qui n'a pas
+besoin d'être typé (typage dynamique).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="s">&#39;un&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">&#39;un&#39;</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">7</div>
+
+
+</article>
+<article class="slide level-1" id="python-8">
+
+<h1>Python (8)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Instruction</strong></p>
+<ul class="simple">
+<li>Expression : évaluation et retour du résultat</li>
+<li>Affectation : evaluation et stockage du résultat dans une variable</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Ceci est une expression</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span><span class="o">+</span><span class="mi">7</span>
+<span class="go">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Ceci est une affectation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="mi">2</span><span class="o">+</span><span class="mi">7</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">8</div>
+
+
+</article>
+<article class="slide level-1" id="python-9">
+
+<h1>Python (9)</h1>
+
+<p><strong>Tout est objet</strong></p>
+<p>En Python, tout est objet : chaînes, entiers, booléens, etc...</p>
+<p>Les fonctionnalités applicables à chaque objet y sont directement attachées.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="s">&#39;chaine&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">[...</span>
+<span class="go">&#39;capitalize&#39;,</span>
+<span class="go">&#39;center&#39;,</span>
+<span class="go">&#39;count&#39;,</span>
+<span class="go">&#39;encode&#39;,</span>
+<span class="go">&#39;endswith&#39;,</span>
+<span class="go">&#39;expandtabs&#39;,</span>
+<span class="go">&#39;find&#39;,</span>
+<span class="go">&#39;format&#39;,</span>
+<span class="gp">...</span>
+<span class="go">&#39;isnumeric&#39;,</span>
+<span class="go">&#39;isprintable&#39;,</span>
+<span class="go">&#39;isspace&#39;,</span>
+<span class="go">&#39;istitle&#39;]</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">9</div>
+
+
+</article>
+<article class="slide level-1" id="id1">
+
+<h1>Python (9)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Les types simples</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># integer</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c"># float</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">2.</span>
+
+<span class="c"># long</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">g</span> <span class="o">=</span> <span class="il">1301L</span>
+
+<span class="c"># complex</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3j</span>
+
+<span class="c"># boolean</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+
+<span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">]</span>
+<span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">long</span><span class="p">,</span> <span class="nb">complex</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">10</div>
+
+
+</article>
+<article class="slide level-1" id="python-10">
+
+<h1>Python (10)</h1>
+
+<p><strong>Chaînes de caractères</strong></p>
+<p>Concaténer :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Éviter d&#39;utiliser</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">ch1</span> <span class="o">+</span> <span class="n">ch2</span> <span class="o">+</span> <span class="n">ch3</span>
+
+<span class="c"># la seule méthode à utiliser</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s">&#39;...&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">ch1</span><span class="p">,</span> <span class="n">ch2</span><span class="p">,</span> <span class="n">ch3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Formater :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># formatage de chaînes</span>
+<span class="s">&#39;</span><span class="si">%s%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&#39;os&#39;</span><span class="p">,</span> <span class="s">&#39;landia&#39;</span><span class="p">)</span>
+
+<span class="c"># nouvelle méthode</span>
+<span class="s">&#39;{}{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;os&#39;</span><span class="p">,</span> <span class="s">&#39;landia&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">11</div>
+
+
+</article>
+<article class="slide level-1" id="python-11">
+
+<h1>Python (11)</h1>
+
+<p><strong>list et tuple</strong></p>
+<p><em>list</em> : séquence d'objets ordonnés modifiable</p>
+<p><em>tuple</em> : séquence d'objets ordonnés NON modifiable</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">1j</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="c"># ajout d&#39;un élément</span>
+<span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;toto&#39;</span><span class="p">)</span>
+
+<span class="c"># slice = [start:end:step]</span>
+<span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c"># accès direct à un élément</span>
+
+<span class="c"># extraction de sous liste</span>
+<span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>  <span class="c"># extraction de sous listes</span>
+
+<span class="n">l</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>  <span class="c"># extraire les éléments par pas de 2</span>
+
+<span class="c"># concaténer des listes</span>
+<span class="n">l</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>  <span class="c"># concaténer des listes</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">12</div>
+
+
+</article>
+<article class="slide level-1" id="python-12">
+
+<h1>Python (12)</h1>
+
+<p>TODO : mettre dans les exercices</p>
+<p>Analyser le comportement ci-dessous</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="n">l1</span>
+<span class="n">l1</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="n">l1</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">13</div>
+
+
+</article>
+<article class="slide level-1" id="id2">
+
+<h1>Python (12)</h1>
+
+<p><strong>Compréhension de liste</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Permet de construire des listes de façon concise ET optimisée</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># manière traditionnelle</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c"># list comprehension</span>
+<span class="c"># [expression for element in liste if predicat]</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+
+<span class="c"># même chose avec prédicat</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">14</div>
+
+
+</article>
+<article class="slide level-1" id="python-13">
+
+<h1>Python (13)</h1>
+
+<p><strong>set et frozenset</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><em>set</em> : conteneurs d'objets uniques non ordonnés modifiable</p>
+<p><em>frozenset</em> : conteneurs d'objets uniques non ordonnés NON modifiable</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;e&#39;</span><span class="p">}</span>
+
+<span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;f&#39;</span><span class="p">}</span>
+
+<span class="n">s1</span> <span class="o">|</span> <span class="n">s2</span>  <span class="c"># union</span>
+
+<span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span>  <span class="c"># différence</span>
+
+<span class="n">s1</span> <span class="o">&amp;</span> <span class="n">s2</span>  <span class="c"># intersection</span>
+
+<span class="n">s1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>  <span class="c"># ajout d&#39;élément</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">15</div>
+
+
+</article>
+<article class="slide level-1" id="python-14">
+
+<h1>Python (14)</h1>
+
+<p><strong>dict</strong></p>
+<p>Conteneurs qui associent une valeur à une clé</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mf">2.</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="o">+</span><span class="mi">1j</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">}</span>
+<span class="n">d</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span>
+<span class="n">d</span><span class="p">[</span><span class="s">&#39;e&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>  <span class="c"># insertion d&#39;une pair clé valeur</span>
+
+<span class="c"># dict comprehension</span>
+<span class="p">{</span><span class="s">&#39;</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">num</span><span class="p">:</span> <span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)}</span>
+
+<span class="c"># mixer des dictionnaires</span>
+<span class="n">first</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;env&#39;</span><span class="p">:</span> <span class="s">&#39;snap&#39;</span><span class="p">,</span> <span class="s">&#39;domain&#39;</span><span class="p">:</span> <span class="s">&#39;osl.com&#39;</span><span class="p">}</span>
+<span class="n">second</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;env&#39;</span><span class="p">:</span> <span class="s">&#39;prod&#39;</span><span class="p">,</span> <span class="s">&#39;domain&#39;</span><span class="p">:</span> <span class="s">&#39;osl.com&#39;</span><span class="p">}</span>
+<span class="n">first</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
+<span class="n">first</span>
+
+<span class="c"># savoir si une clé est dans le dictionnaire ?</span>
+<span class="k">if</span> <span class="s">&#39;env&#39;</span> <span class="ow">in</span> <span class="n">first</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Found it!&#39;</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">16</div>
+
+
+</article>
+<article class="slide level-1" id="python-15">
+
+<h1>Python (15)</h1>
+
+<p><strong>Logique</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Intersection</span>
+<span class="n">x</span> <span class="ow">and</span> <span class="n">y</span>
+
+<span class="c"># Union:</span>
+<span class="n">x</span> <span class="ow">or</span> <span class="n">y</span>
+
+<span class="c"># Négation:</span>
+<span class="ow">not</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>Toute expression valant False, 0, None ou tout type complexe vide sera
+convertie en False dans une expression logique.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nb">bool</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">17</div>
+
+
+</article>
+<article class="slide level-1" id="python-16">
+
+<h1>Python (16)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Les structures de contrôle - if</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;X est négatif&#39;</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;X est nul&#39;</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;X est positif&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Hum...&#39;</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">18</div>
+
+
+</article>
+<article class="slide level-1" id="id3">
+
+<h1>Python (16)</h1>
+
+<p><strong>Structure de contrôle - for</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Parcourt les éléments d'une séquence :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="s">&#39;window&#39;</span><span class="p">,</span> <span class="s">&#39;defenestrate&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">x</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Parcourt avec un index :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="s">&#39;window&#39;</span><span class="p">,</span> <span class="s">&#39;defenestrate&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+    <span class="k">print</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">19</div>
+
+
+</article>
+<article class="slide level-1" id="python-17">
+
+<h1>Python (17)</h1>
+
+<p><strong>Structure de contrôle - for</strong></p>
+<p>Avec <em>enumerate</em> :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="s">&#39;window&#39;</span><span class="p">,</span> <span class="s">&#39;defenestrate&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+   <span class="k">print</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Avec les <em>list comprehension</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Avec les <em>dict</em> :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;couleur&quot;</span><span class="p">:</span> <span class="s">&quot;bleu&quot;</span><span class="p">,</span> <span class="s">&quot;annee&quot;</span><span class="p">:</span> <span class="mi">1985</span><span class="p">,</span> <span class="s">&quot;immatriculation&quot;</span><span class="p">:</span> <span class="s">&quot;1337BB34&quot;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+   <span class="k">print</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">20</div>
+
+
+</article>
+<article class="slide level-1" id="python-18">
+
+<h1>Python (18)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Structure de contrôle - while</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Répète ses instructions tant qu'une condition est vraie, c'est à dire jusqu'à
+ce que cette même condition soit fausse :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;Entrez un entier : &#39;</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+   <span class="k">print</span> <span class="s">&#39;trop petit...&#39;</span>
+   <span class="n">x</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;Entrez un entier : &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">21</div>
+
+
+</article>
+<article class="slide level-1" id="python-19">
+
+<h1>Python (19)</h1>
+
+<p><strong>Fonction - définition</strong></p>
+<p>Ensemble d'instructions auquel on affecte un nom :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">mult2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Signature d'une fonction :</p>
+<ul class="simple">
+<li>nom</li>
+<li>types d'arguments</li>
+<li>type de retour</li>
+</ul>
+
+
+
+<div class="slide-no">22</div>
+
+
+</article>
+<article class="slide level-1" id="python-20">
+
+<h1>Python (20)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Fonction - appel</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">354</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mult2</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="go">708</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">mult2</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>Les arguments peuvent être nommés et optionnels :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">beethov</span><span class="p">(</span><span class="n">notes</span><span class="p">,</span> <span class="n">play</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">play</span><span class="p">:</span>
+        <span class="n">sonate</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">23</div>
+
+
+</article>
+<article class="slide level-1" id="python-21">
+
+<h1>Python (21)</h1>
+
+<p><strong>Module - import</strong></p>
+<p>But : organiser son programme en fichiers en vue de réutilisation</p>
+<p>Un fichier <em>.py</em>  =  un module python</p>
+<p>Dans un terminal :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;print &#39;hello&#39;&quot;</span> &gt; mymodule.py
+<span class="nv">$ </span>python mymodule.py
+<span class="s1">&#39;Hello&#39;</span>
+</pre></div>
+</div>
+<p>Dans l'interpréteur :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mymodule</span>
+<span class="go">&#39;Hello&#39;</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">24</div>
+
+
+</article>
+<article class="slide level-1" id="python-22">
+
+<h1>Python (22)</h1>
+
+<p>TODO : a mettre dans un example</p>
+<p>Un module = ensemble de définitions et d'instructions Python réutilisables par ailleurs.</p>
+<p>Exemple : insérer le code suivant dans un module nommé fibo.py</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>    <span class="c"># Ecrire la suite de Fibonacci de 1 a n</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">b</span><span class="p">,</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c"># Retourne la suite de Fibonacci de 1 a n</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">25</div>
+
+
+</article>
+<article class="slide level-1" id="python-23">
+
+<h1>Python (23)</h1>
+
+<p><strong>Module - fonctions</strong></p>
+<p>Si des fonctions sont définies dans un module :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On peut importer des objets spécifiques de l'intérieur d'un module :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span>
+<span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On peut réassigner un nom local à une des fonctions du module :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span>
+<span class="n">u</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">26</div>
+
+
+</article>
+<article class="slide level-1" id="python-24">
+
+<h1>Python (24)</h1>
+
+<p><strong>Package</strong></p>
+<p>Regroupement de modules</p>
+<p>Dans un répertoire nommé suivant le nom du package :</p>
+<ul class="simple">
+<li>des modules</li>
+<li>un fichier <em>_init_.py</em></li>
+</ul>
+<p>Pour l'utiliser :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mypackage.mymodule</span> <span class="kn">import</span> <span class="n">myfunction</span>
+<span class="n">myfonction</span><span class="p">(</span><span class="o">.......</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">27</div>
+
+
+</article>
+<article class="slide level-1" id="python-25">
+
+<h1>Python (25)</h1>
+
+<p><strong>Entrées/Sorties - open</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>La fonction <strong>open()</strong> prend en premier argument le chemin d'accès au fichier et
+en deuxième argument le mode qui peut être :</p>
+<ul class="simple">
+<li><em>'r'</em> : pour lire dans le fichier,</li>
+<li><em>'w'</em> : pour écrire à partir du début du fichier (écrase le contenu précédent),</li>
+<li><em>'a'</em> : pour écrire à la fin du fichier (en ajoutant au contenu précédent).</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;/tmp/workfile&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">28</div>
+
+
+</article>
+<article class="slide level-1" id="python-26">
+
+<h1>Python (26)</h1>
+
+<p><strong>Entrées/Sorties - readline</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Lire un fichier ligne par ligne:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;/tmp/workfile&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+   <span class="k">print</span> <span class="n">line</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">29</div>
+
+
+</article>
+<article class="slide level-1" id="python-27">
+
+<h1>Python (27)</h1>
+
+<p><strong>Entrées/Sorties - write</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Pour écrire dans un fichier :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;/tmp/workfile&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;This is a test</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Note : les opérations autorisées dans le fichier dépendent du mode dans lequel
+le fichier est ouvert.</p>
+
+
+
+<div class="slide-no">30</div>
+
+
+</article>
+<article class="slide level-1" id="python-28">
+
+<h1>Python (28)</h1>
+
+<p><strong>Les bonnes pratiques</strong></p>
+<p>PEP8 : <a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">http://www.python.org/dev/peps/pep-0008/</a></p>
+<ul class="simple">
+<li>4 espaces par niveau d'indentation.</li>
+<li>Pas de tabulations.</li>
+<li>Ne jamais mixer des tabulations et des espaces.</li>
+<li>Un saut de ligne entre les fonctions.</li>
+<li>Deux sauts de ligne entre les classes.</li>
+<li>essayer de garder des lignes de moins de 80 caractères (favorise une lecture verticale du code)</li>
+<li>nommage des variables à 3 lettres minimum pour plus de compréhension</li>
+<li>miniscule avec séparateur '_' pour les méthodes de classe</li>
+<li>MAJUSCULE pour les constantes</li>
+</ul>
+
+
+
+<div class="slide-no">31</div>
+
+
+</article>
+<article class="slide level-1" id="python-29">
+
+<h1>Python (29)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Références</strong></p>
+<p><a class="reference external" href="https://docs.python.org/2.7/library/index.html">https://docs.python.org/2.7/library/index.html</a></p>
+<p><a class="reference external" href="http://docs.python-guide.org/en/latest/">http://docs.python-guide.org/en/latest/</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Dans une console :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">32</div>
 
 
 </article>
