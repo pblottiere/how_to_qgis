@@ -6,7 +6,7 @@ Composeur et atlas (1)
 
 |
 Fournit des outils de mise en page et d'impression :
-  - échelle, carte, légendre, ...
+  - échelle, carte, légende, ...
   - export (SVG, PDF, ...)
 
 **Atlas**

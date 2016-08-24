@@ -22,10 +22,12 @@ Les couches vecteur (2)
 |
 **Charger un shapefile**
 
-|
 .. image:: imgs/select_vector.png
   :width: 400pt
   :align: center
+
+|
+NOTE: l'outil *Refactor fields* permet de changer le type des attributs, les réordonner, ...
 
 Les couches vecteur (3)
 =======================
@@ -135,6 +137,7 @@ Les couches vecteur (9)
   - changer la palette de couleur
   - classer et visualiser
   - visualiser l'échelle dans l'arbre des couches
+  - sauvegarder/recharger le style de l'analyse thématique
 
 **5** - Catégoriser selon la densité de population
 
