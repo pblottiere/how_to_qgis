@@ -79,7 +79,7 @@ Python (5)
 
 |
 
-**DÉCOUVERTE DE L'ENVIRONNEMENT**
+**EXERCICE 1**
 
 |
 
@@ -714,7 +714,7 @@ Python (33)
 
 |
 
-**EXERCICE 1**
+**EXERCICE 2**
 
 |
 

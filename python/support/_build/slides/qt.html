@@ -51,11 +51,145 @@
 
 <h1>PyQT (1)</h1>
 
-<p>TODO</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/qt.png"><img alt="_images/qt.png" class="align-center" src="_images/qt.png" style="width: 150pt;" /></a>
+<ul class="simple">
+<li>1995</li>
+<li>multiplateforme</li>
+<li>libre depuis QT4</li>
+<li>widgets graphiques, signaux/slots, macros, patterns, ...</li>
+</ul>
 
 
 
 <div class="slide-no">1</div>
+
+
+</article>
+<article class="slide level-1" id="pyqt-2">
+
+<h1>PyQT (2)</h1>
+
+<p><strong>QApplication</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">QtGui</span>
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+
+    <span class="n">w</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QWidget</span><span class="p">()</span>
+    <span class="n">w</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+    <span class="n">w</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s">&#39;MyApp&#39;</span><span class="p">)</span>
+    <span class="n">w</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s">&#39;Hello World&#39;</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="n">text</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">2</div>
+
+
+</article>
+<article class="slide level-1" id="pyqt-3">
+
+<h1>PyQT (3)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>slot/signal</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">PyQt4.QtCore</span> <span class="kn">import</span> <span class="n">QObject</span><span class="p">,</span> <span class="n">pyqtSignal</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">QObject</span><span class="p">):</span>
+
+    <span class="n">mysignal</span> <span class="o">=</span> <span class="n">pyqtSignal</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mysignal</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">myslot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mysignal</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">myslot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">&quot;signal received&quot;</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">3</div>
+
+
+</article>
+<article class="slide level-1" id="pyqt-4">
+
+<h1>PyQT (4)</h1>
+
+<p><strong>QtDesigner</strong></p>
+<p>Outil de modélisation de fenêtres</p>
+<a class="reference internal image-reference" href="_images/qtdesigner.png"><img alt="_images/qtdesigner.png" class="align-center" src="_images/qtdesigner.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">4</div>
+
+
+</article>
+<article class="slide level-1" id="pyqt-5">
+
+<h1>PyQT (5)</h1>
+
+<p><strong>pyuic</strong></p>
+<p>Utilitaire de transformation de code <em>.ui</em> en code Python</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># pyuic4 file.ui -o file_ui.py</span>
+</pre></div>
+</div>
+<p>Le code généré :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Ui_MainWindow</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setupUi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">MainWindow</span><span class="p">):</span>
+        <span class="n">MainWindow</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span><span class="s">&quot;MainWindow&quot;</span><span class="p">))</span>
+        <span class="n">MainWindow</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QWidget</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span><span class="s">&quot;centralwidget&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayoutWidget</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayoutWidget</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">QRect</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">781</span><span class="p">,</span> <span class="mi">531</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayoutWidget</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span><span class="s">&quot;verticalLayoutWidget&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QVBoxLayout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">verticalLayoutWidget</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">5</div>
+
+
+</article>
+<article class="slide level-1" id="pyqt-6">
+
+<h1>PyQT (6)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>EXERCICE 3</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 200pt;" /></a>
+
+
+
+<div class="slide-no">6</div>
 
 
 </article>

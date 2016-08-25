@@ -51,11 +51,237 @@
 
 <h1>PyQGIS (1)</h1>
 
-<p>TODO</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/qgis-icon.png"><img alt="_images/qgis-icon.png" class="align-center" src="_images/qgis-icon.png" style="width: 200pt;" /></a>
 
 
 
 <div class="slide-no">1</div>
+
+
+</article>
+<article class="slide level-1" id="pyqgis-2">
+
+<h1>PyQGIS (2)</h1>
+
+<p><strong>API</strong></p>
+<a class="reference internal image-reference" href="_images/qgis.png"><img alt="_images/qgis.png" class="align-center" src="_images/qgis.png" style="width: 2000pt;" /></a>
+
+
+
+<div class="slide-no">2</div>
+
+
+</article>
+<article class="slide level-1" id="pyqgis-3">
+
+<h1>PyQGIS (3)</h1>
+
+<p><strong>map</strong></p>
+<ul class="simple">
+<li>QgsMapCanvas : widget d'affichage de la carte</li>
+<li>QgsMapRenderer / QgsMapRendererJob : rendu de la carte</li>
+<li>QgsMapTool : intéractions utilisateur avec la carte (déplacement, identification de feature, ...)</li>
+<li>QgsMapLayer : les couches (vector, raster, ...)</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>feature</strong></p>
+<ul class="simple">
+<li>QgsFeature : objets géographiques</li>
+<li>QgsFeatureRenderer : rendu de feature</li>
+<li>QgsGeometry : géometrie (point, polygone, ...)</li>
+</ul>
+
+
+
+<div class="slide-no">3</div>
+
+
+</article>
+<article class="slide level-1" id="pyqgis-4">
+
+<h1>PyQGIS (4)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>divers</strong></p>
+<ul class="simple">
+<li>QgsProject : ouverture / lecture / ... de fichier .qgis</li>
+<li>QgsLayerTreeGroup : arbre des couches</li>
+<li>QgisInterface : point d'entrée des plugins Python</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Beaucoup (beaucoup) de classes!!</strong></p>
+
+
+
+<div class="slide-no">4</div>
+
+
+</article>
+<article class="slide level-1" id="pyqgis-5">
+
+<h1>PyQGIS (5)</h1>
+
+<p><a class="reference external" href="https://github.com/qgis/QGIS">https://github.com/qgis/QGIS</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/qgis_repo.png"><img alt="_images/qgis_repo.png" class="align-center" src="_images/qgis_repo.png" style="width: 2000pt;" /></a>
+
+
+
+<div class="slide-no">5</div>
+
+
+</article>
+<article class="slide level-1" id="pyqgis-6">
+
+<h1>PyQGIS (6)</h1>
+
+<p><strong>Racine</strong></p>
+<ul class="simple">
+<li><strong>ci</strong> : continuous integration (scripts travis pour linux, OSX, QT4, QT5)</li>
+<li><strong>cmake</strong> : scripts CMake</li>
+<li><strong>debian</strong> - mac - ms-windows - rpm : le nécessaire pour faire les packages</li>
+<li><strong>doc</strong> : auteurs, contributeurs, ...</li>
+<li><strong>i18n</strong> : langues</li>
+<li><strong>images/themes/default</strong> : icones, ...</li>
+<li><strong>python</strong> : binding (.sip), ...</li>
+<li><strong>scripts</strong> : des scripts utiles (pre-commit.sh, astyle.sh, ...)</li>
+<li><strong>src</strong> : les sources QGIS</li>
+<li><strong>tests</strong> : le nécessaire pour les tests unitaires (sources, données de tests, ...)</li>
+</ul>
+
+
+
+<div class="slide-no">6</div>
+
+
+</article>
+<article class="slide level-1" id="pyqgis-7">
+
+<h1>PyQGIS (7)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>src : les répertoires principaux</strong></p>
+<ul class="simple">
+<li><strong>app</strong> : maptools &quot;spécifiques&quot; (pin/unpin labels, ...), le main!</li>
+<li><strong>core</strong> : expression, maplayer, renderer, datadefined, ...</li>
+<li><strong>customwidgets</strong> : les widgets custom réutilisables (QgsSpinBox)</li>
+<li><strong>gui</strong> : les maptools de base, mapcanvas, messagebar, attributeform, ...</li>
+<li><strong>plugins</strong> : les plugin C++</li>
+<li><strong>providers</strong> : les dataproviders (memory, postgres, virtual, ...)</li>
+<li><strong>ui</strong> : les fichiers .ui</li>
+</ul>
+
+
+
+<div class="slide-no">7</div>
+
+
+</article>
+<article class="slide level-1" id="pyqgis-8">
+
+<h1>PyQGIS (8)</h1>
+
+<p><strong>EXERCICE 5</strong></p>
+<dl class="docutils">
+<dt>TODO <span class="classifier-delimiter">:</span> <span class="classifier">exercice dans la console QGIS / se servir des tests unitaires pour voir</span></dt>
+<dd>comment tiliser l'API</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 200pt;" /></a>
+
+
+
+<div class="slide-no">8</div>
+
+
+</article>
+<article class="slide level-1" id="pyqgis-9">
+
+<h1>PyQGIS (9)</h1>
+
+<p><strong>Plugin - où?</strong></p>
+<p>Dépôt de plugin : <a class="reference external" href="http://plugins.qgis.org/plugins/">http://plugins.qgis.org/plugins/</a></p>
+<p>Installation : <em>Plugin Manager</em></p>
+<a class="reference internal image-reference" href="_images/plugin_manager.png"><img alt="_images/plugin_manager.png" class="align-center" src="_images/plugin_manager.png" style="width: 2000pt;" /></a>
+
+
+
+<div class="slide-no">9</div>
+
+
+</article>
+<article class="slide level-1" id="pyqgis-10">
+
+<h1>PyQGIS (10)</h1>
+
+<p><strong>Plugin - Structure</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre>PYTHON_PLUGINS_PATH/
+  MyPlugin/
+    __init__.py    --&gt; *required*
+    mainPlugin.py  --&gt; *required*
+    metadata.txt   --&gt; *required*
+    resources.qrc  --&gt; *likely useful*
+    resources.py   --&gt; *compiled version, likely useful*
+    form.ui        --&gt; *likely useful*
+    form.py        --&gt; *compiled version, likely useful*
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Plugin Builder</strong></p>
+<p>Plugin Buider : <a class="reference external" href="http://geoapt.net/pluginbuilder/">http://geoapt.net/pluginbuilder/</a></p>
+
+
+
+<div class="slide-no">10</div>
+
+
+</article>
+<article class="slide level-1" id="pyqgis-11">
+
+<h1>PyQGIS (11)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Documentation</strong></p>
+<p><a class="reference external" href="https://qgis.org/api/">https://qgis.org/api/</a></p>
+<p><a class="reference external" href="http://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/">http://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/</a></p>
+<p><a class="reference external" href="http://www.qgistutorials.com/fr/docs/building_a_python_plugin.html">http://www.qgistutorials.com/fr/docs/building_a_python_plugin.html</a></p>
+<p><a class="reference external" href="http://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/plugins.html">http://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/plugins.html</a></p>
+
+
+
+<div class="slide-no">11</div>
+
+
+</article>
+<article class="slide level-1" id="pyqgis-12">
+
+<h1>PyQGIS (12)</h1>
+
+<p><strong>EXERCICE</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 200pt;" /></a>
+
+
+
+<div class="slide-no">12</div>
 
 
 </article>
