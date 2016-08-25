@@ -283,24 +283,6 @@ Python (11)
 Python (12)
 ===========
 
-TODO : mettre dans les exercices
-
-Analyser le comportement ci-dessous
-
-.. code-block:: python
-
-    l1 = [1, 2, 3]
-    l2 = l1
-    l1 += [4, 5, 6]
-
-    l1 = [1, 2, 3]
-    l2 = l1
-    l1 = l1 + [4, 5, 6]
-
-
-Python (12)
-===========
-
 **Compréhension de liste**
 
 |
@@ -561,29 +543,6 @@ Dans l'interpréteur :
 Python (22)
 ===========
 
-TODO : a mettre dans un example
-
-Un module = ensemble de définitions et d'instructions Python réutilisables par ailleurs.
-
-Exemple : insérer le code suivant dans un module nommé fibo.py ::
-
-    def fib(n):    # Ecrire la suite de Fibonacci de 1 a n
-        a, b = 0, 1
-        while b < n:
-            print b,
-            a, b = b, a+b
-
-    def fib2(n): # Retourne la suite de Fibonacci de 1 a n
-        result = []
-        a, b = 0, 1
-        while b < n:
-            result.append(b)
-            a, b = b, a+b
-        return result
-
-Python (23)
-===========
-
 **Module - fonctions**
 
 Si des fonctions sont définies dans un module :
@@ -609,7 +568,7 @@ On peut réassigner un nom local à une des fonctions du module :
     u(0, 5)
 
 
-Python (24)
+Python (23)
 ===========
 
 **Package**
@@ -619,7 +578,7 @@ Regroupement de modules
 Dans un répertoire nommé suivant le nom du package :
 
 * des modules
-* un fichier *_init_.py*
+* un fichier *__init__.py*
 
 Pour l'utiliser :
 
@@ -629,7 +588,7 @@ Pour l'utiliser :
   myfonction(.......)
 
 
-Python (25)
+Python (24)
 ===========
 
 **main**
@@ -644,7 +603,7 @@ Script exécutable :
       print(len(sys.argv))
 
 
-Python (26)
+Python (25)
 ===========
 
 **Entrées/Sorties - open**
@@ -663,7 +622,7 @@ en deuxième argument le mode qui peut être :
    f.close()
 
 
-Python (27)
+Python (26)
 ===========
 
 **Entrées/Sorties - readline**
@@ -681,7 +640,7 @@ Lire un fichier ligne par ligne:
     f.close()
 
 
-Python (28)
+Python (27)
 ===========
 
 **Entrées/Sorties - write**
@@ -700,7 +659,7 @@ Note : les opérations autorisées dans le fichier dépendent du mode dans leque
 le fichier est ouvert.
 
 
-Python (29)
+Python (28)
 ===========
 
 **Les bonnes pratiques**
@@ -718,7 +677,7 @@ PEP8 : `<http://www.python.org/dev/peps/pep-0008/>`_
 * MAJUSCULE pour les constantes
 
 
-Python (30)
+Python (29)
 ===========
 
 |
@@ -735,3 +694,17 @@ Dans une console :
 .. code-block:: python
 
     import this
+
+Python (30)
+===========
+
+|
+
+**EXERCICE 1**
+
+|
+
+.. image:: imgs/exo.png
+  :width: 200pt
+  :align: center
+

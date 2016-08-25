@@ -444,28 +444,6 @@ besoin d'être typé (typage dynamique).</p>
 
 <h2>Python (12)</h2>
 
-<p>TODO : mettre dans les exercices</p>
-<p>Analyser le comportement ci-dessous</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">l2</span> <span class="o">=</span> <span class="n">l1</span>
-<span class="n">l1</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-
-<span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">l2</span> <span class="o">=</span> <span class="n">l1</span>
-<span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-</pre></div>
-</div>
-
-
-
-<div class="slide-no">15</div>
-
-
-</article>
-<article class="slide level-2" id="id2">
-
-<h2>Python (12)</h2>
-
 <p><strong>Compréhension de liste</strong></p>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -488,7 +466,7 @@ besoin d'être typé (typage dynamique).</p>
 
 
 
-<div class="slide-no">16</div>
+<div class="slide-no">15</div>
 
 
 </article>
@@ -518,7 +496,7 @@ besoin d'être typé (typage dynamique).</p>
 
 
 
-<div class="slide-no">17</div>
+<div class="slide-no">16</div>
 
 
 </article>
@@ -549,7 +527,7 @@ besoin d'être typé (typage dynamique).</p>
 
 
 
-<div class="slide-no">18</div>
+<div class="slide-no">17</div>
 
 
 </article>
@@ -577,7 +555,7 @@ convertie en False dans une expression logique.</p>
 
 
 
-<div class="slide-no">19</div>
+<div class="slide-no">18</div>
 
 
 </article>
@@ -605,11 +583,11 @@ convertie en False dans une expression logique.</p>
 
 
 
-<div class="slide-no">20</div>
+<div class="slide-no">19</div>
 
 
 </article>
-<article class="slide level-2" id="id3">
+<article class="slide level-2" id="id2">
 
 <h2>Python (16)</h2>
 
@@ -635,7 +613,7 @@ convertie en False dans une expression logique.</p>
 
 
 
-<div class="slide-no">21</div>
+<div class="slide-no">20</div>
 
 
 </article>
@@ -663,7 +641,7 @@ convertie en False dans une expression logique.</p>
 
 
 
-<div class="slide-no">22</div>
+<div class="slide-no">21</div>
 
 
 </article>
@@ -690,7 +668,7 @@ ce que cette même condition soit fausse :</p>
 
 
 
-<div class="slide-no">23</div>
+<div class="slide-no">22</div>
 
 
 </article>
@@ -716,7 +694,7 @@ ce que cette même condition soit fausse :</p>
 
 
 
-<div class="slide-no">24</div>
+<div class="slide-no">23</div>
 
 
 </article>
@@ -743,7 +721,7 @@ ce que cette même condition soit fausse :</p>
 
 
 
-<div class="slide-no">25</div>
+<div class="slide-no">24</div>
 
 
 </article>
@@ -768,42 +746,13 @@ ce que cette même condition soit fausse :</p>
 
 
 
-<div class="slide-no">26</div>
+<div class="slide-no">25</div>
 
 
 </article>
 <article class="slide level-2" id="python-22">
 
 <h2>Python (22)</h2>
-
-<p>TODO : a mettre dans un example</p>
-<p>Un module = ensemble de définitions et d'instructions Python réutilisables par ailleurs.</p>
-<p>Exemple : insérer le code suivant dans un module nommé fibo.py</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>    <span class="c"># Ecrire la suite de Fibonacci de 1 a n</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-        <span class="k">print</span> <span class="n">b</span><span class="p">,</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
-
-<span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c"># Retourne la suite de Fibonacci de 1 a n</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
-    <span class="k">return</span> <span class="n">result</span>
-</pre></div>
-</div>
-
-
-
-<div class="slide-no">27</div>
-
-
-</article>
-<article class="slide level-2" id="python-23">
-
-<h2>Python (23)</h2>
 
 <p><strong>Module - fonctions</strong></p>
 <p>Si des fonctions sont définies dans un module :</p>
@@ -825,20 +774,20 @@ ce que cette même condition soit fausse :</p>
 
 
 
-<div class="slide-no">28</div>
+<div class="slide-no">26</div>
 
 
 </article>
-<article class="slide level-2" id="python-24">
+<article class="slide level-2" id="python-23">
 
-<h2>Python (24)</h2>
+<h2>Python (23)</h2>
 
 <p><strong>Package</strong></p>
 <p>Regroupement de modules</p>
 <p>Dans un répertoire nommé suivant le nom du package :</p>
 <ul class="simple">
 <li>des modules</li>
-<li>un fichier <em>_init_.py</em></li>
+<li>un fichier <em>__init__.py</em></li>
 </ul>
 <p>Pour l'utiliser :</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mypackage.mymodule</span> <span class="kn">import</span> <span class="n">myfunction</span>
@@ -848,13 +797,13 @@ ce que cette même condition soit fausse :</p>
 
 
 
-<div class="slide-no">29</div>
+<div class="slide-no">27</div>
 
 
 </article>
-<article class="slide level-2" id="python-25">
+<article class="slide level-2" id="python-24">
 
-<h2>Python (25)</h2>
+<h2>Python (24)</h2>
 
 <p><strong>main</strong></p>
 <p>Script exécutable :</p>
@@ -867,13 +816,13 @@ ce que cette même condition soit fausse :</p>
 
 
 
-<div class="slide-no">30</div>
+<div class="slide-no">28</div>
 
 
 </article>
-<article class="slide level-2" id="python-26">
+<article class="slide level-2" id="python-25">
 
-<h2>Python (26)</h2>
+<h2>Python (25)</h2>
 
 <p><strong>Entrées/Sorties - open</strong></p>
 <div class="line-block">
@@ -893,13 +842,13 @@ en deuxième argument le mode qui peut être :</p>
 
 
 
-<div class="slide-no">31</div>
+<div class="slide-no">29</div>
 
 
 </article>
-<article class="slide level-2" id="python-27">
+<article class="slide level-2" id="python-26">
 
-<h2>Python (27)</h2>
+<h2>Python (26)</h2>
 
 <p><strong>Entrées/Sorties - readline</strong></p>
 <div class="line-block">
@@ -919,13 +868,13 @@ en deuxième argument le mode qui peut être :</p>
 
 
 
-<div class="slide-no">32</div>
+<div class="slide-no">30</div>
 
 
 </article>
-<article class="slide level-2" id="python-28">
+<article class="slide level-2" id="python-27">
 
-<h2>Python (28)</h2>
+<h2>Python (27)</h2>
 
 <p><strong>Entrées/Sorties - write</strong></p>
 <div class="line-block">
@@ -945,13 +894,13 @@ le fichier est ouvert.</p>
 
 
 
-<div class="slide-no">33</div>
+<div class="slide-no">31</div>
 
 
 </article>
-<article class="slide level-2" id="python-29">
+<article class="slide level-2" id="python-28">
 
-<h2>Python (29)</h2>
+<h2>Python (28)</h2>
 
 <p><strong>Les bonnes pratiques</strong></p>
 <p>PEP8 : <a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">http://www.python.org/dev/peps/pep-0008/</a></p>
@@ -969,13 +918,13 @@ le fichier est ouvert.</p>
 
 
 
-<div class="slide-no">34</div>
+<div class="slide-no">32</div>
 
 
 </article>
-<article class="slide level-2" id="python-30">
+<article class="slide level-2" id="python-29">
 
-<h2>Python (30)</h2>
+<h2>Python (29)</h2>
 
 <div class="line-block">
 <div class="line"><br /></div>
@@ -993,7 +942,26 @@ le fichier est ouvert.</p>
 
 
 
-<div class="slide-no">35</div>
+<div class="slide-no">33</div>
+
+
+</article>
+<article class="slide level-2" id="python-30">
+
+<h2>Python (30)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>EXERCICE 1</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 200pt;" /></a>
+
+
+
+<div class="slide-no">34</div>
 
 
 </article>
@@ -1005,7 +973,7 @@ le fichier est ouvert.</p>
 
 
 
-<div class="slide-no">36</div>
+<div class="slide-no">35</div>
 
 
 </article>
@@ -1017,7 +985,7 @@ le fichier est ouvert.</p>
 
 
 
-<div class="slide-no">37</div>
+<div class="slide-no">36</div>
 
 
 </article>
