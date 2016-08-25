@@ -77,6 +77,20 @@ Python (4)
 Python (5)
 ==========
 
+|
+
+**DÉCOUVERTE DE L'ENVIRONNEMENT**
+
+|
+
+.. image:: imgs/exo.png
+  :width: 200pt
+  :align: center
+
+
+Python (6)
+==========
+
 **Syntaxe générale - l'indentation**
 
 L'indentation délimite les blocs de code
@@ -99,7 +113,7 @@ Ne pas mixer espaces et tabulations (convention : **4 espaces**)
 L’interpréteur Python s’appuie sur l’indentation pour déterminer la structure du code
 
 
-Python (6)
+Python (7)
 ==========
 
 **Syntaxe générale - les commentaires**
@@ -126,7 +140,7 @@ Ou **"""** :
 Les **"""** sont le plus souvent utilisé pour les *docstring*.
 
 
-Python (7)
+Python (8)
 ==========
 
 **Syntaxe générale - les variables**
@@ -149,7 +163,7 @@ besoin d'être typé (typage dynamique).
     'un'
 
 
-Python (8)
+Python (9)
 ==========
 
 |
@@ -168,8 +182,8 @@ Python (8)
    >>> var = 2+7
 
 
-Python (9)
-==========
+Python (10)
+===========
 
 **Tout est objet**
 
@@ -197,8 +211,8 @@ Les fonctionnalités applicables à chaque objet y sont directement attachées.
     'istitle']
 
 
-Python (9)
-==========
+Python (11)
+===========
 
 |
 **Les types simples**
@@ -225,7 +239,7 @@ Python (9)
 
 
 
-Python (10)
+Python (12)
 ===========
 
 **Chaînes de caractères**
@@ -251,7 +265,7 @@ Formater :
     '{}{}'.format('os', 'landia')
 
 
-Python (11)
+Python (13)
 ===========
 
 **list et tuple**
@@ -280,7 +294,7 @@ Python (11)
     l += [2, 3, 4]  # concaténer des listes
 
 
-Python (12)
+Python (14)
 ===========
 
 **Compréhension de liste**
@@ -304,7 +318,7 @@ Permet de construire des listes de façon concise ET optimisée
     l = [num ** 2 for num in range(10) if num % 2 == 0]
 
 
-Python (13)
+Python (15)
 ===========
 
 **set et frozenset**
@@ -329,7 +343,7 @@ Python (13)
     s1.add('t')  # ajout d'élément
 
 
-Python (14)
+Python (16)
 ===========
 
 **dict**
@@ -356,7 +370,7 @@ Conteneurs qui associent une valeur à une clé
         print 'Found it!'
 
 
-Python (15)
+Python (17)
 ===========
 
 **Logique**
@@ -381,7 +395,7 @@ convertie en False dans une expression logique.
   bool(a)
 
 
-Python (16)
+Python (18)
 ===========
 
 |
@@ -400,7 +414,7 @@ Python (16)
         print 'Hum...'
 
 
-Python (16)
+Python (19)
 ===========
 
 
@@ -425,7 +439,7 @@ Parcourt avec un index :
         print a[i], len(a[i])
 
 
-Python (17)
+Python (20)
 ===========
 
 
@@ -454,7 +468,7 @@ Avec les *dict* :
      print k, v
 
 
-Python (18)
+Python (21)
 ===========
 
 |
@@ -473,7 +487,7 @@ ce que cette même condition soit fausse :
        x = raw_input('Entrez un entier : ')
 
 
-Python (19)
+Python (22)
 ===========
 
 **Fonction - définition**
@@ -493,7 +507,7 @@ Signature d'une fonction :
 * type de retour
 
 
-Python (20)
+Python (23)
 ===========
 
 |
@@ -515,7 +529,7 @@ Les arguments peuvent être nommés et optionnels :
             sonate.play()
 
 
-Python (21)
+Python (24)
 ===========
 
 **Module - import**
@@ -540,7 +554,7 @@ Dans l'interpréteur :
   'Hello'
 
 
-Python (22)
+Python (25)
 ===========
 
 **Module - fonctions**
@@ -568,7 +582,7 @@ On peut réassigner un nom local à une des fonctions du module :
     u(0, 5)
 
 
-Python (23)
+Python (26)
 ===========
 
 **Package**
@@ -588,7 +602,7 @@ Pour l'utiliser :
   myfonction(.......)
 
 
-Python (24)
+Python (27)
 ===========
 
 **main**
@@ -603,7 +617,7 @@ Script exécutable :
       print(len(sys.argv))
 
 
-Python (25)
+Python (28)
 ===========
 
 **Entrées/Sorties - open**
@@ -622,7 +636,7 @@ en deuxième argument le mode qui peut être :
    f.close()
 
 
-Python (26)
+Python (29)
 ===========
 
 **Entrées/Sorties - readline**
@@ -640,7 +654,7 @@ Lire un fichier ligne par ligne:
     f.close()
 
 
-Python (27)
+Python (30)
 ===========
 
 **Entrées/Sorties - write**
@@ -659,7 +673,7 @@ Note : les opérations autorisées dans le fichier dépendent du mode dans leque
 le fichier est ouvert.
 
 
-Python (28)
+Python (31)
 ===========
 
 **Les bonnes pratiques**
@@ -677,7 +691,7 @@ PEP8 : `<http://www.python.org/dev/peps/pep-0008/>`_
 * MAJUSCULE pour les constantes
 
 
-Python (29)
+Python (32)
 ===========
 
 |
@@ -695,7 +709,7 @@ Dans une console :
 
     import this
 
-Python (30)
+Python (33)
 ===========
 
 |
@@ -707,4 +721,3 @@ Python (30)
 .. image:: imgs/exo.png
   :width: 200pt
   :align: center
-
