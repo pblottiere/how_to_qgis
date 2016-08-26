@@ -676,6 +676,102 @@ le fichier est ouvert.
 Python (31)
 ===========
 
+**yield**
+
+Générateur : le code ne s'exécute que lorsque l'on itère sur le générateur!
+
+.. code-block:: bash
+
+    >>> def mygen():
+    >>>     for i in range(0, 4):
+    >>>         yield i
+    >>>
+    >>> g = mygen()
+    >>> type(g)
+    <type 'generator'>
+    >>> g.next()
+    0
+    >>> g.next()
+    1
+    >>> for i in g:
+    >>>    print i
+    2
+    3
+    >>> g.next()
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    StopIteration
+    >>>
+
+
+
+Python (32)
+===========
+
+**Objet - héritage**
+
+.. code-block:: python
+
+  class Pet(object):
+
+      def __init__(self, name):
+          self.name = name
+
+      def whoami(self):
+        return "I'm a {}".format(self.name)
+
+  class Dog(Pet):
+
+      def __init__(self, nickname):
+          Pet.__ini__(self, "dog")
+          self.nickname = nickname
+
+  d = Dog("Pluto")
+
+
+Python (33)
+===========
+
+**Objet - public/privé**
+
+Convention de nommage avec le prefix *_*
+
+.. code-block:: python
+
+  class MyAPI(object):
+
+      def public_method(self):
+          self._private_member = ""
+          self.public_member = 0
+
+      def _private_method(self):
+          pass
+
+
+Python (34)
+===========
+
+**Objet - property**
+
+.. code-block:: python
+
+  class Fake(object):
+
+      def __init__(self, data):
+          self._data = data
+
+      @property
+      def data(self):
+          return self._data
+
+      @data.setter
+      def data(self, d):
+          self._data = d
+
+
+Python (35)
+===========
+
 **Les bonnes pratiques**
 
 PEP8 : `<http://www.python.org/dev/peps/pep-0008/>`_
@@ -691,7 +787,7 @@ PEP8 : `<http://www.python.org/dev/peps/pep-0008/>`_
 * MAJUSCULE pour les constantes
 
 
-Python (32)
+Python (36)
 ===========
 
 |
@@ -709,7 +805,7 @@ Dans une console :
 
     import this
 
-Python (33)
+Python (37)
 ===========
 
 |

@@ -873,6 +873,119 @@ le fichier est ouvert.</p>
 
 <h1>Python (31)</h1>
 
+<p><strong>yield</strong></p>
+<p>Générateur : le code ne s'exécute que lorsque l'on itère sur le générateur!</p>
+<div class="highlight-bash"><div class="highlight"><pre>&gt;&gt;&gt; def mygen<span class="o">()</span>:
+&gt;&gt;&gt;     <span class="k">for</span> i in range<span class="o">(</span>0, 4<span class="o">)</span>:
+&gt;&gt;&gt;         yield i
+&gt;&gt;&gt;
+&gt;&gt;&gt; <span class="nv">g</span> <span class="o">=</span> mygen<span class="o">()</span>
+&gt;&gt;&gt; <span class="nb">type</span><span class="o">(</span>g<span class="o">)</span>
+&lt;<span class="nb">type</span> <span class="s1">&#39;generator&#39;</span>&gt;
+&gt;&gt;&gt; g.next<span class="o">()</span>
+0
+&gt;&gt;&gt; g.next<span class="o">()</span>
+1
+&gt;&gt;&gt; <span class="k">for</span> i in g:
+&gt;&gt;&gt;    print i
+2
+3
+&gt;&gt;&gt; g.next<span class="o">()</span>
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+File <span class="s2">&quot;&lt;stdin&gt;&quot;</span>, line 1, in &lt;module&gt;
+StopIteration
+&gt;&gt;&gt;
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">31</div>
+
+
+</article>
+<article class="slide level-1" id="python-32">
+
+<h1>Python (32)</h1>
+
+<p><strong>Objet - héritage</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Pet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">whoami</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="s">&quot;I&#39;m a {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Pet</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nickname</span><span class="p">):</span>
+        <span class="n">Pet</span><span class="o">.</span><span class="n">__ini__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&quot;dog&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nickname</span> <span class="o">=</span> <span class="n">nickname</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s">&quot;Pluto&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">32</div>
+
+
+</article>
+<article class="slide level-1" id="python-33">
+
+<h1>Python (33)</h1>
+
+<p><strong>Objet - public/privé</strong></p>
+<p>Convention de nommage avec le prefix <em>_</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyAPI</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">public_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_private_member</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">public_member</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">_private_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">33</div>
+
+
+</article>
+<article class="slide level-1" id="python-34">
+
+<h1>Python (34)</h1>
+
+<p><strong>Objet - property</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Fake</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span>
+
+    <span class="nd">@data.setter</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">d</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">34</div>
+
+
+</article>
+<article class="slide level-1" id="python-35">
+
+<h1>Python (35)</h1>
+
 <p><strong>Les bonnes pratiques</strong></p>
 <p>PEP8 : <a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">http://www.python.org/dev/peps/pep-0008/</a></p>
 <ul class="simple">
@@ -889,13 +1002,13 @@ le fichier est ouvert.</p>
 
 
 
-<div class="slide-no">31</div>
+<div class="slide-no">35</div>
 
 
 </article>
-<article class="slide level-1" id="python-32">
+<article class="slide level-1" id="python-36">
 
-<h1>Python (32)</h1>
+<h1>Python (36)</h1>
 
 <div class="line-block">
 <div class="line"><br /></div>
@@ -913,13 +1026,13 @@ le fichier est ouvert.</p>
 
 
 
-<div class="slide-no">32</div>
+<div class="slide-no">36</div>
 
 
 </article>
-<article class="slide level-1" id="python-33">
+<article class="slide level-1" id="python-37">
 
-<h1>Python (33)</h1>
+<h1>Python (37)</h1>
 
 <div class="line-block">
 <div class="line"><br /></div>
@@ -932,7 +1045,7 @@ le fichier est ouvert.</p>
 
 
 
-<div class="slide-no">33</div>
+<div class="slide-no">37</div>
 
 
 </article>
