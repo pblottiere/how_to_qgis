@@ -105,6 +105,26 @@ Le code généré :
 PyQT (6)
 ========
 
+**pyrcc**
+
+Utilitaire de transformation de code *.qrc* en code Python
+
+.. code-block:: bash
+
+  # pyrcc4 resources.qrc -o resources.py
+
+.. code-block:: python
+
+  <RCC>
+    <qresource prefix="/plugins/MyPlugin" >
+      <file>icon.png</file>
+    </qresource>
+  </RCC>
+
+
+PyQT (7)
+========
+
 |
 
 **EXERCICE 3**
