@@ -19,6 +19,47 @@ Environnement QGIS : OSGeo4W
 'C:\\OSGeo4W64\\bin\\python.exe'
 >> import qgis
 ```
+Si vous avez ce type d'erreur au moment de l'import qgis:
+
+```` python
+>>> import qgis
+Import error: DLL load failed: Le module spécifié est introuvable.
+````
+
+cela signifie que les variables d'environnement ne sont pas correctes. Par défaut, le fichier *C:\OSGeo4W64\bin\o4w_env* ressemble à ceci:
+
+```` bash
+REM Make parent of this script location our current directory,
+REM converting UNC path to drive letter if needed
+pushd %~dp0
+cd ..
+
+REM set OSGEO4W_ROOT to short path version
+for %%i in ("%CD%") do set OSGEO4W_ROOT=%%~fsi
+
+REM start with clean path
+set path=%OSGEO4W_ROOT%\bin;%WINDIR%\system32;%WINDIR%;%WINDIR%\system32\WBem
+
+for %%f in ("%OSGEO4W_ROOT%\etc\ini\*.bat") do call "%%f"
+
+popd
+````
+
+Or la variable d'environnement PATH doit pointer vers le répertoire contenant les DLL *qgis_core.dll* et *qgis_gui.dll*. Celles ci se trouvent dans le répertoire *%OSGEO4W_ROOT%\apps\qgis\bin*. Suite à la modification du fichier *o4w_env* comme ci-dessous, l'import se déroule sans encombre:
+
+```` bash
+REM start with clean path
+set path=%OSGEO4W_ROOT%\bin;%OSGEO4W_ROOT%\apps\qgis\bin;%WINDIR%\system32;%WINDIR%;%WINDIR%\system32\WBem
+````
+
+**Étape 5** - Lancer QGIS puis l'interpréteur Python embarqué. Ensuite, affichez la variable d'environnement PYTHONPATH:
+
+```` python
+>>> import os
+>>> print(os.environ['PYTHONPATH'])
+C:\OSGeo4W64\apps\qgis\python
+````
+
 
 Éditeur : Eclipse
 -----------------
