@@ -14,6 +14,16 @@ Partie 1
 
 **Étape 2** - Écrire la docstring associée
 
+**Étape 3** - Utilisez l'interpréteur Python de QGIS pour exécuter le script
+              via:
+
+````
+>>> import sys
+>>> sys.path.append("C:/Users/Paul/git/how_to_qgis/python/exercices/ex2")
+>>> import proj
+.....
+````
+
 
 Partie 2
 --------
