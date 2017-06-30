@@ -1,5 +1,20 @@
 # -*- coding:utf-8 -*-
 
+def docstring_example(a, b):
+
+    """
+        Simple docstring example:
+
+        :param a: Description of a
+        :param b: Description of b
+        :type a: int
+        :type b: int
+        :return: The result is just another integer
+        :rtype: int
+    """
+
+    return a + b
+
 
 def reproject_pyproj(x, y, source_srid, dest_srid):
 
