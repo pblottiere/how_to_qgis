@@ -37,6 +37,8 @@
     <script type="text/javascript" src="_static/init.js"></script>
     
     
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
   </head>
   <body>
@@ -73,8 +75,8 @@
 <h1>PyQT (2)</h1>
 
 <p><strong>QApplication</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/python</span>
-<span class="c"># -*- coding: utf-8 -*-</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">QtGui</span>
 
@@ -83,15 +85,15 @@
 
     <span class="n">w</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QWidget</span><span class="p">()</span>
     <span class="n">w</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
-    <span class="n">w</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s">&#39;MyApp&#39;</span><span class="p">)</span>
+    <span class="n">w</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;MyApp&#39;</span><span class="p">)</span>
     <span class="n">w</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-    <span class="n">text</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s">&#39;Hello World&#39;</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
     <span class="n">text</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
     <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">())</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -110,7 +112,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>slot/signal</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">PyQt4.QtCore</span> <span class="kn">import</span> <span class="n">QObject</span><span class="p">,</span> <span class="n">pyqtSignal</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt4.QtCore</span> <span class="kn">import</span> <span class="n">QObject</span><span class="p">,</span> <span class="n">pyqtSignal</span>
 
 <span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">QObject</span><span class="p">):</span>
 
@@ -121,7 +123,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">mysignal</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">myslot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s">&quot;signal received&quot;</span>
+        <span class="k">print</span> <span class="s2">&quot;signal received&quot;</span>
 </pre></div>
 </div>
 
@@ -151,19 +153,19 @@
 
 <p><strong>pyuic</strong></p>
 <p>Utilitaire de transformation de code <em>.ui</em> en code Python</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># pyuic4 file.ui -o file_ui.py</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># pyuic4 file.ui -o file_ui.py</span>
 </pre></div>
 </div>
 <p>Le code généré :</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Ui_MainWindow</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ui_MainWindow</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setupUi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">MainWindow</span><span class="p">):</span>
-        <span class="n">MainWindow</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span><span class="s">&quot;MainWindow&quot;</span><span class="p">))</span>
+        <span class="n">MainWindow</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">))</span>
         <span class="n">MainWindow</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QWidget</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span><span class="s">&quot;centralwidget&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span><span class="s2">&quot;centralwidget&quot;</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayoutWidget</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayoutWidget</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">QRect</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">781</span><span class="p">,</span> <span class="mi">531</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayoutWidget</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span><span class="s">&quot;verticalLayoutWidget&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayoutWidget</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span><span class="s2">&quot;verticalLayoutWidget&quot;</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QVBoxLayout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">verticalLayoutWidget</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -180,11 +182,11 @@
 
 <p><strong>pyrcc</strong></p>
 <p>Utilitaire de transformation de code <em>.qrc</em> en code Python</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># pyrcc4 resources.qrc -o resources.py</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># pyrcc4 resources.qrc -o resources.py</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="o">&lt;</span><span class="n">RCC</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">qresource</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;/plugins/MyPlugin&quot;</span> <span class="o">&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">RCC</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">qresource</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;/plugins/MyPlugin&quot;</span> <span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nb">file</span><span class="o">&gt;</span><span class="n">icon</span><span class="o">.</span><span class="n">png</span><span class="o">&lt;/</span><span class="nb">file</span><span class="o">&gt;</span>
   <span class="o">&lt;/</span><span class="n">qresource</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="n">RCC</span><span class="o">&gt;</span>

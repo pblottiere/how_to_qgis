@@ -5,7 +5,7 @@ Développement QGIS - Plugin Python
 |
 **Paul Blottiere**
 
-**Septembre 2016**
+**Juillet 2017**
 
 Plan de la formation
 ====================
