@@ -116,8 +116,8 @@ Rappels de C++ (6)
   class HelloV2
   {
     public:
-      Hello( const std::string &word );
-      virtual ~Hello();
+      HelloV2( const std::string &word );
+      virtual ~HelloV2();
 
       virtual void print() const = 0;
 
