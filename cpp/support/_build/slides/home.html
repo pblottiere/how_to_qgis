@@ -37,6 +37,8 @@
     <script type="text/javascript" src="_static/init.js"></script>
     
     
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
   </head>
   <body>
@@ -145,7 +147,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>main</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &quot;hello.h&quot;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;hello.h&quot;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
@@ -161,7 +163,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./main
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ./main
 Hello 1
 Hello 2
 </pre></div>
@@ -181,7 +183,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Header</strong> : déclaration</p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#ifndef HELLO_H</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#ifndef HELLO_H</span>
 <span class="cp">#define HELLO_H</span>
 
 <span class="k">class</span> <span class="nc">Hello</span>
@@ -190,7 +192,7 @@ Hello 2
     <span class="n">Hello</span><span class="p">(</span> <span class="kt">int</span> <span class="n">number</span> <span class="p">);</span>
     <span class="o">~</span><span class="n">Hello</span><span class="p">();</span>
 
-    <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 
   <span class="k">private</span><span class="o">:</span>
     <span class="kt">int</span> <span class="n">mNumber</span><span class="p">;</span>
@@ -214,8 +216,8 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Source</strong> : implémentation</p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;iostream&gt;</span>
-<span class="cp">#include &quot;hello.h&quot;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;hello.h&quot;</span><span class="cp"></span>
 
 <span class="n">Hello</span><span class="o">::</span><span class="n">Hello</span><span class="p">(</span> <span class="kt">int</span> <span class="n">number</span> <span class="p">)</span>
   <span class="o">:</span> <span class="n">mNumber</span><span class="p">(</span> <span class="n">number</span> <span class="p">)</span>
@@ -247,13 +249,13 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Méthode virtuelle pure ⟶ Classe abstraite</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">HelloV2</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HelloV2</span>
 <span class="p">{</span>
   <span class="k">public</span><span class="o">:</span>
     <span class="n">Hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span> <span class="p">);</span>
     <span class="k">virtual</span> <span class="o">~</span><span class="n">Hello</span><span class="p">();</span>
 
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
   <span class="k">protected</span><span class="o">:</span>
     <span class="kt">void</span> <span class="n">hello</span><span class="p">();</span>
@@ -278,7 +280,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Méthode virtuelle pure ⟶ Classe abstraite</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">HelloV2</span><span class="o">::</span><span class="n">HelloV2</span><span class="p">(</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span> <span class="p">)</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="n">HelloV2</span><span class="o">::</span><span class="n">HelloV2</span><span class="p">(</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span> <span class="p">)</span>
   <span class="o">:</span> <span class="n">mWord</span><span class="p">(</span> <span class="n">word</span> <span class="p">)</span>
 <span class="p">{</span>
 <span class="p">}</span>
@@ -308,13 +310,13 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Héritage</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">HelloWorldV2</span> <span class="o">:</span> <span class="k">public</span> <span class="n">HelloV2</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HelloWorldV2</span> <span class="o">:</span> <span class="k">public</span> <span class="n">HelloV2</span>
 <span class="p">{</span>
   <span class="k">public</span><span class="o">:</span>
     <span class="n">HelloWorldV2</span><span class="p">();</span>
     <span class="o">~</span><span class="n">HelloWorldV2</span><span class="p">();</span>
 
-    <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 </div>
@@ -333,7 +335,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Héritage</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">HelloWorldV2</span><span class="o">::</span><span class="n">HelloWorldV2</span><span class="p">()</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="n">HelloWorldV2</span><span class="o">::</span><span class="n">HelloWorldV2</span><span class="p">()</span>
   <span class="o">:</span> <span class="n">HelloV2</span><span class="p">(</span> <span class="s">&quot;world!&quot;</span> <span class="p">)</span>
 <span class="p">{</span>
 <span class="p">}</span>
@@ -364,14 +366,14 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Surcharge / méthode statique</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Printer</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Printer</span>
 <span class="p">{</span>
   <span class="k">static</span> <span class="kt">void</span> <span class="n">hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">HelloWorldV2</span> <span class="o">&amp;</span><span class="n">h</span> <span class="p">)</span> <span class="p">{</span> <span class="n">h</span><span class="p">.</span><span class="n">print</span><span class="p">();</span> <span class="p">}</span>
   <span class="k">static</span> <span class="kt">void</span> <span class="n">hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">Hello</span> <span class="o">&amp;</span><span class="n">h</span> <span class="p">)</span> <span class="p">{</span> <span class="n">h</span><span class="p">.</span><span class="n">print</span><span class="p">()</span> <span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span> <span class="p">)</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span> <span class="p">)</span>
 <span class="p">{</span>
   <span class="n">Hello</span> <span class="n">h1</span><span class="p">(</span> <span class="mi">10</span> <span class="p">);</span>
   <span class="n">Printer</span><span class="o">::</span><span class="n">hello</span><span class="p">(</span> <span class="n">h1</span> <span class="p">);</span>
@@ -396,11 +398,11 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Sructures de contrôle : if</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">...;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">...;</span>
 
 <span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="o">||</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">)</span>
   <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">42</span> <span class="p">)</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">42</span> <span class="p">)</span>
   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Awesome!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="k">else</span>
   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Nothing todo&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -421,7 +423,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Sructures de contrôle : switch/case</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">...;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">...;</span>
 
 <span class="k">switch</span> <span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
 <span class="p">{</span>
@@ -453,7 +455,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Sructures de contrôle : for</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp"># entier</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp"># entier</span>
 <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
@@ -485,7 +487,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Sructures de contrôle : while</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="k">while</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">)</span>
@@ -511,13 +513,13 @@ Hello 2
 </div>
 <p><strong>Compilateur</strong></p>
 <p>Sous GNU/Linux: g++</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>g++ main.cpp
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ g++ main.cpp
 </pre></div>
 </div>
 <p>Construction d'une librairie partagée et linkage :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>gcc -Wall -fPIC -c mylib.c
-<span class="nv">$ </span>gcc -shared -Wl,-soname,libmylib.so.1 -o libmylib.so.1.0 mylib.o
-<span class="nv">$ </span>g++ main.cpp -L lmylib.so
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ gcc -Wall -fPIC -c mylib.c
+$ gcc -shared -Wl,-soname,libmylib.so.1 -o libmylib.so.1.0 mylib.o
+$ g++ main.cpp -L lmylib.so
 </pre></div>
 </div>
 
@@ -579,22 +581,22 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>git : workflow QGIS simple</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/username/QGIS <span class="c"># clone d&#39;un fork</span>
-<span class="nv">$ </span>git branch new_feature
-<span class="nv">$ </span>git checkout new_feature
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git clone https://github.com/username/QGIS <span class="c1"># clone d&#39;un fork</span>
+$ git branch new_feature
+$ git checkout new_feature
 ......
-<span class="nv">$ </span>git add ...
-<span class="nv">$ </span>git commit -m <span class="s2">&quot;[FEATURE] my new feature description&quot;</span>
-<span class="nv">$ </span>git push origin new_feature
+$ git add ...
+$ git commit -m <span class="s2">&quot;[FEATURE] my new feature description&quot;</span>
+$ git push origin new_feature
 .....
-<span class="nv">$ </span>git checkout master
-<span class="nv">$ </span>git remote add upstream https://github.com/qgis/QGIS
-<span class="nv">$ </span>git fetch upstream
-<span class="nv">$ </span>git merge upstream/master
+$ git checkout master
+$ git remote add upstream https://github.com/qgis/QGIS
+$ git fetch upstream
+$ git merge upstream/master
 ....
-<span class="nv">$ </span>git checkout new_feature
-<span class="nv">$ </span>git rebase master
-<span class="nv">$ </span>git push -f origin new_feature
+$ git checkout new_feature
+$ git rebase master
+$ git push -f origin new_feature
 </pre></div>
 </div>
 
@@ -614,7 +616,7 @@ Hello 2
 <p><a class="reference external" href="https://www.qgis.org/en/site/getinvolved/development/qgisdevelopersguide/codingstandards.html">https://www.qgis.org/en/site/getinvolved/development/qgisdevelopersguide/codingstandards.html</a></p>
 <p><strong>git : hook</strong></p>
 <p>Pour vérifier automatiquement les coding rules QGIS à chaque commit :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ln -s scripts/prepare-commit.sh .git/hooks/pre-commit
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ln -s scripts/prepare-commit.sh .git/hooks/pre-commit
 </pre></div>
 </div>
 
@@ -632,12 +634,12 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>git : hook</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git add file_badly_indented.cpp
-<span class="nv">$ </span>git commit
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git add file_badly_indented.cpp
+$ git commit
 flip not found
 formatted  file_badly_indented.cpp
 Files changed <span class="o">(</span>see astyle.c68eaeb92923638518e802baf410d55eed766f37.diff<span class="o">)</span>
-<span class="nv">$ </span>git status
+$ git status
 On branch master
 Your branch is up-to-date with <span class="s1">&#39;origin/master&#39;</span>.
 Changes to be committed:
@@ -683,14 +685,14 @@ Changes not staged <span class="k">for</span> commit:
 <div class="line"><br /></div>
 </div>
 <p><strong>CMake : compilation</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd </span>build
-<span class="nv">$ </span>cmake .. -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/usr/local
-<span class="nv">$ </span>make -jN
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+$ cmake .. -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/usr/local
+$ make -jN
 </pre></div>
 </div>
 <p><strong>CMake : installation/désinstallation</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo make install
-<span class="nv">$ </span>sudo xargs rm &lt; install_manifest.txt
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo make install
+$ sudo xargs rm &lt; install_manifest.txt
 </pre></div>
 </div>
 
@@ -724,13 +726,13 @@ Changes not staged <span class="k">for</span> commit:
 <div class="line"><br /></div>
 </div>
 <p><strong>CMake : compilation QGIS</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> &lt;QGIS-DIR&gt;
-<span class="nv">$ </span>mkdir -p ~/myapps
-<span class="nv">$ </span>mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd </span>build
-<span class="nv">$ </span>ccmake ..
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> &lt;QGIS-DIR&gt;
+$ mkdir -p ~/myapps
+$ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+$ ccmake ..
 .....
-<span class="nv">$ </span>make -jN
-<span class="nv">$ </span>make install
+$ make -jN
+$ make install
 </pre></div>
 </div>
 <ul class="simple">
@@ -752,19 +754,19 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <h2>Environnement de développement (11)</h2>
 
 <p><strong>CMake : variable d'environnement</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">SET</span><span class="p">(</span><span class="s">LIBHELLO_DIR</span> <span class="o">${</span><span class="nv">CMAKE_SOURCE_DIR</span><span class="o">}</span><span class="s">/src/lib</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">SET</span><span class="p">(</span><span class="s">LIBHELLO_DIR</span> <span class="o">${</span><span class="nv">CMAKE_SOURCE_DIR</span><span class="o">}</span><span class="s">/src/lib</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>CMake : ajouter un sous répertoire ayant un CMakeLists.txt</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">ADD_SUBDIRECTORY</span><span class="p">(</span><span class="s">src</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">ADD_SUBDIRECTORY</span><span class="p">(</span><span class="s">src</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>CMake : compiler une librairie partagée</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">ADD_LIBRARY</span><span class="p">(</span><span class="s">hello</span> <span class="s">SHARED</span> <span class="o">${</span><span class="nv">SOURCES</span><span class="o">}</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">ADD_LIBRARY</span><span class="p">(</span><span class="s">hello</span> <span class="s">SHARED</span> <span class="o">${</span><span class="nv">SOURCES</span><span class="o">}</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>CMake : compiler un exécutable</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">ADD_EXECUTABLE</span><span class="p">(</span><span class="s">main</span> <span class="o">${</span><span class="nv">MAIN_SOURCES</span><span class="o">}</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">ADD_EXECUTABLE</span><span class="p">(</span><span class="s">main</span> <span class="o">${</span><span class="nv">MAIN_SOURCES</span><span class="o">}</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -782,16 +784,16 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>CMake : link avec une librairie</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">LINK_DIRECTORIES</span><span class="p">(</span><span class="o">${</span><span class="nv">LIBHELLO_DIR</span><span class="o">}</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">LINK_DIRECTORIES</span><span class="p">(</span><span class="o">${</span><span class="nv">LIBHELLO_DIR</span><span class="o">}</span><span class="p">)</span>
 <span class="nb">TARGET_LINK_LIBRARIES</span><span class="p">(</span><span class="s">main</span> <span class="s">hello</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>CMake : ajouter un chemin d'include</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">INCLUDE_DIRECTORIES</span><span class="p">(</span><span class="o">${</span><span class="nv">LIBHELLO_DIR</span><span class="o">}</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">INCLUDE_DIRECTORIES</span><span class="p">(</span><span class="o">${</span><span class="nv">LIBHELLO_DIR</span><span class="o">}</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>CMake : installer une librairie</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">INSTALL</span><span class="p">(</span><span class="s">TARGETS</span> <span class="s">hello</span> <span class="s">DESTINATION</span> <span class="s">lib</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">INSTALL</span><span class="p">(</span><span class="s">TARGETS</span> <span class="s">hello</span> <span class="s">DESTINATION</span> <span class="s">lib</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -849,8 +851,8 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>main</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;QApplication&gt;</span>
-<span class="cp">#include &lt;QTextEdit&gt;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QApplication&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;QTextEdit&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span> <span class="p">)</span>
 <span class="p">{</span>
@@ -880,11 +882,11 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>slot/signal : utilisation</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">QObject</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span> <span class="n">button</span><span class="p">,</span> <span class="n">SIGNAL</span><span class="p">(</span> <span class="n">clicked</span><span class="p">()</span> <span class="p">),</span> <span class="n">app</span><span class="p">,</span> <span class="n">SLOT</span><span class="p">(</span> <span class="n">quit</span><span class="p">()</span> <span class="p">)</span> <span class="p">);</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="n">QObject</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span> <span class="n">button</span><span class="p">,</span> <span class="n">SIGNAL</span><span class="p">(</span> <span class="n">clicked</span><span class="p">()</span> <span class="p">),</span> <span class="n">app</span><span class="p">,</span> <span class="n">SLOT</span><span class="p">(</span> <span class="n">quit</span><span class="p">()</span> <span class="p">)</span> <span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>slot/signal : déclaration dans le header</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CustomButton</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QPushButton</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomButton</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QPushButton</span>
 <span class="p">{</span>
   <span class="n">Q_OBJECT</span>
 
@@ -915,7 +917,7 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>translate - TS file</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE TS&gt;</span>
 <span class="nt">&lt;TS</span> <span class="na">version=</span><span class="s">&quot;2.0&quot;</span> <span class="na">language=</span><span class="s">&quot;fr_FR&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;context&gt;</span>
@@ -956,7 +958,7 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>translate - QTranslator</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">QApplication</span> <span class="nf">app</span><span class="p">(</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span> <span class="p">);</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="n">QApplication</span> <span class="nf">app</span><span class="p">(</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span> <span class="p">);</span>
 
 <span class="n">QTranslator</span> <span class="n">translator</span><span class="p">;</span>
 <span class="n">translator</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">qm_file</span><span class="p">);</span>
@@ -977,18 +979,18 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <h2>QT (7)</h2>
 
 <p><strong>CMake - détection de QT</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">FIND_PACKAGE</span><span class="p">(</span><span class="s">Qt4</span> <span class="s">REQUIRED</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">FIND_PACKAGE</span><span class="p">(</span><span class="s">Qt4</span> <span class="s">REQUIRED</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>CMake - link</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">INCLUDE</span><span class="p">(</span><span class="o">${</span><span class="nv">QT_USE_FILE</span><span class="o">}</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">INCLUDE</span><span class="p">(</span><span class="o">${</span><span class="nv">QT_USE_FILE</span><span class="o">}</span><span class="p">)</span>
 <span class="nb">ADD_DEFINITIONS</span><span class="p">(</span><span class="o">${</span><span class="nv">QT_DEFINITIONS</span><span class="o">}</span><span class="p">)</span>
 
 <span class="nb">TARGET_LINK_LIBRARIES</span><span class="p">(</span><span class="s">myexe</span> <span class="o">${</span><span class="nv">QT_LIBRARIES</span><span class="o">}</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>CMake - moc</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">SET</span><span class="p">(</span><span class="s">MYLIB_HEADERS</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">SET</span><span class="p">(</span><span class="s">MYLIB_HEADERS</span>
   <span class="o">${</span><span class="nv">MYLIB_DIR</span><span class="o">}</span><span class="s">/file_qobject.h</span><span class="p">)</span>
 
 <span class="nb">QT4_WRAP_CPP</span><span class="p">(</span><span class="s">MYLIB_MOC</span> <span class="o">${</span><span class="nv">MYLIB_HEADERS</span><span class="o">}</span><span class="p">)</span>
@@ -1008,7 +1010,7 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <h2>QT (8)</h2>
 
 <p><strong>CMake - translation</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">MACRO</span><span class="p">(</span><span class="s">ADD_TRANSLATION_FILES</span> <span class="s">_sources</span> <span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">MACRO</span><span class="p">(</span><span class="s">ADD_TRANSLATION_FILES</span> <span class="s">_sources</span> <span class="p">)</span>
   <span class="nb">FOREACH</span> <span class="p">(</span><span class="s">_current_FILE</span> <span class="o">${</span><span class="nv">ARGN</span><span class="o">}</span><span class="p">)</span>
     <span class="nb">GET_FILENAME_COMPONENT</span><span class="p">(</span><span class="s">_in</span> <span class="o">${</span><span class="nv">_current_FILE</span><span class="o">}</span> <span class="s">ABSOLUTE</span><span class="p">)</span>
     <span class="nb">GET_FILENAME_COMPONENT</span><span class="p">(</span><span class="s">_basename</span> <span class="o">${</span><span class="nv">_current_FILE</span><span class="o">}</span> <span class="s">NAME_WE</span><span class="p">)</span>
@@ -1048,7 +1050,7 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>smart pointer - QScopedPointer</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">MyClass</span> <span class="o">*</span><span class="n">myClass</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">();</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="n">MyClass</span> <span class="o">*</span><span class="n">myClass</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">();</span>
 <span class="n">myClass</span><span class="o">-&gt;</span><span class="n">print</span><span class="p">();</span>
 <span class="k">delete</span> <span class="n">myClass</span><span class="p">;</span>
 
@@ -1233,8 +1235,8 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>Application sans GUI</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;QApplication&gt;</span>
-<span class="cp">#include &lt;qgsapplication.h&gt;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QApplication&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;qgsapplication.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
@@ -1264,9 +1266,9 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>Application avec GUI</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;QApplication&gt;</span>
-<span class="cp">#include &lt;qgsapplication.h&gt;</span>
-<span class="cp">#include &lt;qgsmapcanvas.h&gt;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QApplication&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;qgsapplication.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;qgsmapcanvas.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
@@ -1346,7 +1348,7 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>header</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cm">/***************************************************************************</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************</span>
 <span class="cm">&lt;filename&gt;</span>
 <span class="cm">begin                : &lt;month&gt; &lt;year&gt;</span>
 <span class="cm">copyright            : (C) &lt;year&gt; &lt;Prenom&gt; &lt;Nom&gt;, &lt;Entrprise&gt;</span>
@@ -1378,7 +1380,7 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>doxygen</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cm">/** Description de la méthode.</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cm">/** Description de la méthode.</span>
 <span class="cm"> * @param nom description du paramètre1</span>
 <span class="cm"> * @param nom description du paramètre2</span>
 <span class="cm"> * @return description de la valeur de retour</span>
@@ -1434,7 +1436,7 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>C++ : unit class test</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;QtTest/QtTest&gt;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QtTest/QtTest&gt;</span><span class="cp"></span>
 
 <span class="k">class</span> <span class="nc">TestQgsMyClass</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QObject</span>
 <span class="p">{</span>
@@ -1469,7 +1471,7 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>C++ : QGIS environment</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="kt">void</span> <span class="n">TestQgsMyClass</span><span class="o">::</span><span class="n">initTestCase</span><span class="p">()</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">TestQgsMyClass</span><span class="o">::</span><span class="n">initTestCase</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="n">QgsApplication</span><span class="o">::</span><span class="n">init</span><span class="p">();</span>
   <span class="n">QgsApplication</span><span class="o">::</span><span class="n">initQgis</span><span class="p">();</span> <span class="c1">// if needed</span>
@@ -1505,7 +1507,7 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 <div class="line"><br /></div>
 </div>
 <p><strong>Python : unittest</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">qgis.testing</span> <span class="kn">import</span> <span class="p">(</span><span class="n">start_app</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qgis.testing</span> <span class="kn">import</span> <span class="p">(</span><span class="n">start_app</span><span class="p">,</span>
                           <span class="n">unittest</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">utilities</span> <span class="kn">import</span> <span class="n">unitTestDataPath</span>
 
@@ -1522,7 +1524,7 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="o">....</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="o">....</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
   <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1542,7 +1544,7 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 </div>
 <p><strong>Python : interface</strong></p>
 <p>Mock object pour <strong>QgisInterface</strong> : <em>python/testing/mocked.py</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">qgis.testing.mocked</span> <span class="kn">import</span> <span class="n">get_iface</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qgis.testing.mocked</span> <span class="kn">import</span> <span class="n">get_iface</span>
 
 <span class="n">my_iface</span> <span class="o">=</span> <span class="n">get_iface</span><span class="p">()</span>
 </pre></div>
@@ -1569,10 +1571,10 @@ et DÉJÀ commités grâce au script <em>scripts/astyle.sh</em>.</p>
 </ul>
 </div></blockquote>
 <p>En plus :</p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">QgsMapRendererJob</span> <span class="o">:</span> <span class="n">QObject</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">QgsMapRendererJob</span> <span class="o">:</span> <span class="n">QObject</span>
 <span class="p">{</span>
   <span class="o">%</span><span class="n">TypeHeaderCode</span>
-  <span class="cp">#include &lt;qgsmaprendererjob.h&gt;</span>
+  <span class="cp">#include</span> <span class="cpf">&lt;qgsmaprendererjob.h&gt;</span><span class="cp"></span>
   <span class="o">%</span><span class="n">End</span>
 
   <span class="p">........</span>

@@ -37,6 +37,8 @@
     <script type="text/javascript" src="_static/init.js"></script>
     
     
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
   </head>
   <body>
@@ -197,8 +199,8 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>Application sans GUI</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;QApplication&gt;</span>
-<span class="cp">#include &lt;qgsapplication.h&gt;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QApplication&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;qgsapplication.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
@@ -228,9 +230,9 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>Application avec GUI</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;QApplication&gt;</span>
-<span class="cp">#include &lt;qgsapplication.h&gt;</span>
-<span class="cp">#include &lt;qgsmapcanvas.h&gt;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QApplication&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;qgsapplication.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;qgsmapcanvas.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
@@ -310,7 +312,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>header</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cm">/***************************************************************************</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************</span>
 <span class="cm">&lt;filename&gt;</span>
 <span class="cm">begin                : &lt;month&gt; &lt;year&gt;</span>
 <span class="cm">copyright            : (C) &lt;year&gt; &lt;Prenom&gt; &lt;Nom&gt;, &lt;Entrprise&gt;</span>
@@ -342,7 +344,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>doxygen</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cm">/** Description de la méthode.</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cm">/** Description de la méthode.</span>
 <span class="cm"> * @param nom description du paramètre1</span>
 <span class="cm"> * @param nom description du paramètre2</span>
 <span class="cm"> * @return description de la valeur de retour</span>
@@ -398,7 +400,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>C++ : unit class test</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;QtTest/QtTest&gt;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QtTest/QtTest&gt;</span><span class="cp"></span>
 
 <span class="k">class</span> <span class="nc">TestQgsMyClass</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QObject</span>
 <span class="p">{</span>
@@ -433,7 +435,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>C++ : QGIS environment</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="kt">void</span> <span class="n">TestQgsMyClass</span><span class="o">::</span><span class="n">initTestCase</span><span class="p">()</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">TestQgsMyClass</span><span class="o">::</span><span class="n">initTestCase</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="n">QgsApplication</span><span class="o">::</span><span class="n">init</span><span class="p">();</span>
   <span class="n">QgsApplication</span><span class="o">::</span><span class="n">initQgis</span><span class="p">();</span> <span class="c1">// if needed</span>
@@ -469,7 +471,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>Python : unittest</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">qgis.testing</span> <span class="kn">import</span> <span class="p">(</span><span class="n">start_app</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qgis.testing</span> <span class="kn">import</span> <span class="p">(</span><span class="n">start_app</span><span class="p">,</span>
                           <span class="n">unittest</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">utilities</span> <span class="kn">import</span> <span class="n">unitTestDataPath</span>
 
@@ -486,7 +488,7 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="o">....</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="o">....</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
   <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -506,7 +508,7 @@
 </div>
 <p><strong>Python : interface</strong></p>
 <p>Mock object pour <strong>QgisInterface</strong> : <em>python/testing/mocked.py</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">qgis.testing.mocked</span> <span class="kn">import</span> <span class="n">get_iface</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qgis.testing.mocked</span> <span class="kn">import</span> <span class="n">get_iface</span>
 
 <span class="n">my_iface</span> <span class="o">=</span> <span class="n">get_iface</span><span class="p">()</span>
 </pre></div>
@@ -533,10 +535,10 @@
 </ul>
 </div></blockquote>
 <p>En plus :</p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">QgsMapRendererJob</span> <span class="o">:</span> <span class="n">QObject</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">QgsMapRendererJob</span> <span class="o">:</span> <span class="n">QObject</span>
 <span class="p">{</span>
   <span class="o">%</span><span class="n">TypeHeaderCode</span>
-  <span class="cp">#include &lt;qgsmaprendererjob.h&gt;</span>
+  <span class="cp">#include</span> <span class="cpf">&lt;qgsmaprendererjob.h&gt;</span><span class="cp"></span>
   <span class="o">%</span><span class="n">End</span>
 
   <span class="p">........</span>

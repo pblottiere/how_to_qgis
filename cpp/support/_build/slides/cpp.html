@@ -37,6 +37,8 @@
     <script type="text/javascript" src="_static/init.js"></script>
     
     
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
   </head>
   <body>
@@ -92,7 +94,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>main</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &quot;hello.h&quot;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;hello.h&quot;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
@@ -108,7 +110,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./main
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ./main
 Hello 1
 Hello 2
 </pre></div>
@@ -128,7 +130,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Header</strong> : déclaration</p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#ifndef HELLO_H</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#ifndef HELLO_H</span>
 <span class="cp">#define HELLO_H</span>
 
 <span class="k">class</span> <span class="nc">Hello</span>
@@ -137,7 +139,7 @@ Hello 2
     <span class="n">Hello</span><span class="p">(</span> <span class="kt">int</span> <span class="n">number</span> <span class="p">);</span>
     <span class="o">~</span><span class="n">Hello</span><span class="p">();</span>
 
-    <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 
   <span class="k">private</span><span class="o">:</span>
     <span class="kt">int</span> <span class="n">mNumber</span><span class="p">;</span>
@@ -161,8 +163,8 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Source</strong> : implémentation</p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;iostream&gt;</span>
-<span class="cp">#include &quot;hello.h&quot;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;hello.h&quot;</span><span class="cp"></span>
 
 <span class="n">Hello</span><span class="o">::</span><span class="n">Hello</span><span class="p">(</span> <span class="kt">int</span> <span class="n">number</span> <span class="p">)</span>
   <span class="o">:</span> <span class="n">mNumber</span><span class="p">(</span> <span class="n">number</span> <span class="p">)</span>
@@ -194,13 +196,13 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Méthode virtuelle pure ⟶ Classe abstraite</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">HelloV2</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HelloV2</span>
 <span class="p">{</span>
   <span class="k">public</span><span class="o">:</span>
     <span class="n">Hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span> <span class="p">);</span>
     <span class="k">virtual</span> <span class="o">~</span><span class="n">Hello</span><span class="p">();</span>
 
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
   <span class="k">protected</span><span class="o">:</span>
     <span class="kt">void</span> <span class="n">hello</span><span class="p">();</span>
@@ -225,7 +227,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Méthode virtuelle pure ⟶ Classe abstraite</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">HelloV2</span><span class="o">::</span><span class="n">HelloV2</span><span class="p">(</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span> <span class="p">)</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="n">HelloV2</span><span class="o">::</span><span class="n">HelloV2</span><span class="p">(</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span> <span class="p">)</span>
   <span class="o">:</span> <span class="n">mWord</span><span class="p">(</span> <span class="n">word</span> <span class="p">)</span>
 <span class="p">{</span>
 <span class="p">}</span>
@@ -255,13 +257,13 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Héritage</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">HelloWorldV2</span> <span class="o">:</span> <span class="k">public</span> <span class="n">HelloV2</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HelloWorldV2</span> <span class="o">:</span> <span class="k">public</span> <span class="n">HelloV2</span>
 <span class="p">{</span>
   <span class="k">public</span><span class="o">:</span>
     <span class="n">HelloWorldV2</span><span class="p">();</span>
     <span class="o">~</span><span class="n">HelloWorldV2</span><span class="p">();</span>
 
-    <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 </div>
@@ -280,7 +282,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Héritage</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">HelloWorldV2</span><span class="o">::</span><span class="n">HelloWorldV2</span><span class="p">()</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="n">HelloWorldV2</span><span class="o">::</span><span class="n">HelloWorldV2</span><span class="p">()</span>
   <span class="o">:</span> <span class="n">HelloV2</span><span class="p">(</span> <span class="s">&quot;world!&quot;</span> <span class="p">)</span>
 <span class="p">{</span>
 <span class="p">}</span>
@@ -311,14 +313,14 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Surcharge / méthode statique</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Printer</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Printer</span>
 <span class="p">{</span>
   <span class="k">static</span> <span class="kt">void</span> <span class="n">hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">HelloWorldV2</span> <span class="o">&amp;</span><span class="n">h</span> <span class="p">)</span> <span class="p">{</span> <span class="n">h</span><span class="p">.</span><span class="n">print</span><span class="p">();</span> <span class="p">}</span>
   <span class="k">static</span> <span class="kt">void</span> <span class="n">hello</span><span class="p">(</span> <span class="k">const</span> <span class="n">Hello</span> <span class="o">&amp;</span><span class="n">h</span> <span class="p">)</span> <span class="p">{</span> <span class="n">h</span><span class="p">.</span><span class="n">print</span><span class="p">()</span> <span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span> <span class="p">)</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span> <span class="p">)</span>
 <span class="p">{</span>
   <span class="n">Hello</span> <span class="n">h1</span><span class="p">(</span> <span class="mi">10</span> <span class="p">);</span>
   <span class="n">Printer</span><span class="o">::</span><span class="n">hello</span><span class="p">(</span> <span class="n">h1</span> <span class="p">);</span>
@@ -343,11 +345,11 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Sructures de contrôle : if</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">...;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">...;</span>
 
 <span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="o">||</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">)</span>
   <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">42</span> <span class="p">)</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">42</span> <span class="p">)</span>
   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Awesome!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="k">else</span>
   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Nothing todo&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -368,7 +370,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Sructures de contrôle : switch/case</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">...;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">...;</span>
 
 <span class="k">switch</span> <span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
 <span class="p">{</span>
@@ -400,7 +402,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Sructures de contrôle : for</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp"># entier</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp"># entier</span>
 <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
@@ -432,7 +434,7 @@ Hello 2
 <div class="line"><br /></div>
 </div>
 <p><strong>Sructures de contrôle : while</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="k">while</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">)</span>

@@ -37,6 +37,8 @@
     <script type="text/javascript" src="_static/init.js"></script>
     
     
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
   </head>
   <body>
@@ -76,8 +78,8 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>main</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="cp">#include &lt;QApplication&gt;</span>
-<span class="cp">#include &lt;QTextEdit&gt;</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QApplication&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;QTextEdit&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span> <span class="p">)</span>
 <span class="p">{</span>
@@ -107,11 +109,11 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>slot/signal : utilisation</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">QObject</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span> <span class="n">button</span><span class="p">,</span> <span class="n">SIGNAL</span><span class="p">(</span> <span class="n">clicked</span><span class="p">()</span> <span class="p">),</span> <span class="n">app</span><span class="p">,</span> <span class="n">SLOT</span><span class="p">(</span> <span class="n">quit</span><span class="p">()</span> <span class="p">)</span> <span class="p">);</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="n">QObject</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span> <span class="n">button</span><span class="p">,</span> <span class="n">SIGNAL</span><span class="p">(</span> <span class="n">clicked</span><span class="p">()</span> <span class="p">),</span> <span class="n">app</span><span class="p">,</span> <span class="n">SLOT</span><span class="p">(</span> <span class="n">quit</span><span class="p">()</span> <span class="p">)</span> <span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>slot/signal : déclaration dans le header</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CustomButton</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QPushButton</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomButton</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QPushButton</span>
 <span class="p">{</span>
   <span class="n">Q_OBJECT</span>
 
@@ -142,7 +144,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>translate - TS file</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE TS&gt;</span>
 <span class="nt">&lt;TS</span> <span class="na">version=</span><span class="s">&quot;2.0&quot;</span> <span class="na">language=</span><span class="s">&quot;fr_FR&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;context&gt;</span>
@@ -183,7 +185,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>translate - QTranslator</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">QApplication</span> <span class="nf">app</span><span class="p">(</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span> <span class="p">);</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="n">QApplication</span> <span class="nf">app</span><span class="p">(</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span> <span class="p">);</span>
 
 <span class="n">QTranslator</span> <span class="n">translator</span><span class="p">;</span>
 <span class="n">translator</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">qm_file</span><span class="p">);</span>
@@ -204,18 +206,18 @@
 <h1>QT (7)</h1>
 
 <p><strong>CMake - détection de QT</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">FIND_PACKAGE</span><span class="p">(</span><span class="s">Qt4</span> <span class="s">REQUIRED</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">FIND_PACKAGE</span><span class="p">(</span><span class="s">Qt4</span> <span class="s">REQUIRED</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>CMake - link</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">INCLUDE</span><span class="p">(</span><span class="o">${</span><span class="nv">QT_USE_FILE</span><span class="o">}</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">INCLUDE</span><span class="p">(</span><span class="o">${</span><span class="nv">QT_USE_FILE</span><span class="o">}</span><span class="p">)</span>
 <span class="nb">ADD_DEFINITIONS</span><span class="p">(</span><span class="o">${</span><span class="nv">QT_DEFINITIONS</span><span class="o">}</span><span class="p">)</span>
 
 <span class="nb">TARGET_LINK_LIBRARIES</span><span class="p">(</span><span class="s">myexe</span> <span class="o">${</span><span class="nv">QT_LIBRARIES</span><span class="o">}</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>CMake - moc</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">SET</span><span class="p">(</span><span class="s">MYLIB_HEADERS</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">SET</span><span class="p">(</span><span class="s">MYLIB_HEADERS</span>
   <span class="o">${</span><span class="nv">MYLIB_DIR</span><span class="o">}</span><span class="s">/file_qobject.h</span><span class="p">)</span>
 
 <span class="nb">QT4_WRAP_CPP</span><span class="p">(</span><span class="s">MYLIB_MOC</span> <span class="o">${</span><span class="nv">MYLIB_HEADERS</span><span class="o">}</span><span class="p">)</span>
@@ -235,7 +237,7 @@
 <h1>QT (8)</h1>
 
 <p><strong>CMake - translation</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">MACRO</span><span class="p">(</span><span class="s">ADD_TRANSLATION_FILES</span> <span class="s">_sources</span> <span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">MACRO</span><span class="p">(</span><span class="s">ADD_TRANSLATION_FILES</span> <span class="s">_sources</span> <span class="p">)</span>
   <span class="nb">FOREACH</span> <span class="p">(</span><span class="s">_current_FILE</span> <span class="o">${</span><span class="nv">ARGN</span><span class="o">}</span><span class="p">)</span>
     <span class="nb">GET_FILENAME_COMPONENT</span><span class="p">(</span><span class="s">_in</span> <span class="o">${</span><span class="nv">_current_FILE</span><span class="o">}</span> <span class="s">ABSOLUTE</span><span class="p">)</span>
     <span class="nb">GET_FILENAME_COMPONENT</span><span class="p">(</span><span class="s">_basename</span> <span class="o">${</span><span class="nv">_current_FILE</span><span class="o">}</span> <span class="s">NAME_WE</span><span class="p">)</span>
@@ -275,7 +277,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>smart pointer - QScopedPointer</strong></p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">MyClass</span> <span class="o">*</span><span class="n">myClass</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">();</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="n">MyClass</span> <span class="o">*</span><span class="n">myClass</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">();</span>
 <span class="n">myClass</span><span class="o">-&gt;</span><span class="n">print</span><span class="p">();</span>
 <span class="k">delete</span> <span class="n">myClass</span><span class="p">;</span>
 
