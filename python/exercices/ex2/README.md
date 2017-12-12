@@ -24,6 +24,16 @@ Partie 1
 .....
 ````
 
+**Note**
+
+Pour forcer le rechargement un module dans la console QGIS:
+
+```` python
+import mymodule
+import imp
+imp.reload(mymodule)
+````
+
 
 Partie 2
 --------
