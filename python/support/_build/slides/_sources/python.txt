@@ -37,7 +37,7 @@ Python (2)
 Python (3)
 ==========
 
-**Installer Python (version 2.7)**
+**Installer Python 3**
 
 |
 Sous une distribution Linux Debian-based :
@@ -789,7 +789,7 @@ Python (36)
 **Références**
 
 
-`<https://docs.python.org/2.7/library/index.html>`_
+`<https://docs.python.org/3/reference/index.html>`_
 
 `<http://docs.python-guide.org/en/latest/>`_
 
