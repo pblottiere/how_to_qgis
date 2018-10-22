@@ -57,7 +57,7 @@ def transform_csv(filename, separator=','):
 class Projector(object):
 
     def __init__(self):
-        self._filename = ""
+        self.__filename = ''
 
     @property
     def filename(self):
