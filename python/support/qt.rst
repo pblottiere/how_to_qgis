@@ -22,17 +22,17 @@ PyQT (2)
   #!/usr/bin/python
   # -*- coding: utf-8 -*-
   import sys
-  from PyQt4 import QtGui
+  from PyQt.QtWidgets import QApplication, QWidget, QLabel
 
   def run():
-      app = QtGui.QApplication(sys.argv)
+      app = QApplication(sys.argv)
 
-      w = QtGui.QWidget()
+      w = QWidget()
       w.resize(250, 150)
       w.setWindowTitle('MyApp')
       w.show()
 
-      text = QtGui.QLabel('Hello World', w)
+      text = QLabel('Hello World', w)
       text.show()
 
       sys.exit(app.exec_())
@@ -50,7 +50,7 @@ PyQT (3)
 
 .. code-block:: python
 
-  from PyQt4.QtCore import QObject, pyqtSignal
+  from qgis.PyQt.QtCore import QObject, pyqtSignal
 
   class Foo(QObject):
 
@@ -61,7 +61,7 @@ PyQT (3)
           self.mysignal.emit()
 
       def myslot(self):
-          print "signal received"
+          print('signal received')
 
 PyQT (4)
 ========
@@ -84,7 +84,7 @@ Utilitaire de transformation de code *.ui* en code Python
 
 .. code-block:: bash
 
-  # pyuic4 file.ui -o file_ui.py
+  # pyuic file.ui -o file_ui.py
 
 Le code généré :
 
@@ -94,12 +94,12 @@ Le code généré :
       def setupUi(self, MainWindow):
           MainWindow.setObjectName(_fromUtf8("MainWindow"))
           MainWindow.resize(800, 600)
-          self.centralwidget = QtGui.QWidget(MainWindow)
+          self.centralwidget = QtWidgets.QWidget(MainWindow)
           self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
-          self.verticalLayoutWidget = QtGui.QWidget(self.centralwidget)
+          self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
           self.verticalLayoutWidget.setGeometry(QtCore.QRect(9, 19, 781, 531))
           self.verticalLayoutWidget.setObjectName(_fromUtf8("verticalLayoutWidget"))
-          self.verticalLayout = QtGui.QVBoxLayout(self.verticalLayoutWidget)
+          self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
 
 
 PyQT (6)
@@ -111,7 +111,7 @@ Utilitaire de transformation de code *.qrc* en code Python
 
 .. code-block:: bash
 
-  # pyrcc4 resources.qrc -o resources.py
+  # pyrcc resources.qrc -o resources.py
 
 .. code-block:: python
 
