@@ -58,7 +58,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>Paul Blottiere</strong></p>
-<p><strong>Décembre 2017</strong></p>
+<p><strong>Octobre 2018</strong></p>
 
 
 
@@ -131,11 +131,11 @@
 <li>de debugger des programmes simples</li>
 </ul>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ python
-Python 2.7.3 <span class="o">(</span>default, Mar <span class="m">13</span> 2014, 11:03:55<span class="o">)</span>
-<span class="o">[</span>GCC 4.7.2<span class="o">]</span> on linux2
+Python <span class="m">3</span>.5.3 <span class="o">(</span>default, Jan <span class="m">19</span> <span class="m">2017</span>, <span class="m">14</span>:11:04<span class="o">)</span>
+<span class="o">[</span>GCC <span class="m">6</span>.3.0 <span class="m">20170118</span><span class="o">]</span> on linux
 Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
-&gt;&gt;&gt; <span class="m">1</span> + 1
-2
+&gt;&gt;&gt; <span class="m">1</span> + <span class="m">1</span>
+<span class="m">2</span>
 &gt;&gt;&gt; <span class="nb">help</span>
 </pre></div>
 </div>
@@ -229,9 +229,9 @@ sudo pip install ipython
 <p>L'indentation délimite les blocs de code</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
 <span class="o">....</span><span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="o">........</span><span class="k">print</span> <span class="s1">&#39;one&#39;</span>
+<span class="o">........</span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
 <span class="o">....</span><span class="k">else</span><span class="p">:</span>
-<span class="o">........</span><span class="k">print</span> <span class="s1">&#39;two&#39;</span>
+<span class="o">........</span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;two&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
 <span class="o">....</span><span class="k">return</span> <span class="n">arg</span>
@@ -265,7 +265,7 @@ sudo pip install ipython
 <span class="sd">print</span>
 <span class="sd">some stuff now</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="k">print</span> <span class="s2">&quot;stuff&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;stuff&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Les <strong>&quot;&quot;&quot;</strong> sont le plus souvent utilisé pour les <em>docstring</em>.</p>
@@ -381,17 +381,14 @@ besoin d'être typé (typage dynamique).</p>
 <span class="c1"># float</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mf">2.</span>
 
-<span class="c1"># long</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">g</span> <span class="o">=</span> <span class="il">1301L</span>
-
 <span class="c1"># complex</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3j</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3j</span>
 
 <span class="c1"># boolean</span>
-<span class="n">e</span> <span class="o">=</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
 
-<span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">]</span>
-<span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">long</span><span class="p">,</span> <span class="nb">complex</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span>
+<span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">]]</span>
+<span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">complex</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span>
 </pre></div>
 </div>
 
@@ -532,7 +529,7 @@ besoin d'être typé (typage dynamique).</p>
 <span class="n">d</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>  <span class="c1"># insertion d&#39;une pair clé valeur</span>
 
 <span class="c1"># dict comprehension</span>
-<span class="p">{</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">num</span><span class="p">:</span> <span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)}</span>
+<span class="p">{</span><span class="s1">&#39;{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="p">):</span> <span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)}</span>
 
 <span class="c1"># mixer des dictionnaires</span>
 <span class="n">first</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;env&#39;</span><span class="p">:</span> <span class="s1">&#39;snap&#39;</span><span class="p">,</span> <span class="s1">&#39;domain&#39;</span><span class="p">:</span> <span class="s1">&#39;osl.com&#39;</span><span class="p">}</span>
@@ -542,7 +539,7 @@ besoin d'être typé (typage dynamique).</p>
 
 <span class="c1"># savoir si une clé est dans le dictionnaire ?</span>
 <span class="k">if</span> <span class="s1">&#39;env&#39;</span> <span class="ow">in</span> <span class="n">first</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s1">&#39;Found it!&#39;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Found it!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -592,13 +589,13 @@ convertie en False dans une expression logique.</p>
 <div class="line"><br /></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s1">&#39;X est négatif&#39;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;X est négatif&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s1">&#39;X est nul&#39;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;X est nul&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s1">&#39;X est positif&#39;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;X est positif&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s1">&#39;Hum...&#39;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hum...&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -617,18 +614,18 @@ convertie en False dans une expression logique.</p>
 <div class="line"><br /></div>
 </div>
 <p>Parcourt les éléments d'une séquence :</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;window&#39;</span><span class="p">,</span> <span class="s1">&#39;defenestrate&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">x</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;window&#39;</span><span class="p">,</span> <span class="s1">&#39;defenestrate&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">))</span>
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>Parcourt avec un index :</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;window&#39;</span><span class="p">,</span> <span class="s1">&#39;defenestrate&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
-    <span class="k">print</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;window&#39;</span><span class="p">,</span> <span class="s1">&#39;defenestrate&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">index</span><span class="p">]))</span>
 </pre></div>
 </div>
 
@@ -644,9 +641,9 @@ convertie en False dans une expression logique.</p>
 
 <p><strong>Structure de contrôle - for</strong></p>
 <p>Avec <em>enumerate</em> :</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;window&#39;</span><span class="p">,</span> <span class="s1">&#39;defenestrate&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-   <span class="k">print</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;window&#39;</span><span class="p">,</span> <span class="s1">&#39;defenestrate&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Avec les <em>list comprehension</em>:</p>
@@ -654,9 +651,9 @@ convertie en False dans une expression logique.</p>
 </pre></div>
 </div>
 <p>Avec les <em>dict</em> :</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;couleur&quot;</span><span class="p">:</span> <span class="s2">&quot;bleu&quot;</span><span class="p">,</span> <span class="s2">&quot;annee&quot;</span><span class="p">:</span> <span class="mi">1985</span><span class="p">,</span> <span class="s2">&quot;immatriculation&quot;</span><span class="p">:</span> <span class="s2">&quot;1337BB34&quot;</span><span class="p">}</span>
-<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
-   <span class="k">print</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;couleur&#39;</span><span class="p">:</span> <span class="s1">&#39;bleu&#39;</span><span class="p">,</span> <span class="s1">&#39;annee&#39;</span><span class="p">:</span> <span class="mi">1985</span><span class="p">,</span> <span class="s1">&#39;immatriculation&#39;</span><span class="p">:</span> <span class="s1">&#39;1337BB34&#39;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -682,7 +679,7 @@ ce que cette même condition soit fausse :</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s1">&#39;Entrez un entier : &#39;</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-   <span class="k">print</span> <span class="s1">&#39;trop petit...&#39;</span>
+   <span class="k">print</span><span class="p">(</span><span class="s1">&#39;trop petit...&#39;</span><span class="p">)</span>
    <span class="n">x</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s1">&#39;Entrez un entier : &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -754,7 +751,7 @@ ce que cette même condition soit fausse :</p>
 <p>But : organiser son programme en fichiers en vue de réutilisation</p>
 <p>Un fichier <em>.py</em>  =  un module python</p>
 <p>Dans un terminal :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s2">&quot;print &#39;hello&#39;&quot;</span> &gt; mymodule.py
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s2">&quot;print(&#39;hello&#39;)&quot;</span> &gt; mymodule.py
 $ python mymodule.py
 <span class="s1">&#39;Hello&#39;</span>
 </pre></div>
@@ -787,8 +784,7 @@ $ python mymodule.py
 </pre></div>
 </div>
 <p>On peut réassigner un nom local à une des fonctions du module :</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span> <span class="k">as</span> <span class="n">u</span>
 <span class="n">u</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -830,7 +826,7 @@ $ python mymodule.py
 <p>Script exécutable :</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -881,7 +877,7 @@ en deuxième argument le mode qui peut être :</p>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/tmp/workfile&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-   <span class="k">print</span> <span class="n">line</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -926,23 +922,23 @@ le fichier est ouvert.</p>
 <p><strong>yield</strong></p>
 <p>Générateur : le code ne s'exécute que lorsque l'on itère sur le générateur!</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>&gt;&gt;&gt; def mygen<span class="o">()</span>:
-&gt;&gt;&gt;     <span class="k">for</span> i in range<span class="o">(</span>0, 4<span class="o">)</span>:
+&gt;&gt;&gt;     <span class="k">for</span> i in range<span class="o">(</span><span class="m">0</span>, <span class="m">4</span><span class="o">)</span>:
 &gt;&gt;&gt;         yield i
 &gt;&gt;&gt;
 &gt;&gt;&gt; <span class="nv">g</span> <span class="o">=</span> mygen<span class="o">()</span>
 &gt;&gt;&gt; type<span class="o">(</span>g<span class="o">)</span>
 &lt;<span class="nb">type</span> <span class="s1">&#39;generator&#39;</span>&gt;
 &gt;&gt;&gt; g.next<span class="o">()</span>
-0
+<span class="m">0</span>
 &gt;&gt;&gt; g.next<span class="o">()</span>
-1
+<span class="m">1</span>
 &gt;&gt;&gt; <span class="k">for</span> i in g:
 &gt;&gt;&gt;    print i
-2
-3
+<span class="m">2</span>
+<span class="m">3</span>
 &gt;&gt;&gt; g.next<span class="o">()</span>
 Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-File <span class="s2">&quot;&lt;stdin&gt;&quot;</span>, line 1, in &lt;module&gt;
+File <span class="s2">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in &lt;module&gt;
 StopIteration
 &gt;&gt;&gt;
 </pre></div>
@@ -961,19 +957,19 @@ StopIteration
 <p><strong>Objet - héritage</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 
     <span class="k">def</span> <span class="nf">whoami</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-      <span class="k">return</span> <span class="s2">&quot;I&#39;m a {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="s1">&#39;I</span><span class="se">\&#39;</span><span class="s1">m a {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Pet</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nickname</span><span class="p">):</span>
-        <span class="n">Pet</span><span class="o">.</span><span class="n">__ini__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nickname</span><span class="p">):</span>
+        <span class="n">Pet</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nickname</span> <span class="o">=</span> <span class="n">nickname</span>
 
-<span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Pluto&quot;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Pluto&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -988,14 +984,14 @@ StopIteration
 <h2>Python (33)</h2>
 
 <p><strong>Objet - public/privé</strong></p>
-<p>Convention de nommage avec le prefix <em>_</em></p>
+<p>Convention de nommage avec le prefix <strong>__</strong>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyAPI</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">public_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_private_member</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__private_member</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">public_member</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="k">def</span> <span class="nf">_private_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__private_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 </pre></div>
 </div>
@@ -1013,16 +1009,16 @@ StopIteration
 <p><strong>Objet - property</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Fake</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__data</span> <span class="o">=</span> <span class="n">data</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__data</span>
 
     <span class="nd">@data.setter</span>
     <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">d</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__data</span> <span class="o">=</span> <span class="n">d</span>
 </pre></div>
 </div>
 
@@ -1143,7 +1139,7 @@ StopIteration
 
     <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">())</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>

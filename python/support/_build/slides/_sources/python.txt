@@ -26,8 +26,8 @@ Python (2)
 .. code-block:: bash
 
   $ python
-  Python 2.7.3 (default, Mar 13 2014, 11:03:55)
-  [GCC 4.7.2] on linux2
+  Python 3.5.3 (default, Jan 19 2017, 14:11:04)
+  [GCC 6.3.0 20170118] on linux
   Type "help", "copyright", "credits" or "license" for more information.
   >>> 1 + 1
   2
@@ -99,9 +99,9 @@ L'indentation délimite les blocs de code
 
     for num in range(2):
     ....if num == 0:
-    ........print 'one'
+    ........print('one')
     ....else:
-    ........print 'two'
+    ........print('two')
 
     def myfunc(arg):
     ....return arg
@@ -135,7 +135,7 @@ Ou **"""** :
     print
     some stuff now
     """
-    print "stuff"
+    print('stuff')
 
 Les **"""** sont le plus souvent utilisé pour les *docstring*.
 
@@ -225,17 +225,14 @@ Python (11)
     # float
     b = 2.
 
-    # long
-    c = g = 1301L
-
     # complex
-    d = 2 + 3j
+    c = 2 + 3j
 
     # boolean
-    e = a == b
+    d = a == b
 
-    [type(v) for v in a, b, c, d, e]
-    [int, float, long, complex, bool]
+    [type(value) for value in [a, b, c, d]]
+    [int, float, complex, bool]
 
 
 
@@ -357,7 +354,7 @@ Conteneurs qui associent une valeur à une clé
     d['e'] = 999  # insertion d'une pair clé valeur
 
     # dict comprehension
-    {'%s' % num: num for num in range(10)}
+    {'{}'.format(num): num for num in range(10)}
 
     # mixer des dictionnaires
     first = {'env': 'snap', 'domain': 'osl.com'}
@@ -367,7 +364,7 @@ Conteneurs qui associent une valeur à une clé
 
     # savoir si une clé est dans le dictionnaire ?
     if 'env' in first:
-        print 'Found it!'
+        print('Found it!')
 
 
 Python (17)
@@ -405,13 +402,13 @@ Python (18)
 .. code-block:: python
 
     if x < 0:
-        print 'X est négatif'
+        print('X est négatif')
     elif x == 0:
-        print 'X est nul'
+        print('X est nul')
     elif x > 0:
-        print 'X est positif'
+        print('X est positif')
     else:
-        print 'Hum...'
+        print('Hum...')
 
 
 Python (19)
@@ -425,18 +422,18 @@ Parcourt les éléments d'une séquence :
 
 .. code-block:: python
 
-    a = ['cat', 'window', 'defenestrate']
-    for x in a:
-        print x, len(x)
+    l = ['cat', 'window', 'defenestrate']
+    for element in l:
+        print(element, len(element))
 
 |
 Parcourt avec un index :
 
 .. code-block:: python
 
-    a = ['cat', 'window', 'defenestrate']
-    for i in range(len(a)):
-        print a[i], len(a[i])
+    l = ['cat', 'window', 'defenestrate']
+    for index in range(len(l)):
+        print(l[index], len(l[index]))
 
 
 Python (20)
@@ -449,9 +446,9 @@ Avec *enumerate* :
 
 .. code-block:: python
 
-    a = ['cat', 'window', 'defenestrate']
-    for i, x in enumerate(a):
-       print i, x, len(x)
+    l = ['cat', 'window', 'defenestrate']
+    for index, element in enumerate(l):
+       print(index, element, len(element))
 
 Avec les *list comprehension*:
 
@@ -463,9 +460,9 @@ Avec les *dict* :
 
 .. code-block:: python
 
-  a = {"couleur": "bleu", "annee": 1985, "immatriculation": "1337BB34"}
-  for k, v in a.iteritems():
-     print k, v
+  a = {'couleur': 'bleu', 'annee': 1985, 'immatriculation': '1337BB34'}
+  for key, value in a.items():
+     print(key, value)
 
 
 Python (21)
@@ -483,7 +480,7 @@ ce que cette même condition soit fausse :
     x = raw_input('Entrez un entier : ')
 
     while x < 10:
-       print 'trop petit...'
+       print('trop petit...')
        x = raw_input('Entrez un entier : ')
 
 
@@ -542,7 +539,7 @@ Dans un terminal :
 
 .. code-block:: bash
 
-    $ echo "print 'hello'" > mymodule.py
+    $ echo "print('hello')" > mymodule.py
     $ python mymodule.py
     'Hello'
 
@@ -577,10 +574,8 @@ On peut réassigner un nom local à une des fonctions du module :
 
 .. code-block:: python
 
-    import random
-    u = random.uniform
+    from random import uniform as u
     u(0, 5)
-
 
 Python (26)
 ===========
@@ -649,7 +644,7 @@ Lire un fichier ligne par ligne:
 
     f = open('/tmp/workfile', 'r')
     for line in f:
-       print line
+        print(line)
 
     f.close()
 
@@ -718,15 +713,15 @@ Python (32)
           self.name = name
 
       def whoami(self):
-        return "I'm a {}".format(self.name)
+        return 'I\'m a {}'.format(self.name)
 
   class Dog(Pet):
 
       def __init__(self, nickname):
-          Pet.__ini__(self, "dog")
+          Pet.__init__(self, 'dog')
           self.nickname = nickname
 
-  d = Dog("Pluto")
+  d = Dog('Pluto')
 
 
 Python (33)
@@ -734,17 +729,17 @@ Python (33)
 
 **Objet - public/privé**
 
-Convention de nommage avec le prefix *_*
+Convention de nommage avec le prefix **__**:
 
 .. code-block:: python
 
   class MyAPI(object):
 
       def public_method(self):
-          self._private_member = ""
+          self.__private_member = ''
           self.public_member = 0
 
-      def _private_method(self):
+      def __private_method(self):
           pass
 
 
@@ -758,15 +753,15 @@ Python (34)
   class Fake(object):
 
       def __init__(self, data):
-          self._data = data
+          self.__data = data
 
       @property
       def data(self):
-          return self._data
+          return self.__data
 
       @data.setter
       def data(self, d):
-          self._data = d
+          self.__data = d
 
 
 Python (35)

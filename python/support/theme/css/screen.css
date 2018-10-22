@@ -57,7 +57,7 @@ div.slides.nocontext {
 
 div.slide {
   background: url('background.png') bottom center no-repeat;
-  background: url('oslandia.png') bottom right no-repeat;
+  background: url('qgis.png') bottom right no-repeat;
   background-size: 200px 147px;
   display: none;
   position: absolute;
