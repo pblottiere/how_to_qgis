@@ -9,11 +9,11 @@ int main( int argc, char *argv[] )
   QgsApplication::setPrefixPath("/usr/local", true);
   QgsApplication::initQgis();
 
-  QgsMapCanvas canvas;
-  canvas.show();
+  //QgsMapCanvas canvas;
+  //canvas.show();
 
-  int rc = app.exec();
-  QgsApplication::exitQgis();
+  //int rc = app.exec();
+  //QgsApplication::exitQgis();
 
-  return rc;
+  return 0;
 }
