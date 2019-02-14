@@ -1,19 +1,18 @@
-#include <QApplication>
 #include <qgsapplication.h>
 #include <qgsmapcanvas.h>
 
 int main( int argc, char *argv[] )
 {
-  QApplication app(argc, argv);
+  QgsApplication app(argc, argv, true);
+  app.setPrefixPath("/usr/local", true);
+  app.init();
+  app.initQgis();
 
-  QgsApplication::setPrefixPath("/usr/local", true);
-  QgsApplication::initQgis();
+  QgsMapCanvas canvas;
+  canvas.show();
 
-  //QgsMapCanvas canvas;
-  //canvas.show();
+  int rc = app.exec();
+  QgsApplication::exitQgis();
 
-  //int rc = app.exec();
-  //QgsApplication::exitQgis();
-
-  return 0;
+  return rc;
 }

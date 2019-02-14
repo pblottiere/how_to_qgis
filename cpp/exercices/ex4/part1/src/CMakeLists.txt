@@ -12,4 +12,3 @@ QT5_USE_MODULES(standalone Widgets)
 
 TARGET_LINK_LIBRARIES(standalone ${QGIS_CORE_LIBRARY})
 TARGET_LINK_LIBRARIES(standalone ${QGIS_GUI_LIBRARY})
-# TARGET_LINK_LIBRARIES(standalone qgis_app)
