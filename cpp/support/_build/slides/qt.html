@@ -206,23 +206,18 @@
 <h1>QT (7)</h1>
 
 <p><strong>CMake - détection de QT</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">FIND_PACKAGE</span><span class="p">(</span><span class="s">Qt4</span> <span class="s">REQUIRED</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">FIND_PACKAGE</span><span class="p">(</span><span class="s">Qt5Widgets</span> <span class="s">REQUIRED</span><span class="p">)</span>
+<span class="nb">FIND_PACKAGE</span><span class="p">(</span><span class="s">Qt5Gui</span> <span class="s">REQUIRED</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>CMake - link</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">INCLUDE</span><span class="p">(</span><span class="o">${</span><span class="nv">QT_USE_FILE</span><span class="o">}</span><span class="p">)</span>
-<span class="nb">ADD_DEFINITIONS</span><span class="p">(</span><span class="o">${</span><span class="nv">QT_DEFINITIONS</span><span class="o">}</span><span class="p">)</span>
-
-<span class="nb">TARGET_LINK_LIBRARIES</span><span class="p">(</span><span class="s">myexe</span> <span class="o">${</span><span class="nv">QT_LIBRARIES</span><span class="o">}</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">QT5_USE_MODULES</span><span class="p">(</span><span class="s">myapp</span> <span class="s">Gui</span><span class="p">)</span>
+<span class="nb">QT5_USE_MODULES</span><span class="p">(</span><span class="s">myapp</span> <span class="s">Widgets</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>CMake - moc</strong></p>
-<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">SET</span><span class="p">(</span><span class="s">MYLIB_HEADERS</span>
-  <span class="o">${</span><span class="nv">MYLIB_DIR</span><span class="o">}</span><span class="s">/file_qobject.h</span><span class="p">)</span>
-
-<span class="nb">QT4_WRAP_CPP</span><span class="p">(</span><span class="s">MYLIB_MOC</span> <span class="o">${</span><span class="nv">MYLIB_HEADERS</span><span class="o">}</span><span class="p">)</span>
-
-<span class="nb">ADD_EXECUTABLE</span><span class="p">(</span><span class="s">myexe</span> <span class="o">${</span><span class="nv">SOURCES</span><span class="o">}</span> <span class="o">${</span><span class="nv">MYLIB_MOC</span><span class="o">}</span><span class="p">)</span>
+<div class="highlight-cmake"><div class="highlight"><pre><span></span><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_AUTOMOC</span> <span class="s">ON</span><span class="p">)</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_AUTOUIC</span> <span class="s">ON</span><span class="p">)</span>
 </pre></div>
 </div>
 

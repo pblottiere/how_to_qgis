@@ -4,7 +4,7 @@ QGIS
 |
 
 .. image:: imgs/qgis-icon.png
-  :width: 200pt
+  :width: 300pt
   :align: center
 
 API QGIS (1)
@@ -103,12 +103,12 @@ QGIS Standalone (1)
 
   int main(int argc, char *argv[])
   {
-    QApplication app(argc, argv);
+    QgsApplication app(argc, argv);
+    app.setPrefixPath("/usr/local", true);
+    app.init();
+    app.initQgis();
 
-    QgsApplication::setPrefixPath("/usr/local", true);
-    QgsApplication::initQgis();
-
-    QgsApplication::exitQgis();
+    app.exitQgis();
 
     return 0;
   }
@@ -122,22 +122,21 @@ QGIS Standalone (2)
 
 .. code-block:: C++
 
-  #include <QApplication>
   #include <qgsapplication.h>
   #include <qgsmapcanvas.h>
 
   int main(int argc, char *argv[])
   {
-    QApplication app(argc, argv);
-
-    QgsApplication::setPrefixPath("/usr/local", true);
-    QgsApplication::initQgis();
+    QgsApplication app(argc, argv);
+    app.setPrefixPath("/usr/local", true);
+    app.init();
+    app.initQgis();
 
     QgsMapCanvas canvas;
     canvas.show();
 
     int rc = app.exec();
-    QgsApplication::exitQgis();
+    app.exitQgis();
 
     return rc;
   }
@@ -206,10 +205,10 @@ QGIS documentation (2)
 .. code-block:: C++
 
   /** Description de la méthode.
-   * @param nom description du paramètre1
-   * @param nom description du paramètre2
-   * @return description de la valeur de retour
-   * @note added in QGIS 2.XX
+   * \param nom description du paramètre1
+   * \param nom description du paramètre2
+   * \returns description de la valeur de retour
+   * \note added in QGIS 3.X
    */
 
 Documenter tout ce qui est public ou protected au minimum!!

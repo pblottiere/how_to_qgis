@@ -12,13 +12,9 @@ Partie 4.1
 > cd exercices/ex4/part1
 > mkdir build && cd build
 > cmake .. && make
-
- #include <qgsapplication.h>
-                            ^
-compilation terminated.
 ````
 
-**Question 1** : Récupérer le script FindQGIS.cmake dans le projet QGIS et l'utiliser dans notre contexte pour compiler notre application QGIS standalone.
+**Question 1** : Étudier le script FindQGIS.cmake et le main.
 
 Partie 4.2
 ----------

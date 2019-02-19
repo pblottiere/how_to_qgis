@@ -35,13 +35,13 @@ Rappels de C++ (3)
 
   int main( int argc, char** argv)
   {
-    Hello h1( 1 );
+    const Hello h1( 1 );
     h1.print();
 
     const int n2 = 2;
     Hello *h2 = new Hello( n2 );
     h2->print();
-    delete h2;
+    delete h2; // unique ptr?
 
     return 0;
   }
@@ -61,7 +61,7 @@ Rappels de C++ (4)
 
 .. code-block:: C++
 
-  #ifndef HELLO_H
+  #ifndef HELLO_H  // #pragma once
   #define HELLO_H
 
   class Hello
@@ -73,7 +73,7 @@ Rappels de C++ (4)
       void print() const;
 
     private:
-      int mNumber;
+      const int mNumber;
   };
 
   #endif
@@ -90,7 +90,7 @@ Rappels de C++ (5)
   #include <iostream>
   #include "hello.h"
 
-  Hello::Hello( int number )
+  Hello::Hello( const int number )
     : mNumber( number )
   {
   }
@@ -122,10 +122,10 @@ Rappels de C++ (6)
       virtual void print() const = 0;
 
     protected:
-      void hello();
+      void hello() const;
 
     private:
-      std::string mWord;
+      const std::string mWord;
   }
 
 Rappels de C++ (7)
@@ -146,7 +146,7 @@ Rappels de C++ (7)
   {
   }
 
-  void HelloV2::hello()
+  void HelloV2::hello() const
   {
     std::cout << "Hello " << mWord << "!" << std::endl;
   }
@@ -190,7 +190,7 @@ Rappels de C++ (9)
   void HelloWorldV2::print() const
   {
     std::cout << "HelloWorldV2 print: " << std::endl;
-    this.hello();
+    HelloV2::hello();
   }
 
 Rappels de C++ (10)
@@ -286,6 +286,9 @@ Rappels de C++ (13)
 
   for( it = values.begin(); it != values.end(); it++ )
     a += *it;
+
+  for( int value : values )
+    a += value;
 
 Rappels de C++ (14)
 ===================

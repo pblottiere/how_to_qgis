@@ -120,27 +120,22 @@ QT (7)
 
 .. code-block:: cmake
 
-  FIND_PACKAGE(Qt4 REQUIRED)
+  FIND_PACKAGE(Qt5Widgets REQUIRED)
+  FIND_PACKAGE(Qt5Gui REQUIRED)
 
 **CMake - link**
 
 .. code-block:: cmake
 
-  INCLUDE(${QT_USE_FILE})
-  ADD_DEFINITIONS(${QT_DEFINITIONS})
-
-  TARGET_LINK_LIBRARIES(myexe ${QT_LIBRARIES})
+  QT5_USE_MODULES(myapp Gui)
+  QT5_USE_MODULES(myapp Widgets)
 
 **CMake - moc**
 
 .. code-block:: cmake
 
-  SET(MYLIB_HEADERS
-    ${MYLIB_DIR}/file_qobject.h)
-
-  QT4_WRAP_CPP(MYLIB_MOC ${MYLIB_HEADERS})
-
-  ADD_EXECUTABLE(myexe ${SOURCES} ${MYLIB_MOC})
+  SET(CMAKE_AUTOMOC ON)
+  SET(CMAKE_AUTOUIC ON)
 
 QT (8)
 ======

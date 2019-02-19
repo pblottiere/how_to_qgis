@@ -5,7 +5,7 @@ Développement QGIS - C++
 |
 **Paul Blottiere**
 
-**Décembre 2017**
+**2019**
 
 Plan de la formation
 ====================

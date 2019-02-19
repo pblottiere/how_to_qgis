@@ -11,7 +11,7 @@ Sous GNU/Linux: g++
 
   $ g++ main.cpp
 
-Construction d'une librairie partagée et linkage :
+Construction d'une librairie partagée et link :
 
 .. code-block:: bash
 
@@ -180,10 +180,6 @@ Environnement de développement (10)
 
 - CMAKE_BUILD_TYPE : Debug
 - CMAKE_INSTALL_PREFIX : /home/username/myapps/qgis-fork-master
-- WITH_ASTYLE : ON
-
-La dernière option permet de réparer des fichiers mal indentés
-et DÉJÀ commités grâce au script *scripts/astyle.sh*.
 
 Environnement de développement (11)
 ===================================
