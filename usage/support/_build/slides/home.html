@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>QGIS 2.14 - Utilisateur &mdash; Python - SIG 2016.02.06 documentation</title>
+    <title>QGIS 3.4 - Utilisateur &mdash; Python - SIG 2016.02.06 documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/styles.css" type="text/css" />
@@ -37,6 +37,8 @@
     <script type="text/javascript" src="_static/init.js"></script>
     
     
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
   </head>
   <body>
@@ -47,16 +49,16 @@
 
 
   
-<article class="slide level-1" id="qgis-2-14-utilisateur">
+<article class="slide level-1" id="qgis-3-4-utilisateur">
 
-<h1>QGIS 2.14 - Utilisateur</h1>
+<h1>QGIS 3.4 - Utilisateur</h1>
 
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
 <p><strong>Paul Blottiere</strong></p>
-<p><strong>Juillet 2016</strong></p>
+<p><strong>2019</strong></p>
 
 
 
@@ -146,14 +148,15 @@
 
 <p><strong>Dernière version</strong></p>
 <ul class="simple">
-<li>2.14.3 / Essen</li>
-<li>Sortie en 20/05/ 2016</li>
-<li>Bientôt la 2.16!</li>
+<li>3.4 / Madeira</li>
+<li>Sortie en 26/10/2018</li>
+<li>Bientôt la 3.6!</li>
+<li>Road Map: <a class="reference external" href="https://www.qgis.org/fr/site/getinvolved/development/roadmap.html">https://www.qgis.org/fr/site/getinvolved/development/roadmap.html</a></li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<a class="reference internal image-reference" href="_images/essen.png"><img alt="_images/essen.png" class="align-center" src="_images/essen.png" style="width: 400pt;" /></a>
+<a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" class="align-center" src="_images/banner.png" style="width: 600pt;" /></a>
 
 
 
@@ -196,9 +199,6 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>Installateur indépendant : seulement QGIS</strong></p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 <a class="reference internal image-reference" href="_images/qgis_install.png"><img alt="_images/qgis_install.png" class="align-center" src="_images/qgis_install.png" style="width: 1500pt;" /></a>
 
 
@@ -467,7 +467,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-C++"><div class="highlight"><pre><span class="k">case</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="k">case</span>
   <span class="n">when</span> <span class="n">CODE_DEPT</span> <span class="o">=</span> <span class="mi">29</span> <span class="n">or</span> <span class="n">CODE_DEPT</span> <span class="o">=</span> <span class="mi">53</span>
   <span class="n">then</span>
     <span class="n">POPULATION</span>
@@ -989,7 +989,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>5</strong> - Ajouter un point dans une couche virtuelle à la position du mont Everest grâce à la commande suivante (<em>x</em> et <em>y</em> doivent être en degrés décimaux) :</p>
-<div class="highlight-C++"><div class="highlight"><pre><span class="n">SELECT</span> <span class="mi">1</span> <span class="n">as</span> <span class="n">id</span><span class="p">,</span> <span class="n">MakePoint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">4326</span><span class="p">)</span> <span class="n">as</span> <span class="n">geom</span>
+<div class="highlight-C++"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="mi">1</span> <span class="n">as</span> <span class="n">id</span><span class="p">,</span> <span class="n">MakePoint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">4326</span><span class="p">)</span> <span class="n">as</span> <span class="n">geom</span>
 </pre></div>
 </div>
 <p><strong>6</strong> - Labeliser la couche contour avec l'élévation et vérifier que le mont Everest se trouve bien à l'altitude maximale</p>

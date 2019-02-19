@@ -28,11 +28,12 @@ Présentation (3)
 ================
 **Dernière version**
 
-- 2.14.3 / Essen
-- Sortie en 20/05/ 2016
-- Bientôt la 2.16!
+- 3.4 / Madeira
+- Sortie en 26/10/2018
+- Bientôt la 3.6!
+- Road Map: https://www.qgis.org/fr/site/getinvolved/development/roadmap.html
 
 |
-.. image:: imgs/essen.png
-  :width: 400pt
+.. image:: imgs/banner.png
+  :width: 600pt
   :align: center

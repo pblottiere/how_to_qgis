@@ -20,7 +20,6 @@ Installation Windows (2)
 |
 **Installateur indépendant : seulement QGIS**
 
-|
 .. image:: imgs/qgis_install.png
   :width: 1500pt
   :align: center
