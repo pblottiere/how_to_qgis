@@ -322,7 +322,14 @@ HEIGHT=200
 <h2>Configuration (2)</h2>
 
 <p><strong>MAP</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
 <p>=&gt; indique le projet sur lequel on veut travailler</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost/qgisserver?
 MAP=/tmp/world.qgz&amp;
 LAYERS=countries&amp;
@@ -337,6 +344,84 @@ HEIGHT=200
 
 
 <div class="slide-no">13</div>
+
+
+</article>
+<article class="slide level-2" id="clients-1">
+
+<h2>Clients (1)</h2>
+
+<p><strong>WEB: LizMap (3Liz)</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/lizmap.png"><img alt="_images/lizmap.png" class="align-center" src="_images/lizmap.png" style="width: 500pt;" /></a>
+
+
+
+<div class="slide-no">14</div>
+
+
+</article>
+<article class="slide level-2" id="clients-2">
+
+<h2>Clients (2)</h2>
+
+<p><strong>WEB: QWC2 (QGIS)</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/qwc2.PNG"><img alt="_images/qwc2.PNG" class="align-center" src="_images/qwc2.PNG" style="width: 500pt;" /></a>
+
+
+
+<div class="slide-no">15</div>
+
+
+</article>
+<article class="slide level-2" id="clients-3">
+
+<h2>Clients (3)</h2>
+
+<p><strong>WEB: custom</strong></p>
+<ul class="simple">
+<li>flux WMS affichée dans une page HTML classique</li>
+<li>OpenLayers, Leaflet, …</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>var map=new OpenLayers.Map(’map’);
+var layer=new OpenLayers.Layer.WMS(
+  &quot;Glacier fronts1&quot;,
+  &quot;http://qgis.sequanux.org/cgi-bin/project/landsat/qgis_mapserv.fcgi&quot;,
+  {layers: &quot;fronts4&quot;, transparent:&quot;true&quot;, format:&quot;image/png&quot;},
+  {isBaseLayer: false}
+);
+map.setCenter(new OpenLayers.LonLat(12,79),9);
+map.addLayer(layer);
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">16</div>
+
+
+</article>
+<article class="slide level-2" id="clients-4">
+
+<h2>Clients (4)</h2>
+
+<p><strong>Lourd: QGIS Desktop</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/clientwms.png"><img alt="_images/clientwms.png" class="align-center" src="_images/clientwms.png" style="width: 450pt;" /></a>
+
+
+
+<div class="slide-no">17</div>
 
 
 </article>

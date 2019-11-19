@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Configuration (1) &mdash; Python - SIG 2016.02.06 documentation</title>
+    <title>Clients (1) &mdash; Python - SIG 2016.02.06 documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/styles.css" type="text/css" />
@@ -50,15 +50,15 @@
 
 
   
-<article class="slide level-1" id="configuration-1">
+<article class="slide level-1" id="clients-1">
 
-<h1>Configuration (1)</h1>
+<h1>Clients (1)</h1>
 
-<p>À travers QGIS Desktop!</p>
+<p><strong>WEB: LizMap (3Liz)</strong></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<a class="reference internal image-reference" href="_images/config0.png"><img alt="_images/config0.png" class="align-center" src="_images/config0.png" style="width: 500pt;" /></a>
+<a class="reference internal image-reference" href="_images/lizmap.png"><img alt="_images/lizmap.png" class="align-center" src="_images/lizmap.png" style="width: 500pt;" /></a>
 
 
 
@@ -66,33 +66,65 @@
 
 
 </article>
-<article class="slide level-1" id="configuration-2">
+<article class="slide level-1" id="clients-2">
 
-<h1>Configuration (2)</h1>
+<h1>Clients (2)</h1>
 
-<p><strong>MAP</strong></p>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-<p>=&gt; indique le projet sur lequel on veut travailler</p>
+<p><strong>WEB: QWC2 (QGIS)</strong></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost/qgisserver?
-MAP=/tmp/world.qgz&amp;
-LAYERS=countries&amp;
-SERVICE=WMS&amp;
-REQUEST=GetMap&amp;
-CRS=EPSG:4326&amp;
-WIDTH=400&amp;
-HEIGHT=200
+<a class="reference internal image-reference" href="_images/qwc2.PNG"><img alt="_images/qwc2.PNG" class="align-center" src="_images/qwc2.PNG" style="width: 500pt;" /></a>
+
+
+
+<div class="slide-no">2</div>
+
+
+</article>
+<article class="slide level-1" id="clients-3">
+
+<h1>Clients (3)</h1>
+
+<p><strong>WEB: custom</strong></p>
+<ul class="simple">
+<li>flux WMS affichée dans une page HTML classique</li>
+<li>OpenLayers, Leaflet, …</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>var map=new OpenLayers.Map(’map’);
+var layer=new OpenLayers.Layer.WMS(
+  &quot;Glacier fronts1&quot;,
+  &quot;http://qgis.sequanux.org/cgi-bin/project/landsat/qgis_mapserv.fcgi&quot;,
+  {layers: &quot;fronts4&quot;, transparent:&quot;true&quot;, format:&quot;image/png&quot;},
+  {isBaseLayer: false}
+);
+map.setCenter(new OpenLayers.LonLat(12,79),9);
+map.addLayer(layer);
 </pre></div>
 </div>
 
 
 
-<div class="slide-no">2</div>
+<div class="slide-no">3</div>
+
+
+</article>
+<article class="slide level-1" id="clients-4">
+
+<h1>Clients (4)</h1>
+
+<p><strong>Lourd: QGIS Desktop</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/clientwms.png"><img alt="_images/clientwms.png" class="align-center" src="_images/clientwms.png" style="width: 450pt;" /></a>
+
+
+
+<div class="slide-no">4</div>
 
 
 </article>

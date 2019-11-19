@@ -13,8 +13,11 @@ Configuration (2)
 =================
 **MAP**
 
+|
+|
 => indique le projet sur lequel on veut travailler
 
+|
 .. code-block::
 
   http://localhost/qgisserver?
