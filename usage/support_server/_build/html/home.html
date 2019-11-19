@@ -1,0 +1,798 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>QGIS 3.4 - Utilisateur &#8212; Python - SIG 2016.02.06 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">Python - SIG 2016.02.06 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="qgis-3-4-utilisateur">
+<h1>QGIS 3.4 - Utilisateur<a class="headerlink" href="#qgis-3-4-utilisateur" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p><strong>Paul Blottiere</strong></p>
+<p><strong>2019</strong></p>
+<div class="section" id="plan-de-la-formation">
+<h2>Plan de la formation<a class="headerlink" href="#plan-de-la-formation" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt><strong>Jour 1</strong></dt><dd><ul class="simple">
+<li><p>Présentation</p></li>
+<li><p>Installation Windows</p></li>
+<li><p>Les couches vecteur</p></li>
+<li><p>Style et étiquettes</p></li>
+<li><p>Requêtes attributaires et spatiales</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="simple">
+<dt><strong>Jour 2</strong></dt><dd><ul class="simple">
+<li><p>Les couches raster</p></li>
+<li><p>Les flux WMS</p></li>
+<li><p>Mise en page cartographique et atlas</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="presentation-1">
+<h2>Présentation (1)<a class="headerlink" href="#presentation-1" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/qgis-icon.png"><img alt="_images/qgis-icon.png" class="align-center" src="_images/qgis-icon.png" style="width: 200pt;" /></a>
+<p><a class="reference external" href="http://www.qgis.org/fr/site/">http://www.qgis.org/fr/site/</a></p>
+<ul class="simple">
+<li><p>Développement débuté en 2002</p></li>
+<li><p>Logiciel SIG libre multiplate-forme</p></li>
+<li><p>Quantum GIS -&gt; version 1.9</p></li>
+</ul>
+</div>
+<div class="section" id="presentation-2">
+<h2>Présentation (2)<a class="headerlink" href="#presentation-2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>De nombreux formats supportés</strong></p>
+<ul class="simple">
+<li><p>Raster (GeoTIFF, JPG, PNG, …)</p></li>
+<li><p>Vecteur ( Shapefile, GRASS GIS, Mapinfo, … )</p></li>
+<li><p>Base de données spatiale ( Postgis, SpatiaLite, … )</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/mix2.png"><img alt="_images/mix2.png" class="align-center" src="_images/mix2.png" style="width: 600pt;" /></a>
+</div>
+<div class="section" id="presentation-3">
+<h2>Présentation (3)<a class="headerlink" href="#presentation-3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Dernière version</strong></p>
+<ul class="simple">
+<li><p>3.4 / Madeira</p></li>
+<li><p>Sortie en 26/10/2018</p></li>
+<li><p>Bientôt la 3.6!</p></li>
+<li><p>Road Map: <a class="reference external" href="https://www.qgis.org/fr/site/getinvolved/development/roadmap.html">https://www.qgis.org/fr/site/getinvolved/development/roadmap.html</a></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" class="align-center" src="_images/banner.png" style="width: 600pt;" /></a>
+</div>
+<div class="section" id="installation-windows-1">
+<h2>Installation Windows (1)<a class="headerlink" href="#installation-windows-1" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><a class="reference external" href="https://www.qgis.org/fr/site/forusers/download.html">https://www.qgis.org/fr/site/forusers/download.html</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="simple">
+<dt>Deux moyens d’installer QGIS:</dt><dd><ul class="simple">
+<li><p>Installateur indépendant</p></li>
+<li><p>Installateur réseau OsGeo4W</p></li>
+</ul>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/mix.png"><img alt="_images/mix.png" class="align-center" src="_images/mix.png" style="width: 1500pt;" /></a>
+</div>
+<div class="section" id="installation-windows-2">
+<h2>Installation Windows (2)<a class="headerlink" href="#installation-windows-2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Installateur indépendant : seulement QGIS</strong></p>
+<a class="reference internal image-reference" href="_images/qgis_install.png"><img alt="_images/qgis_install.png" class="align-center" src="_images/qgis_install.png" style="width: 1500pt;" /></a>
+</div>
+<div class="section" id="installation-windows-3">
+<h2>Installation Windows (3)<a class="headerlink" href="#installation-windows-3" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Installateur réseau : OsGeo4W</strong></p>
+<ul class="simple">
+<li><p>Pour les utilisateurs “experts”</p></li>
+<li><p>Permet d’installer QGIS ainsi que de nombreux logiciels annexes</p></li>
+<li><p>Permet d’installer plusieurs versions de QGIS en parallèle</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/osgeo_dl.png"><img alt="_images/osgeo_dl.png" class="align-center" src="_images/osgeo_dl.png" style="width: 1500pt;" /></a>
+</div>
+<div class="section" id="installation-windows-4">
+<h2>Installation Windows (4)<a class="headerlink" href="#installation-windows-4" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Installateur réseau : OsGeo4W</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/osgeo4w.gif"><img alt="_images/osgeo4w.gif" class="align-center" src="_images/osgeo4w.gif" style="width: 400pt;" /></a>
+</div>
+<div class="section" id="installation-windows-5">
+<h2>Installation Windows (5)<a class="headerlink" href="#installation-windows-5" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>1</strong> - Installer Windows avec l’installateur indépendant</p>
+<p><strong>2</strong> - Lancer QGIS pour vérifier le fonctionnement</p>
+</div>
+<div class="section" id="information-1">
+<h2>Information (1)<a class="headerlink" href="#information-1" title="Permalink to this headline">¶</a></h2>
+<p>De nombreuses sources d’information :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Documentation : <a class="reference external" href="http://www.qgis.org/fr/docs/">http://www.qgis.org/fr/docs/</a></p></li>
+<li><p>Tutoriaux : <a class="reference external" href="http://www.qgistutorials.com/fr/">http://www.qgistutorials.com/fr/</a>, <a class="reference external" href="http://www.ades.cnrs.fr/tutoqgis/">http://www.ades.cnrs.fr/tutoqgis/</a></p></li>
+<li><p>Contribuer : <a class="reference external" href="https://github.com/qgis/QGIS-Documentation">https://github.com/qgis/QGIS-Documentation</a></p></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="_images/qgisdoc.png"><img alt="_images/qgisdoc.png" class="align-center" src="_images/qgisdoc.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="information-2">
+<h2>Information (2)<a class="headerlink" href="#information-2" title="Permalink to this headline">¶</a></h2>
+<p>Remontée de bug : <a class="reference external" href="https://www.qgis.org/fr/site/getinvolved/development/bugreporting.html">https://www.qgis.org/fr/site/getinvolved/development/bugreporting.html</a></p>
+<p>Mailing lists : <a class="reference external" href="https://www.qgis.org/fr/site/getinvolved/mailinglists.html#qgis-mailinglists">https://www.qgis.org/fr/site/getinvolved/mailinglists.html#qgis-mailinglists</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/bugreport.png"><img alt="_images/bugreport.png" class="align-center" src="_images/bugreport.png" style="width: 700pt;" /></a>
+</div>
+<div class="section" id="information-3">
+<h2>Information (3)<a class="headerlink" href="#information-3" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Dépôt de plugin : <a class="reference external" href="http://plugins.qgis.org/plugins/">http://plugins.qgis.org/plugins/</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/pluginrepo.png"><img alt="_images/pluginrepo.png" class="align-center" src="_images/pluginrepo.png" style="width: 700pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-1">
+<h2>Les couches vecteur (1)<a class="headerlink" href="#les-couches-vecteur-1" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Les bases</strong></p>
+<ul class="simple">
+<li><p>Définies par des coordonnées</p></li>
+<li><p>3 types de géométrie : <em>point</em>, <em>ligne</em> et <em>polygone</em></p></li>
+<li><p>1 seul type de géométrie par layer</p></li>
+<li><p>Données attributaires : données associées à la composante spatiale</p></li>
+<li><p>69 formats gérés (lib OGR) : format standard QGIS est le shapefile ESRI</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><a class="reference external" href="http://www.gdal.org/ogr_formats.html">http://www.gdal.org/ogr_formats.html</a></p>
+</div>
+<div class="section" id="les-couches-vecteur-2">
+<h2>Les couches vecteur (2)<a class="headerlink" href="#les-couches-vecteur-2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Charger un shapefile</strong></p>
+<a class="reference internal image-reference" href="_images/select_vector.png"><img alt="_images/select_vector.png" class="align-center" src="_images/select_vector.png" style="width: 400pt;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>NOTE: l’outil <em>Refactor fields</em> permet de changer le type des attributs, les réordonner, …</p>
+</div>
+<div class="section" id="les-couches-vecteur-3">
+<h2>Les couches vecteur (3)<a class="headerlink" href="#les-couches-vecteur-3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Propriétés</strong></p>
+<a class="reference internal image-reference" href="_images/vector_prop.png"><img alt="_images/vector_prop.png" class="align-center" src="_images/vector_prop.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-4">
+<h2>Les couches vecteur (4)<a class="headerlink" href="#les-couches-vecteur-4" title="Permalink to this headline">¶</a></h2>
+<p><strong>SCR</strong></p>
+<dl class="simple">
+<dt>Les coordonnées d’un point peuvent être exprimées :</dt><dd><ul class="simple">
+<li><p>en degrés dans un système géodésique de référence</p></li>
+<li><p>en mètres suite à une projection (coordonnes 3D -&gt; surface plane)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Système de Coordonnées de Référence : système de coordonnées + projection</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/vector_crs.png"><img alt="_images/vector_crs.png" class="align-center" src="_images/vector_crs.png" style="width: 600pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-5">
+<h2>Les couches vecteur (5)<a class="headerlink" href="#les-couches-vecteur-5" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Symbologie</strong></p>
+<ul class="simple">
+<li><p>Apparence visuelle  sur la carte</p></li>
+<li><p>Couleur, visibilité dépendante de l’échelle, positionnement, …</p></li>
+<li><p>Analyse thématique ( illustration de carte )</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/vector_grad.png"><img alt="_images/vector_grad.png" class="align-center" src="_images/vector_grad.png" style="width: 600pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-6">
+<h2>Les couches vecteur (6)<a class="headerlink" href="#les-couches-vecteur-6" title="Permalink to this headline">¶</a></h2>
+<p><strong>Expressions</strong></p>
+<dl class="simple">
+<dt>Analyse syntaxique d’expression :</dt><dd><ul class="simple">
+<li><p>évaluation en prédicats booléens ou comme des fonctions</p></li>
+<li><p>nombre, texte, référence de colonnes</p></li>
+<li><p>fonctions mathématiques, couleur, date/heure, …</p></li>
+</ul>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/vector_expr.png"><img alt="_images/vector_expr.png" class="align-center" src="_images/vector_expr.png" style="width: 600pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-7">
+<h2>Les couches vecteur (7)<a class="headerlink" href="#les-couches-vecteur-7" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Expressions - example</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="k">case</span>
+  <span class="n">when</span> <span class="n">CODE_DEPT</span> <span class="o">=</span> <span class="mi">29</span> <span class="n">or</span> <span class="n">CODE_DEPT</span> <span class="o">=</span> <span class="mi">53</span>
+  <span class="n">then</span>
+    <span class="n">POPULATION</span>
+  <span class="k">else</span>
+    <span class="mi">0</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-couches-vecteur-8">
+<h2>Les couches vecteur (8)<a class="headerlink" href="#les-couches-vecteur-8" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>1</strong> - Télécharger les données <em>SHP</em> <a class="reference external" href="https://www.data.gouv.fr/fr/datasets/geofla-communes/">https://www.data.gouv.fr/fr/datasets/geofla-communes/</a></p>
+<p><strong>2</strong> - Ouvrir QGIS, charger <em>COMMUNE.shp</em> et déterminer le SCR</p>
+<p><strong>3</strong> - Ouvrir la table d’attributs pour visualiser les informations disponibles</p>
+<dl class="simple">
+<dt><strong>3</strong> - Changer les paramètres du style “Symbole Unique” :</dt><dd><ul class="simple">
+<li><p>mode de remplissage “simple”</p></li>
+<li><p>changer la couleur de remplissage et de la bordure</p></li>
+<li><p>changer le style de remplissage</p></li>
+<li><p>changer le style de bordure</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="les-couches-vecteur-9">
+<h2>Les couches vecteur (9)<a class="headerlink" href="#les-couches-vecteur-9" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<dl class="simple">
+<dt><strong>4</strong> - Changer le style en “Catégorisé” et :</dt><dd><ul class="simple">
+<li><p>créer une catégorie selon le code de département</p></li>
+<li><p>changer la palette de couleur</p></li>
+<li><p>classer et visualiser</p></li>
+<li><p>visualiser l’échelle dans l’arbre des couches</p></li>
+<li><p>sauvegarder/recharger le style de l’analyse thématique</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>5</strong> - Catégoriser selon la densité de population</p>
+<p><strong>6</strong> - Sauvegarder le projet</p>
+</div>
+<div class="section" id="les-couches-vecteur-10">
+<h2>Les couches vecteur (10)<a class="headerlink" href="#les-couches-vecteur-10" title="Permalink to this headline">¶</a></h2>
+<p><strong>Labels / Diagrammes</strong></p>
+<dl class="simple">
+<dt>Ajout d’étiquettes configurables en fonction de la géométrie :</dt><dd><ul class="simple">
+<li><p>texte</p></li>
+<li><p>placement</p></li>
+<li><p>affichage</p></li>
+<li><p>couleur / ombre</p></li>
+<li><p>…</p></li>
+</ul>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/vector_label.png"><img alt="_images/vector_label.png" class="align-center" src="_images/vector_label.png" style="width: 600pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-11">
+<h2>Les couches vecteur (11)<a class="headerlink" href="#les-couches-vecteur-11" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>1</strong> - Ouvrir le projet QGIS précédent</p>
+<dl class="simple">
+<dt><strong>2</strong> - Labeliser la couche <em>COMMUNE</em> en mode “Montrer les étiquettes pour cette couche”:</dt><dd><ul class="simple">
+<li><p>avec le code de département</p></li>
+<li><p>changer la police</p></li>
+<li><p>ajouter un cercle de couleur en fond des labels</p></li>
+<li><p>ajouter une ombre au label</p></li>
+<li><p>ajouter une règle pour ne visualiser les labels qu’à petites échelles</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="les-couches-vecteur-12">
+<h2>Les couches vecteur (12)<a class="headerlink" href="#les-couches-vecteur-12" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<dl class="simple">
+<dt><strong>3</strong> - Passer en mode “Etiquettes basées sur des règles” :</dt><dd><ul class="simple">
+<li><p>la règle : afficher des labels seulement pour le département 29</p></li>
+<li><p>les labels : multi-ligne indiquant le nom de la commune et la population</p></li>
+<li><p>formatter les labels de telle sorte qu’on autorise un retour à la ligne sur le caractère “-” quand le nom de la commune excède un certain nombre de caractères</p></li>
+</ul>
+</dd>
+<dt><strong>4</strong> - Data-defined :</dt><dd><ul class="simple">
+<li><p>ajuster la position de certain label à la main</p></li>
+<li><p>forcer la visibilité de certain label</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="les-couches-vecteur-13">
+<h2>Les couches vecteur (13)<a class="headerlink" href="#les-couches-vecteur-13" title="Permalink to this headline">¶</a></h2>
+<p><strong>Formulaire</strong></p>
+<ul class="simple">
+<li><p>permet d’éditer les attributs d’une entité</p></li>
+<li><p>sélection automatique de l’entité sur la carte</p></li>
+<li><p>outil “Identifier les entités”</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/identifier.png"><img alt="_images/identifier.png" class="align-center" src="_images/identifier.png" style="width: 300pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-14">
+<h2>Les couches vecteur (14)<a class="headerlink" href="#les-couches-vecteur-14" title="Permalink to this headline">¶</a></h2>
+<p><strong>Actions</strong></p>
+<p>Un utilisateur peut ajouter des actions personalisées sur une entité!</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/action_config.png"><img alt="_images/action_config.png" class="align-center" src="_images/action_config.png" style="width: 700pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-15">
+<h2>Les couches vecteur (15)<a class="headerlink" href="#les-couches-vecteur-15" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>1</strong> - Ajouter un attribut “photo” à la couche <em>COMMUNE</em></p>
+<p><strong>2</strong> - Indiquer dans les propriétés du champs qu’on veut utiliser un outil d’édition “Photo”</p>
+<p><strong>3</strong> - Utiliser l’outil “Identifier les entités” et attribuer des photos à quelques entités</p>
+<p><strong>4</strong> - Ajouter une action permettant d’ouvrir la photo de l’entité grâce à la syntaxe <em>[%”photo”%]</em></p>
+<p><strong>5</strong> - Retourner sur la carte et visualiser les photos grâce à l’action définie</p>
+</div>
+<div class="section" id="les-couches-vecteur-16">
+<h2>Les couches vecteur (16)<a class="headerlink" href="#les-couches-vecteur-16" title="Permalink to this headline">¶</a></h2>
+<p><strong>Opérations</strong></p>
+<ul class="simple">
+<li><p>intersection, différence, union, …</p></li>
+<li><p>manipulation d’entité vectorielle “Barre d’outils de la numérisation avancée” ( entités vs parties, fusion, … )</p></li>
+<li><p>de très nombreux algorithmes sont disponibles dans “La boite à outils de traitements”</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/geotools.png"><img alt="_images/geotools.png" class="align-center" src="_images/geotools.png" style="width: 300pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-17">
+<h2>Les couches vecteur (17)<a class="headerlink" href="#les-couches-vecteur-17" title="Permalink to this headline">¶</a></h2>
+<p><strong>Sélection par localisation</strong></p>
+<a class="reference internal image-reference" href="_images/local_menu.png"><img alt="_images/local_menu.png" class="align-center" src="_images/local_menu.png" style="width: 300pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-18">
+<h2>Les couches vecteur (18)<a class="headerlink" href="#les-couches-vecteur-18" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Requête spatiale</strong></p>
+<a class="reference internal image-reference" href="_images/req_spatiale.png"><img alt="_images/req_spatiale.png" class="align-center" src="_images/req_spatiale.png" style="width: 200pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-19">
+<h2>Les couches vecteur (19)<a class="headerlink" href="#les-couches-vecteur-19" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Requête spatiale 2</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/vector_tools.png"><img alt="_images/vector_tools.png" class="align-center" src="_images/vector_tools.png" style="width: 700pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-20">
+<h2>Les couches vecteur (20)<a class="headerlink" href="#les-couches-vecteur-20" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Couche virtuelle</strong></p>
+<ul class="simple">
+<li><p>résultat d’une requête mélangeant SQL et Expression</p></li>
+<li><p>peut utiliser plusieurs couches vecteur</p></li>
+<li><p>les couches filles peuvent être embarquées dans la couche virtuelle</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/virtual.png"><img alt="_images/virtual.png" class="align-center" src="_images/virtual.png" style="width: 30pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-21">
+<h2>Les couches vecteur (21)<a class="headerlink" href="#les-couches-vecteur-21" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Couche virtuelle</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/virtual_conf.png"><img alt="_images/virtual_conf.png" class="align-center" src="_images/virtual_conf.png" style="width: 400pt;" /></a>
+</div>
+<div class="section" id="les-couches-vecteur-22">
+<h2>Les couches vecteur (22)<a class="headerlink" href="#les-couches-vecteur-22" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<dl class="simple">
+<dt><strong>1</strong> - Utiliser les outils suivant pour créer une couche vectorielle contenant seulement les communes frontalières entre le Finistère et le reste de la France</dt><dd><ul class="simple">
+<li><p>couche virtuelle</p></li>
+<li><p>géotraitement “Différence””</p></li>
+<li><p>géotraitement “Tampon”</p></li>
+<li><p>requête spatiale</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="wms-wfs-1">
+<h2>WMS / WFS (1)<a class="headerlink" href="#wms-wfs-1" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="simple">
+<dt>Flux :</dt><dd><ul class="simple">
+<li><p>données géoréférencées à partir de serveur de données</p></li>
+<li><p>données déjà stylisées</p></li>
+<li><p>authentification possible</p></li>
+<li><p>WMS ( Web Map Service ) : raster</p></li>
+<li><p>WFS ( Web Feature Service ) : vecteur</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Plugin : Quick Map Services</p>
+</div>
+<div class="section" id="wms-wfs-2">
+<h2>WMS / WFS (2)<a class="headerlink" href="#wms-wfs-2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/wms.png"><img alt="_images/wms.png" class="align-center" src="_images/wms.png" style="width: 600pt;" /></a>
+</div>
+<div class="section" id="wms-wfs-3">
+<h2>WMS / WFS (3)<a class="headerlink" href="#wms-wfs-3" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>1</strong> - Ajouter un flux WMS <a class="reference external" href="http://services.sandre.eaufrance.fr/geo/zonage">http://services.sandre.eaufrance.fr/geo/zonage</a></p>
+<p><strong>2</strong> - Utiliser le plugin <em>Quick Map Services</em> pour ajouter un fond de carte</p>
+</div>
+<div class="section" id="les-couches-raster-1">
+<h2>Les couches raster (1)<a class="headerlink" href="#les-couches-raster-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Les bases</strong></p>
+<ul class="simple">
+<li><p>Matrice de cellules</p></li>
+<li><p>Photographies aériennes, images satellites, …</p></li>
+<li><p>Géoréférencées grâce à la position des pixels</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/raster_load.png"><img alt="_images/raster_load.png" class="align-center" src="_images/raster_load.png" style="width: 40pt;" /></a>
+</div>
+<div class="section" id="les-couches-raster-2">
+<h2>Les couches raster (2)<a class="headerlink" href="#les-couches-raster-2" title="Permalink to this headline">¶</a></h2>
+<p><strong>Propriétés</strong></p>
+<a class="reference internal image-reference" href="_images/ratser_prop.png"><img alt="_images/ratser_prop.png" class="align-center" src="_images/ratser_prop.png" style="width: 450pt;" /></a>
+</div>
+<div class="section" id="les-couches-raster-3">
+<h2>Les couches raster (3)<a class="headerlink" href="#les-couches-raster-3" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="simple">
+<dt>De nombreux algorithmes de traitement disponibles dans QGIS et via <em>Processing</em> :</dt><dd><ul class="simple">
+<li><p>extraction, contour, analyse, …</p></li>
+<li><p>GRASS GIS 7 ( r.to.vect, r.watershed, … )</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/raster_algo.png"><img alt="_images/raster_algo.png" class="align-center" src="_images/raster_algo.png" style="width: 300pt;" /></a>
+</div>
+<div class="section" id="les-couches-raster-4">
+<h2>Les couches raster (4)<a class="headerlink" href="#les-couches-raster-4" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/raster_grass.png"><img alt="_images/raster_grass.png" class="align-center" src="_images/raster_grass.png" style="width: 200pt;" /></a>
+</div>
+<div class="section" id="les-couches-raster-5">
+<h2>Les couches raster (5)<a class="headerlink" href="#les-couches-raster-5" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>1</strong> - Récupérer les données ici : <a class="reference external" href="https://github.com/spatialthoughts/qgis-tutorials/blob/master/downloads/GMTED2010N10E060_300.zip">https://github.com/spatialthoughts/qgis-tutorials/blob/master/downloads/GMTED2010N10E060_300.zip</a></p>
+<p><strong>2</strong> - Charger le fichier raster <em>10n060e_20101117_gmted_mea300.tif</em> dans QGIS</p>
+<p><strong>3</strong> - Extraire une partie du raster en faisant un drag de la bounding box dans le canvas</p>
+<p><strong>4</strong> - Extraire les contours tous les 100 mètres avec un export de l’altitude dans le champs <em>ELEV</em></p>
+</div>
+<div class="section" id="les-couches-raster-6">
+<h2>Les couches raster (6)<a class="headerlink" href="#les-couches-raster-6" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<a class="reference internal image-reference" href="_images/raster_contour.png"><img alt="_images/raster_contour.png" class="align-center" src="_images/raster_contour.png" style="width: 400pt;" /></a>
+</div>
+<div class="section" id="les-couches-raster-7">
+<h2>Les couches raster (7)<a class="headerlink" href="#les-couches-raster-7" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>5</strong> - Ajouter un point dans une couche virtuelle à la position du mont Everest grâce à la commande suivante (<em>x</em> et <em>y</em> doivent être en degrés décimaux) :</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="mi">1</span> <span class="n">as</span> <span class="n">id</span><span class="p">,</span> <span class="n">MakePoint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">4326</span><span class="p">)</span> <span class="n">as</span> <span class="n">geom</span>
+</pre></div>
+</div>
+<p><strong>6</strong> - Labeliser la couche contour avec l’élévation et vérifier que le mont Everest se trouve bien à l’altitude maximale</p>
+</div>
+<div class="section" id="les-couches-raster-8">
+<h2>Les couches raster (8)<a class="headerlink" href="#les-couches-raster-8" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>7</strong> - Installer et utiliser le plugin <em>Terrain profile</em> pour récupérer une courbe de profile au niveau du mont Everest</p>
+<p><strong>8</strong> - Styliser le raster avec le type de rendu “Singleband pseudocolor” et
+utiliser les couleurs de la palette topographique <em>sda</em></p>
+</div>
+<div class="section" id="les-couches-raster-9">
+<h2>Les couches raster (9)<a class="headerlink" href="#les-couches-raster-9" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/raster_sda.png"><img alt="_images/raster_sda.png" class="align-center" src="_images/raster_sda.png" style="width: 700pt;" /></a>
+</div>
+<div class="section" id="les-couches-raster-10">
+<h2>Les couches raster (10)<a class="headerlink" href="#les-couches-raster-10" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>9</strong> - Créer un hillshade à partir du raster : Raster -&gt; Analyse -&gt; DEM.</p>
+<p><strong>10</strong> - Jouer avec les paramètres de rendu (transparence, luminosité, …) pour donner du relief au raster grâce au hillshade :</p>
+<a class="reference internal image-reference" href="_images/raster_hillshade.png"><img alt="_images/raster_hillshade.png" class="align-center" src="_images/raster_hillshade.png" style="width: 400pt;" /></a>
+</div>
+<div class="section" id="composeur-et-atlas-1">
+<h2>Composeur et atlas (1)<a class="headerlink" href="#composeur-et-atlas-1" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Composeur de carte</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="simple">
+<dt>Fournit des outils de mise en page et d’impression :</dt><dd><ul class="simple">
+<li><p>échelle, carte, légende, …</p></li>
+<li><p>export (SVG, PDF, …)</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Atlas</strong></p>
+<p>Création automatisée d’une carte pour chaque entité d’un couche virtuelle</p>
+</div>
+<div class="section" id="composeur-et-atlas-2">
+<h2>Composeur et atlas (2)<a class="headerlink" href="#composeur-et-atlas-2" title="Permalink to this headline">¶</a></h2>
+<p><strong>Composeur de carte</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/composer.png"><img alt="_images/composer.png" class="align-center" src="_images/composer.png" style="width: 600pt;" /></a>
+</div>
+<div class="section" id="composeur-et-atlas-3">
+<h2>Composeur et atlas (3)<a class="headerlink" href="#composeur-et-atlas-3" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>1</strong> - Avoir un shapefile des communes de Bretagne dans le canvas principal supperposé avec le même fond de carte raster que précédement.</p>
+<a class="reference internal image-reference" href="_images/raster_ex0.png"><img alt="_images/raster_ex0.png" class="align-center" src="_images/raster_ex0.png" style="width: 450pt;" /></a>
+</div>
+<div class="section" id="composeur-et-atlas-4">
+<h2>Composeur et atlas (4)<a class="headerlink" href="#composeur-et-atlas-4" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>2</strong> - Aller dans le composeur de carte et rajouter la carte principale zoomant sur la Bretagne puis ajouter une seconde carte servant d’overview d’un point de vue national</p>
+<p><strong>3</strong> - Rajouter des éléments à la carte : échelle, légende, forme, flèche, image, …</p>
+<p><strong>4</strong> - Labeliser la couche vecteur</p>
+<p><strong>5</strong> - Faire un export.</p>
+</div>
+<div class="section" id="composeur-et-atlas-5">
+<h2>Composeur et atlas (5)<a class="headerlink" href="#composeur-et-atlas-5" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>6</strong> - Faire un atlas avec un polygone “COMMUNE” comme entité de référence.</p>
+<p><strong>7</strong> - Rajouter un deuxième overview d’un point de vue départemental.</p>
+<p><strong>8</strong> - Rajouter un champs texte utilisant une expression affichant la densité de population de l’entité courante à partir de la superficie calculée par QGIS</p>
+<p><strong>9</strong> - Imprimer l’atlas dans un PDF</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">QGIS 3.4 - Utilisateur</a><ul>
+<li><a class="reference internal" href="#plan-de-la-formation">Plan de la formation</a></li>
+<li><a class="reference internal" href="#presentation-1">Présentation (1)</a></li>
+<li><a class="reference internal" href="#presentation-2">Présentation (2)</a></li>
+<li><a class="reference internal" href="#presentation-3">Présentation (3)</a></li>
+<li><a class="reference internal" href="#installation-windows-1">Installation Windows (1)</a></li>
+<li><a class="reference internal" href="#installation-windows-2">Installation Windows (2)</a></li>
+<li><a class="reference internal" href="#installation-windows-3">Installation Windows (3)</a></li>
+<li><a class="reference internal" href="#installation-windows-4">Installation Windows (4)</a></li>
+<li><a class="reference internal" href="#installation-windows-5">Installation Windows (5)</a></li>
+<li><a class="reference internal" href="#information-1">Information (1)</a></li>
+<li><a class="reference internal" href="#information-2">Information (2)</a></li>
+<li><a class="reference internal" href="#information-3">Information (3)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-1">Les couches vecteur (1)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-2">Les couches vecteur (2)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-3">Les couches vecteur (3)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-4">Les couches vecteur (4)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-5">Les couches vecteur (5)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-6">Les couches vecteur (6)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-7">Les couches vecteur (7)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-8">Les couches vecteur (8)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-9">Les couches vecteur (9)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-10">Les couches vecteur (10)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-11">Les couches vecteur (11)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-12">Les couches vecteur (12)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-13">Les couches vecteur (13)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-14">Les couches vecteur (14)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-15">Les couches vecteur (15)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-16">Les couches vecteur (16)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-17">Les couches vecteur (17)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-18">Les couches vecteur (18)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-19">Les couches vecteur (19)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-20">Les couches vecteur (20)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-21">Les couches vecteur (21)</a></li>
+<li><a class="reference internal" href="#les-couches-vecteur-22">Les couches vecteur (22)</a></li>
+<li><a class="reference internal" href="#wms-wfs-1">WMS / WFS (1)</a></li>
+<li><a class="reference internal" href="#wms-wfs-2">WMS / WFS (2)</a></li>
+<li><a class="reference internal" href="#wms-wfs-3">WMS / WFS (3)</a></li>
+<li><a class="reference internal" href="#les-couches-raster-1">Les couches raster (1)</a></li>
+<li><a class="reference internal" href="#les-couches-raster-2">Les couches raster (2)</a></li>
+<li><a class="reference internal" href="#les-couches-raster-3">Les couches raster (3)</a></li>
+<li><a class="reference internal" href="#les-couches-raster-4">Les couches raster (4)</a></li>
+<li><a class="reference internal" href="#les-couches-raster-5">Les couches raster (5)</a></li>
+<li><a class="reference internal" href="#les-couches-raster-6">Les couches raster (6)</a></li>
+<li><a class="reference internal" href="#les-couches-raster-7">Les couches raster (7)</a></li>
+<li><a class="reference internal" href="#les-couches-raster-8">Les couches raster (8)</a></li>
+<li><a class="reference internal" href="#les-couches-raster-9">Les couches raster (9)</a></li>
+<li><a class="reference internal" href="#les-couches-raster-10">Les couches raster (10)</a></li>
+<li><a class="reference internal" href="#composeur-et-atlas-1">Composeur et atlas (1)</a></li>
+<li><a class="reference internal" href="#composeur-et-atlas-2">Composeur et atlas (2)</a></li>
+<li><a class="reference internal" href="#composeur-et-atlas-3">Composeur et atlas (3)</a></li>
+<li><a class="reference internal" href="#composeur-et-atlas-4">Composeur et atlas (4)</a></li>
+<li><a class="reference internal" href="#composeur-et-atlas-5">Composeur et atlas (5)</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/home.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">Python - SIG 2016.02.06 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Oslandia.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.
+    </div>
+  </body>
+</html>

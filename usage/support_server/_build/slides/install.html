@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation (1) &mdash; Python - SIG 2016.02.06 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/oslide.css" type="text/css" />
+    
+    
+    
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2016.02.06',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  
+<article class="slide level-1" id="installation-1">
+
+<h1>Installation (1)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>OS cible:</dt><dd><ul class="simple">
+<li>Windows: installation compliquée et semée d’embuches</li>
+<li>OSX: aucune idée…</li>
+<li>GNU/Linux: OS conseillé</li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>Diverses distributions GNU/Linux supportées:</dt><dd><ul class="simple">
+<li>Debian, Ubuntu, Fedora, …</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">qgis</span><span class="o">-</span><span class="n">server</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/working_with_ogc/server/getting_started.html">https://docs.qgis.org/3.4/en/docs/user_manual/working_with_ogc/server/getting_started.html</a></p>
+
+
+
+<div class="slide-no">1</div>
+
+
+</article>
+<article class="slide level-1" id="installation-2">
+
+<h1>Installation (2)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>Nécessite:</dt><dd><ul class="simple">
+<li>un serveur web (NGINX, Apache, …)</li>
+<li>en environnement graphique (serveur X)</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost/qgisserver?
+MAP=/home/user/qgis-server-tutorial-data-master/world.qgs&amp;
+LAYERS=countries&amp;
+SERVICE=WMS&amp;
+REQUEST=GetMap&amp;
+CRS=EPSG:4326&amp;
+WIDTH=400&amp;
+HEIGHT=200
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">2</div>
+
+
+</article>
+<article class="slide level-1" id="installation-3">
+
+<h1>Installation (3)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/hw.png"><img alt="_images/hw.png" class="align-center" src="_images/hw.png" style="width: 400pt;" /></a>
+
+
+
+<div class="slide-no">3</div>
+
+
+</article>
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>

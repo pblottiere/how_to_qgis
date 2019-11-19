@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>QGIS Server 3.10 &mdash; Python - SIG 2016.02.06 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/oslide.css" type="text/css" />
+    
+    
+    
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2016.02.06',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  
+<article class="slide level-1" id="qgis-server-3-10">
+
+<h1>QGIS Server 3.10</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p><strong>Paul Blottiere</strong></p>
+<p><strong>2019</strong></p>
+
+
+
+<div class="slide-no">1</div>
+
+
+</article>
+<article class="slide level-2" id="presentation-1">
+
+<h2>Présentation (1)</h2>
+
+<a class="reference internal image-reference" href="_images/qgis-icon.png"><img alt="_images/qgis-icon.png" class="align-center" src="_images/qgis-icon.png" style="width: 200pt;" /></a>
+<p><a class="reference external" href="http://www.qgis.org/fr/site/">http://www.qgis.org/fr/site/</a></p>
+<ul class="simple">
+<li>Développement débuté en 2002</li>
+<li>Logiciel SIG libre multiplate-forme</li>
+<li>Quantum GIS -&gt; version 1.9</li>
+</ul>
+
+
+
+<div class="slide-no">2</div>
+
+
+</article>
+<article class="slide level-2" id="presentation-2">
+
+<h2>Présentation (2)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>De nombreux formats supportés</strong></p>
+<ul class="simple">
+<li>Raster (GeoTIFF, JPG, PNG, …)</li>
+<li>Vecteur ( Shapefile, GRASS GIS, Mapinfo, … )</li>
+<li>Base de données spatiale ( Postgis, SpatiaLite, … )</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/mix2.png"><img alt="_images/mix2.png" class="align-center" src="_images/mix2.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">3</div>
+
+
+</article>
+<article class="slide level-2" id="presentation-3">
+
+<h2>Présentation (3)</h2>
+
+<p><strong>Dernière version</strong></p>
+<ul class="simple">
+<li>3.10</li>
+<li>Sortie en 25/10/2019</li>
+<li>Road Map: <a class="reference external" href="https://www.qgis.org/fr/site/getinvolved/development/roadmap.html">https://www.qgis.org/fr/site/getinvolved/development/roadmap.html</a></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" class="align-center" src="_images/banner.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">4</div>
+
+
+</article>
+<article class="slide level-2" id="presentation-4">
+
+<h2>Présentation (4)</h2>
+
+<p><strong>QGIS Server</strong></p>
+<ul class="simple">
+<li>Depuis la version 1.6 (2010)</li>
+<li>Serveur cartographique comme MapServer ou GeoServer</li>
+<li>certification OGC WMS 1.3.0 depuis 3.0</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/badge.png"><img alt="_images/badge.png" class="align-center" src="_images/badge.png" style="width: 150pt;" /></a>
+
+
+
+<div class="slide-no">5</div>
+
+
+</article>
+<article class="slide level-2" id="installation-1">
+
+<h2>Installation (1)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>OS cible:</dt><dd><ul class="simple">
+<li>Windows: installation compliquée et semée d’embuches</li>
+<li>OSX: aucune idée…</li>
+<li>GNU/Linux: OS conseillé</li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>Diverses distributions GNU/Linux supportées:</dt><dd><ul class="simple">
+<li>Debian, Ubuntu, Fedora, …</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">qgis</span><span class="o">-</span><span class="n">server</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/working_with_ogc/server/getting_started.html">https://docs.qgis.org/3.4/en/docs/user_manual/working_with_ogc/server/getting_started.html</a></p>
+
+
+
+<div class="slide-no">6</div>
+
+
+</article>
+<article class="slide level-2" id="installation-2">
+
+<h2>Installation (2)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>Nécessite:</dt><dd><ul class="simple">
+<li>un serveur web (NGINX, Apache, …)</li>
+<li>en environnement graphique (serveur X)</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost/qgisserver?
+MAP=/home/user/qgis-server-tutorial-data-master/world.qgs&amp;
+LAYERS=countries&amp;
+SERVICE=WMS&amp;
+REQUEST=GetMap&amp;
+CRS=EPSG:4326&amp;
+WIDTH=400&amp;
+HEIGHT=200
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">7</div>
+
+
+</article>
+<article class="slide level-2" id="installation-3">
+
+<h2>Installation (3)</h2>
+
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/hw.png"><img alt="_images/hw.png" class="align-center" src="_images/hw.png" style="width: 400pt;" /></a>
+
+
+
+<div class="slide-no">8</div>
+
+
+</article>
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>

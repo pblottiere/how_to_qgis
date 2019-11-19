@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Les couches vecteur (1) &mdash; Python - SIG 2016.02.06 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/oslide.css" type="text/css" />
+    
+    
+    
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2016.02.06',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Python - SIG 2016.02.06 documentation" href="index.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  
+<article class="slide level-1" id="les-couches-vecteur-1">
+
+<h1>Les couches vecteur (1)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Les bases</strong></p>
+<ul class="simple">
+<li>Définies par des coordonnées</li>
+<li>3 types de géométrie : <em>point</em>, <em>ligne</em> et <em>polygone</em></li>
+<li>1 seul type de géométrie par layer</li>
+<li>Données attributaires : données associées à la composante spatiale</li>
+<li>69 formats gérés (lib OGR) : format standard QGIS est le shapefile ESRI</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><a class="reference external" href="http://www.gdal.org/ogr_formats.html">http://www.gdal.org/ogr_formats.html</a></p>
+
+
+
+<div class="slide-no">1</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-2">
+
+<h1>Les couches vecteur (2)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Charger un shapefile</strong></p>
+<a class="reference internal image-reference" href="_images/select_vector.png"><img alt="_images/select_vector.png" class="align-center" src="_images/select_vector.png" style="width: 400pt;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>NOTE: l’outil <em>Refactor fields</em> permet de changer le type des attributs, les réordonner, …</p>
+
+
+
+<div class="slide-no">2</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-3">
+
+<h1>Les couches vecteur (3)</h1>
+
+<p><strong>Propriétés</strong></p>
+<a class="reference internal image-reference" href="_images/vector_prop.png"><img alt="_images/vector_prop.png" class="align-center" src="_images/vector_prop.png" style="width: 500pt;" /></a>
+
+
+
+<div class="slide-no">3</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-4">
+
+<h1>Les couches vecteur (4)</h1>
+
+<p><strong>SCR</strong></p>
+<dl class="docutils">
+<dt>Les coordonnées d’un point peuvent être exprimées :</dt><dd><ul class="simple">
+<li>en degrés dans un système géodésique de référence</li>
+<li>en mètres suite à une projection (coordonnes 3D -&gt; surface plane)</li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Système de Coordonnées de Référence : système de coordonnées + projection</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/vector_crs.png"><img alt="_images/vector_crs.png" class="align-center" src="_images/vector_crs.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">4</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-5">
+
+<h1>Les couches vecteur (5)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Symbologie</strong></p>
+<ul class="simple">
+<li>Apparence visuelle  sur la carte</li>
+<li>Couleur, visibilité dépendante de l’échelle, positionnement, …</li>
+<li>Analyse thématique ( illustration de carte )</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/vector_grad.png"><img alt="_images/vector_grad.png" class="align-center" src="_images/vector_grad.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">5</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-6">
+
+<h1>Les couches vecteur (6)</h1>
+
+<p><strong>Expressions</strong></p>
+<dl class="docutils">
+<dt>Analyse syntaxique d’expression :</dt><dd><ul class="simple">
+<li>évaluation en prédicats booléens ou comme des fonctions</li>
+<li>nombre, texte, référence de colonnes</li>
+<li>fonctions mathématiques, couleur, date/heure, …</li>
+</ul>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/vector_expr.png"><img alt="_images/vector_expr.png" class="align-center" src="_images/vector_expr.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">6</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-7">
+
+<h1>Les couches vecteur (7)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Expressions - example</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="k">case</span>
+  <span class="n">when</span> <span class="n">CODE_DEPT</span> <span class="o">=</span> <span class="mi">29</span> <span class="n">or</span> <span class="n">CODE_DEPT</span> <span class="o">=</span> <span class="mi">53</span>
+  <span class="n">then</span>
+    <span class="n">POPULATION</span>
+  <span class="k">else</span>
+    <span class="mi">0</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+
+
+
+<div class="slide-no">7</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-8">
+
+<h1>Les couches vecteur (8)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>1</strong> - Télécharger les données <em>SHP</em> <a class="reference external" href="https://www.data.gouv.fr/fr/datasets/geofla-communes/">https://www.data.gouv.fr/fr/datasets/geofla-communes/</a></p>
+<p><strong>2</strong> - Ouvrir QGIS, charger <em>COMMUNE.shp</em> et déterminer le SCR</p>
+<p><strong>3</strong> - Ouvrir la table d’attributs pour visualiser les informations disponibles</p>
+<dl class="docutils">
+<dt><strong>3</strong> - Changer les paramètres du style “Symbole Unique” :</dt><dd><ul class="simple">
+<li>mode de remplissage “simple”</li>
+<li>changer la couleur de remplissage et de la bordure</li>
+<li>changer le style de remplissage</li>
+<li>changer le style de bordure</li>
+</ul>
+</dd>
+</dl>
+
+
+
+<div class="slide-no">8</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-9">
+
+<h1>Les couches vecteur (9)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<dl class="docutils">
+<dt><strong>4</strong> - Changer le style en “Catégorisé” et :</dt><dd><ul class="simple">
+<li>créer une catégorie selon le code de département</li>
+<li>changer la palette de couleur</li>
+<li>classer et visualiser</li>
+<li>visualiser l’échelle dans l’arbre des couches</li>
+<li>sauvegarder/recharger le style de l’analyse thématique</li>
+</ul>
+</dd>
+</dl>
+<p><strong>5</strong> - Catégoriser selon la densité de population</p>
+<p><strong>6</strong> - Sauvegarder le projet</p>
+
+
+
+<div class="slide-no">9</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-10">
+
+<h1>Les couches vecteur (10)</h1>
+
+<p><strong>Labels / Diagrammes</strong></p>
+<dl class="docutils">
+<dt>Ajout d’étiquettes configurables en fonction de la géométrie :</dt><dd><ul class="simple">
+<li>texte</li>
+<li>placement</li>
+<li>affichage</li>
+<li>couleur / ombre</li>
+<li>…</li>
+</ul>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/vector_label.png"><img alt="_images/vector_label.png" class="align-center" src="_images/vector_label.png" style="width: 600pt;" /></a>
+
+
+
+<div class="slide-no">10</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-11">
+
+<h1>Les couches vecteur (11)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>1</strong> - Ouvrir le projet QGIS précédent</p>
+<dl class="docutils">
+<dt><strong>2</strong> - Labeliser la couche <em>COMMUNE</em> en mode “Montrer les étiquettes pour cette couche”:</dt><dd><ul class="simple">
+<li>avec le code de département</li>
+<li>changer la police</li>
+<li>ajouter un cercle de couleur en fond des labels</li>
+<li>ajouter une ombre au label</li>
+<li>ajouter une règle pour ne visualiser les labels qu’à petites échelles</li>
+</ul>
+</dd>
+</dl>
+
+
+
+<div class="slide-no">11</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-12">
+
+<h1>Les couches vecteur (12)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<dl class="docutils">
+<dt><strong>3</strong> - Passer en mode “Etiquettes basées sur des règles” :</dt><dd><ul class="simple">
+<li>la règle : afficher des labels seulement pour le département 29</li>
+<li>les labels : multi-ligne indiquant le nom de la commune et la population</li>
+<li>formatter les labels de telle sorte qu’on autorise un retour à la ligne sur le caractère “-” quand le nom de la commune excède un certain nombre de caractères</li>
+</ul>
+</dd>
+<dt><strong>4</strong> - Data-defined :</dt><dd><ul class="simple">
+<li>ajuster la position de certain label à la main</li>
+<li>forcer la visibilité de certain label</li>
+</ul>
+</dd>
+</dl>
+
+
+
+<div class="slide-no">12</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-13">
+
+<h1>Les couches vecteur (13)</h1>
+
+<p><strong>Formulaire</strong></p>
+<ul class="simple">
+<li>permet d’éditer les attributs d’une entité</li>
+<li>sélection automatique de l’entité sur la carte</li>
+<li>outil “Identifier les entités”</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/identifier.png"><img alt="_images/identifier.png" class="align-center" src="_images/identifier.png" style="width: 300pt;" /></a>
+
+
+
+<div class="slide-no">13</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-14">
+
+<h1>Les couches vecteur (14)</h1>
+
+<p><strong>Actions</strong></p>
+<p>Un utilisateur peut ajouter des actions personalisées sur une entité!</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/action_config.png"><img alt="_images/action_config.png" class="align-center" src="_images/action_config.png" style="width: 700pt;" /></a>
+
+
+
+<div class="slide-no">14</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-15">
+
+<h1>Les couches vecteur (15)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<p><strong>1</strong> - Ajouter un attribut “photo” à la couche <em>COMMUNE</em></p>
+<p><strong>2</strong> - Indiquer dans les propriétés du champs qu’on veut utiliser un outil d’édition “Photo”</p>
+<p><strong>3</strong> - Utiliser l’outil “Identifier les entités” et attribuer des photos à quelques entités</p>
+<p><strong>4</strong> - Ajouter une action permettant d’ouvrir la photo de l’entité grâce à la syntaxe <em>[%”photo”%]</em></p>
+<p><strong>5</strong> - Retourner sur la carte et visualiser les photos grâce à l’action définie</p>
+
+
+
+<div class="slide-no">15</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-16">
+
+<h1>Les couches vecteur (16)</h1>
+
+<p><strong>Opérations</strong></p>
+<ul class="simple">
+<li>intersection, différence, union, …</li>
+<li>manipulation d’entité vectorielle “Barre d’outils de la numérisation avancée” ( entités vs parties, fusion, … )</li>
+<li>de très nombreux algorithmes sont disponibles dans “La boite à outils de traitements”</li>
+</ul>
+<a class="reference internal image-reference" href="_images/geotools.png"><img alt="_images/geotools.png" class="align-center" src="_images/geotools.png" style="width: 300pt;" /></a>
+
+
+
+<div class="slide-no">16</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-17">
+
+<h1>Les couches vecteur (17)</h1>
+
+<p><strong>Sélection par localisation</strong></p>
+<a class="reference internal image-reference" href="_images/local_menu.png"><img alt="_images/local_menu.png" class="align-center" src="_images/local_menu.png" style="width: 300pt;" /></a>
+
+
+
+<div class="slide-no">17</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-18">
+
+<h1>Les couches vecteur (18)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Requête spatiale</strong></p>
+<a class="reference internal image-reference" href="_images/req_spatiale.png"><img alt="_images/req_spatiale.png" class="align-center" src="_images/req_spatiale.png" style="width: 200pt;" /></a>
+
+
+
+<div class="slide-no">18</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-19">
+
+<h1>Les couches vecteur (19)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Requête spatiale 2</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/vector_tools.png"><img alt="_images/vector_tools.png" class="align-center" src="_images/vector_tools.png" style="width: 700pt;" /></a>
+
+
+
+<div class="slide-no">19</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-20">
+
+<h1>Les couches vecteur (20)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Couche virtuelle</strong></p>
+<ul class="simple">
+<li>résultat d’une requête mélangeant SQL et Expression</li>
+<li>peut utiliser plusieurs couches vecteur</li>
+<li>les couches filles peuvent être embarquées dans la couche virtuelle</li>
+</ul>
+<a class="reference internal image-reference" href="_images/virtual.png"><img alt="_images/virtual.png" class="align-center" src="_images/virtual.png" style="width: 30pt;" /></a>
+
+
+
+<div class="slide-no">20</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-21">
+
+<h1>Les couches vecteur (21)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Couche virtuelle</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/virtual_conf.png"><img alt="_images/virtual_conf.png" class="align-center" src="_images/virtual_conf.png" style="width: 400pt;" /></a>
+
+
+
+<div class="slide-no">21</div>
+
+
+</article>
+<article class="slide level-1" id="les-couches-vecteur-22">
+
+<h1>Les couches vecteur (22)</h1>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/exo.png"><img alt="_images/exo.png" class="align-center" src="_images/exo.png" style="width: 100pt;" /></a>
+<dl class="docutils">
+<dt><strong>1</strong> - Utiliser les outils suivant pour créer une couche vectorielle contenant seulement les communes frontalières entre le Finistère et le reste de la France</dt><dd><ul class="simple">
+<li>couche virtuelle</li>
+<li>géotraitement “Différence””</li>
+<li>géotraitement “Tampon”</li>
+<li>requête spatiale</li>
+</ul>
+</dd>
+</dl>
+
+
+
+<div class="slide-no">22</div>
+
+
+</article>
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>

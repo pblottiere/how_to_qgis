@@ -1,0 +1,12 @@
+
+.slides > article {
+    font-size: 0.8em;
+    padding-right: 100px;
+}
+
+
+.slide-no {
+    left: 2ex;
+    right: 1em;
+}
+

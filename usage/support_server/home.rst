@@ -1,0 +1,27 @@
+================
+QGIS Server 3.10
+================
+|
+|
+**Paul Blottiere**
+
+**2019**
+
+
+.. ====
+
+.. **Jour 1**
+..   - Présentation
+..   - Installation Windows
+..   - Les couches vecteur
+..   - Style et étiquettes
+..   - Requêtes attributaires et spatiales
+..
+.. |
+.. **Jour 2**
+..   - Les couches raster
+..   - Les flux WMS
+..   - Mise en page cartographique et atlas
+
+.. include:: pres.rst
+.. include:: install.rst
