@@ -13,7 +13,6 @@ http://www.qgis.org/fr/site/
 
 Présentation (2)
 ================
-|
 **De nombreux formats supportés**
 
 - Raster (GeoTIFF, JPG, PNG, ...)
@@ -39,11 +38,12 @@ Présentation (3)
 
 Présentation (4)
 ================
-**QGIS Server**
+**QGIS Server en quelques mots**
 
 - Depuis la version 1.6 (2010)
 - Serveur cartographique comme MapServer ou GeoServer
-- certification OGC WMS 1.3.0 depuis 3.0
+- certification OGC WMS 1.3.0 depuis 3.0 (http://test.qgis.org/ogc_cite/)
+
 
 |
 .. image:: imgs/badge.png

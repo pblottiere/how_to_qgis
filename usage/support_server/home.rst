@@ -25,3 +25,5 @@ QGIS Server 3.10
 
 .. include:: pres.rst
 .. include:: install.rst
+.. include:: services.rst
+.. include:: config.rst

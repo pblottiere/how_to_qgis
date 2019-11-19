@@ -1,0 +1,28 @@
+Configuration (1)
+=================
+
+À travers QGIS Desktop!
+
+|
+.. image:: imgs/config0.png
+  :width: 500pt
+  :align: center
+
+
+Configuration (2)
+=================
+**MAP**
+
+=> indique le projet sur lequel on veut travailler
+
+.. code-block::
+
+  http://localhost/qgisserver?
+  MAP=/tmp/world.qgz&
+  LAYERS=countries&
+  SERVICE=WMS&
+  REQUEST=GetMap&
+  CRS=EPSG:4326&
+  WIDTH=400&
+  HEIGHT=200
+

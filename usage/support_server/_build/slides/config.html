@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation (1) &mdash; Python - SIG 2016.02.06 documentation</title>
+    <title>Configuration (1) &mdash; Python - SIG 2016.02.06 documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/styles.css" type="text/css" />
@@ -50,31 +50,15 @@
 
 
   
-<article class="slide level-1" id="installation-1">
+<article class="slide level-1" id="configuration-1">
 
-<h1>Installation (1)</h1>
+<h1>Configuration (1)</h1>
 
-<dl class="docutils">
-<dt>OS cible:</dt><dd><ul class="simple">
-<li>Windows: installation compliquée et semée d’embuches</li>
-<li>OSX: aucune idée…</li>
-<li>GNU/Linux: OS conseillé</li>
-</ul>
-</dd>
-</dl>
+<p>À travers QGIS Desktop!</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>Diverses distributions GNU/Linux supportées:</dt><dd><ul class="simple">
-<li>Debian, Ubuntu, Fedora, …</li>
-</ul>
-</dd>
-</dl>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">qgis</span><span class="o">-</span><span class="n">server</span>
-</pre></div>
-</div>
-<p><a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/working_with_ogc/server/getting_started.html">https://docs.qgis.org/3.4/en/docs/user_manual/working_with_ogc/server/getting_started.html</a></p>
+<a class="reference internal image-reference" href="_images/config0.png"><img alt="_images/config0.png" class="align-center" src="_images/config0.png" style="width: 500pt;" /></a>
 
 
 
@@ -82,30 +66,22 @@
 
 
 </article>
-<article class="slide level-1" id="installation-2">
+<article class="slide level-1" id="configuration-2">
 
-<h1>Installation (2)</h1>
+<h1>Configuration (2)</h1>
 
-<div class="line-block">
-<div class="line"><br /></div>
+<p><strong>MAP</strong></p>
+<p>=&gt; indique le projet sur lequel on veut travailler</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost/qgisserver?
+MAP=/tmp/world.qgz&amp;
+LAYERS=countries&amp;
+SERVICE=WMS&amp;
+REQUEST=GetMap&amp;
+CRS=EPSG:4326&amp;
+WIDTH=400&amp;
+HEIGHT=200
+</pre></div>
 </div>
-<dl class="docutils">
-<dt>Nécessite:</dt><dd><ul class="simple">
-<li>un serveur web (NGINX, Apache, …)</li>
-<li>en environnement graphique (serveur X)</li>
-</ul>
-</dd>
-</dl>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<dl class="docutils">
-<dt>En bref:</dt><dd><ul class="simple">
-<li>plus compliqué à installer que QGIS Desktop</li>
-<li>un AdminSys peut aider :)</li>
-</ul>
-</dd>
-</dl>
 
 
 
