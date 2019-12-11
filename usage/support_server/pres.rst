@@ -42,7 +42,7 @@ Présentation (4)
 
 - Depuis la version 1.6 (2010)
 - Serveur cartographique comme MapServer ou GeoServer
-- certification OGC WMS 1.3.0 depuis 3.0 (http://test.qgis.org/ogc_cite/)
+- Certification OGC WMS 1.3.0 depuis 3.0 (http://test.qgis.org/ogc_cite/)
 
 
 |

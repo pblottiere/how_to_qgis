@@ -24,7 +24,7 @@ Installation (2)
 |
 Nécessite:
   - un serveur web (NGINX, Apache, ...)
-  - en environnement graphique (serveur X)
+  - un environnement graphique (serveur X)
 
 |
 En bref:
